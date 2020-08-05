@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "3.1"
+lock "~> 3.1"
 
 set :application, "fleamarket_sample_80h"
 set :repo_url, "git@github.com:goemon11/fleamarket_sample_80h.git"
