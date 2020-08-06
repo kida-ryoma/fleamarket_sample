@@ -84,7 +84,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |preparation_days|string|null: false|
-|item_id|references|null: false|
+|item_id|references|foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -120,7 +120,9 @@
 - has_one :credit_card
 - has_many :orders
 - has_many :sns_credentials
-
+- has_many :items
+- has_many :seller_orders, class_name: 'Order', foreign_key: 'seller_id'
+- has_many :buyer_orders, class_name: 'Order', foreign_key: 'buyer_id'
 
 ## profilesテーブル
 
@@ -147,6 +149,7 @@
 |delivery_family_name_kana|string|null: false|
 |delivery_first_name_kana|string|null: false|
 |phone_number|integer|null: false|
+|post_code|integer|null: false|
 |prefecture|integer|null: false|
 |city|integer|null: false|
 |house_number|string|null: false|
@@ -174,7 +177,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |provider|string|
-|card_id|integer|
+|uid|string|
 |user_id|references|foreign_key: true|
 
 ### Association
