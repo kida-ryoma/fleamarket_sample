@@ -9,6 +9,7 @@
 |price|integer|null: false|
 |delivery_fee|integer|null: false|
 |size|string|
+|brand|string|
 |sales_status|integer|null: false|
 |category_id|references|foreign_key: true|
 |status_id|references|foreign_key: true|
@@ -21,22 +22,10 @@
 - belongs_to :category
 - belongs_to :status
 - belongs_to :user
-- has_one :brand, dependent: :destroy
 - has_one :area, dependent: :destroy
 - has_one :preparation_day, dependent: :destroy
 - has_one :order, dependent: :destroy
 - has_many :item_images, dependent: :destroy
-
-
-## brandsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|
-|item_id|references|foreign_key: true|
-
-### Association
-- belongs_to :item
 
 
 ## categoriesテーブル
