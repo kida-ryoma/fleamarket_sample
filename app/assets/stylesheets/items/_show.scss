@@ -1,3 +1,6 @@
+// これは商品購入ページ用の偽ファイルです
+// マージする前にローカルのどっかに移行してください！！！！！！１１１
+
 .header{
   height: 97px;
   width: 100vw;
@@ -164,13 +167,20 @@
     background-color: #5cebe3;
     border-radius: 10px;
     text-align: center;
-    span{
-      color: white;
-      text-align: center;
-      margin-top: 10px;
-      display: block;
-    }
+    position: relative;
     .btn{
+      position: absolute;
+      top:0;
+      left:0;
+      height: 100%;
+      width: 100%;
+      display: block;
+      text-decoration: none;
+      span{
+        color: white;
+        text-align: center;
+        margin-top: 10px;
+      }
       img{
         margin-top: 10px;
         width: 70px;
