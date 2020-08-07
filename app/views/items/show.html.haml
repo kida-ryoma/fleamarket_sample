@@ -1,0 +1,136 @@
+.header
+  .innerHeader
+    .innerHeader__upperHeader
+      .image
+        = link_to image_tag("/material/logo/logo.png", class: "image__logo"), "#"
+      .searchBox
+        %input.searchBox--input{:name => "key", :placeholder => "キーワードから探す"}/
+        %button
+          .searchBox__search__icon
+          = link_to image_tag("/material/icon/icon-search1.png", class: "searchBox__search__icon__logo"), "#"
+    %nav.innerHeader__lowerHeader
+      %ol.leftList
+        %li.leftList__category
+          = link_to "カテゴリー","#", class: "link"
+        %li.leftList__brand
+          = link_to "ブランド","#",class: "link"
+      %ol.rightList
+        %li.rightList__login
+          = link_to "ログイン","#", class: "link"
+        %li.rightList__memberRegistration
+          = link_to "新規会員登録", "#", class: "link"
+.wrapper
+  .sellBtn
+    %span
+      出品する
+    = link_to "", class: "btn" do
+      %img{ src: "/material/icon/icon_camera.png" }
+  .item
+    .item__name
+      なかやまきんに君監修 プロテイン「ヤァーっ！！ハッ^-^!」
+    .item__images
+      .item__images__big
+        %img.bigImage{ src: "/material/pict/bg-mainVisual-pict_pc.jpg"}
+        -# %img.item__info__image{ src: "/material/pict/pict-reason-01.jpg" , size: "100x100"}
+        -# %img.item__info__image{ src: "/material/pict/pict-reason-01.jpg" , size: "100x100"}
+        -# %img.item__info__image{ src: "/material/pict/pict-reason-01.jpg" , size: "100x100"}
+        /material/pict/bg-mainVisual-pict_pc.jpg
+      .item__images__small
+        %img.smallImage{ src: "/material/pict/bg-mainVisual-pict_pc.jpg" }
+        %img.smallImage{ src: "/material/pict/pict-reason-01.jpg" }
+        %img.smallImage{ src: "/material/pict/pict-reason-01.jpg" }
+    .item__price
+      ¥30000
+      %br
+      %span
+        (税込)送料込み
+    .item__description
+      オイ、オレの筋肉！！本当に対策はあるのかい！？それともないのかい！？どっちなんだい！？あーーーーーる！！さぁー、という訳で今回は『肉離れ』について５つに分けて進めていきます。『肉離れってどんなケガなんだい？』、『肉離れの原因とは？』、『肉離れになったらどうすればいいんだい？』、『肉離れの予防策とは？』、『なかやまきんに君が肉離れをした時の大爆笑エピソードがもしあれば教えて！！』です。
+    .item__details
+      %table{:border => 1, :bordercolor => "#cfcfcf"}
+        %tr
+          %th 出品者
+          %td 
+            = link_to "なかやまきんにくん","", class: "btn"
+        %tr
+          %th カテゴリー
+          %td 
+            = link_to "筋肉","", class: "btn"
+        %tr
+          %th ブランド
+          %td 
+            = link_to "すべり笑い","", class: "btn"
+        %tr
+          %th サイズ
+          %td 上腕二頭筋
+        %tr
+          %th 配送方法
+          %td 大腿四頭筋(大腿直筋、内側広筋、外側広筋、中間広筋)　（デフォルトで配送料は出品者と表示する?）
+        %tr
+          %th 商品の状態
+          %td パンプしてます
+        %tr
+          %th 配送元地域
+          %td アメリカ
+        %tr
+          %th 配送日の目安
+          %td 4ヶ月
+    .item__buy
+      = link_to "購入画面に進む", "",class: "btn"
+
+  .otherItems
+    .categoryItems
+      .itemContent
+        = link_to "#", class: "contentBox" do
+          .contentBox__top
+            %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+            %p.contentBox__top__price ¥1000-
+          .contentBox__bottom
+            商品名
+.appBanner
+  .inner
+    .inner__title
+      だれでもかんたん、人生を変えるフリマアプリ
+    .inner__text
+      今すぐ無料ダウンロード！
+    .inner__icons
+      = link_to "" do
+        %img.inner__icons__apple{ src: "/material/icon/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"}
+      = link_to "" do
+        %img.inner__icons__google{ src: "/material/icon/google-play-badge.png" }
+.footer
+  .contents
+    .content
+      %ul
+        %span.title
+          FURIMAについて
+        %li.list
+          = link_to "会社概要", "", class: "btn"
+        %li.list
+          = link_to "プライバシーポリシー","", class: "btn"
+        %li.list
+          = link_to "FURIMA利用規約","", class: "btn"
+        %li.list
+          = link_to "ポイントに関する規約","", class: "btn"
+    .content
+      %ul
+        %span.title
+          FURIMAを見る
+        %li.list
+          = link_to "カテゴリー一覧","", class: "btn"
+        %li.list
+          = link_to "ブランド一覧","", class: "btn"
+    .content
+      %ul
+        %span.title
+          ヘルプ＆ガイド
+        %li.list
+          = link_to "FURIMAガイド","", class: "btn"
+        %li.list
+          = link_to "FURIMAロゴ利用ガイドライン","", class: "btn"
+        %li.list
+          = link_to "お知らせ","", class: "btn"
+  .footer__logo
+    %img.logo{ src: "/material/logo/logo-white.png"}
+    %p
+      ©︎ FURIMA
