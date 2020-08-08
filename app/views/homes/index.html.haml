@@ -151,3 +151,50 @@
                 %p.contentBox__top__price ¥1000-
                 .contentBox__bottom
                   商品名
+  .appBanner
+    .inner
+      .inner__title
+        だれでもかんたん、人生を変えるフリマアプリ
+      .inner__text
+        今すぐ無料ダウンロード！
+      .inner__icons
+        = link_to "#" do
+          %img.inner__icons__apple{ src: "/material/icon/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"}
+        = link_to "#" do
+          %img.inner__icons__google{ src: "/material/icon/google-play-badge copy.png" }
+.footer
+  .contents
+    .content
+      %ul
+        %span.title
+          FURIMAについて
+        %li.list
+          = link_to "会社概要", "#", class: "btn"
+        %li.list
+          = link_to "プライバシーポリシー","#", class: "btn"
+        %li.list
+          = link_to "FURIMA利用規約","", class: "btn"
+        %li.list
+          = link_to "ポイントに関する規約","", class: "btn"
+    .content
+      %ul
+        %span.title
+          FURIMAを見る
+        %li.list
+          = link_to "カテゴリー一覧","#", class: "btn"
+        %li.list
+          = link_to "ブランド一覧","#", class: "btn"
+    .content
+      %ul
+        %span.title
+          ヘルプ＆ガイド
+        %li.list
+          = link_to "FURIMAガイド","#", class: "btn"
+        %li.list
+          = link_to "FURIMAロゴ利用ガイドライン","#", class: "btn"
+        %li.list
+          = link_to "お知らせ","#", class: "btn"
+  .footer__logo
+    %img.logo{ src: "/material/logo/logo-white.png"}
+    %p
+      ©︎ FURIMA
