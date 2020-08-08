@@ -376,3 +376,20 @@ header {
     }
   }
 }
+.exhibitionButton {
+  width: 120px;
+  background-color: #3CCACE;
+  text-align: center;
+  border-radius: 4%;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  height: 100px;
+  &__text {
+    color: #ffffff;
+    margin-top: 10px;
+  }
+  &__img {
+    width: 50%;
+  }
+}
