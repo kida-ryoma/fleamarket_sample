@@ -1,6 +1,3 @@
--# これは商品購入ページ用の偽ファイルです
--# マージする前にローカルのどっかに移行してください！！！！！！１１１
-
 .header
   .innerHeader
     .innerHeader__upperHeader
@@ -30,14 +27,10 @@
       %img{ src: "/material/icon/icon_camera.png" }
   .item
     .item__name
-      なかやまきんに君監修 プロテイン「ヤァーっ！！ハッ^-^!」
+      プロテイン
     .item__images
       .item__images__big
         %img.bigImage{ src: "/material/pict/bg-mainVisual-pict_pc.jpg"}
-        -# %img.item__info__image{ src: "/material/pict/pict-reason-01.jpg" , size: "100x100"}
-        -# %img.item__info__image{ src: "/material/pict/pict-reason-01.jpg" , size: "100x100"}
-        -# %img.item__info__image{ src: "/material/pict/pict-reason-01.jpg" , size: "100x100"}
-        /material/pict/bg-mainVisual-pict_pc.jpg
       .item__images__small
         %img.smallImage{ src: "/material/pict/bg-mainVisual-pict_pc.jpg" }
         %img.smallImage{ src: "/material/pict/pict-reason-01.jpg" }
@@ -58,31 +51,59 @@
         %tr
           %th カテゴリー
           %td 
-            = link_to "筋肉","", class: "btn"
+            = link_to "食品","", class: "btn"
         %tr
           %th ブランド
           %td 
-            = link_to "すべり笑い","", class: "btn"
+            = link_to "マイプロテイン","", class: "btn"
         %tr
           %th サイズ
-          %td 上腕二頭筋
+          %td M
         %tr
-          %th 配送方法
-          %td 大腿四頭筋(大腿直筋、内側広筋、外側広筋、中間広筋)　（デフォルトで配送料は出品者と表示する?）
+          %th 配送料の負担
+          %td どうしましょう？
         %tr
           %th 商品の状態
-          %td パンプしてます
+          %td 良い
         %tr
           %th 配送元地域
-          %td アメリカ
+          %td 沖縄
         %tr
           %th 配送日の目安
-          %td 4ヶ月
+          %td 1~3日
     .item__buy
       = link_to "購入画面に進む", "",class: "btn"
 
   .otherItems
     .categoryItems
+      .itemContent
+        = link_to "#", class: "contentBox" do
+          .contentBox__top
+            %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+            %p.contentBox__top__price ¥1000-
+          .contentBox__bottom
+            商品名
+      .itemContent
+        = link_to "#", class: "contentBox" do
+          .contentBox__top
+            %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+            %p.contentBox__top__price ¥1000-
+          .contentBox__bottom
+            商品名
+      .itemContent
+        = link_to "#", class: "contentBox" do
+          .contentBox__top
+            %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+            %p.contentBox__top__price ¥1000-
+          .contentBox__bottom
+            商品名
+      .itemContent
+        = link_to "#", class: "contentBox" do
+          .contentBox__top
+            %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+            %p.contentBox__top__price ¥1000-
+          .contentBox__bottom
+            商品名
       .itemContent
         = link_to "#", class: "contentBox" do
           .contentBox__top
