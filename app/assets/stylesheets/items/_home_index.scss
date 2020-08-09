@@ -1,6 +1,9 @@
  * {
    box-sizing: border-box;
  }
+ a {
+   text-decoration: none;
+ }
 // ヘッダー//
 header {
   height: 97px;
@@ -249,48 +252,49 @@ header {
     font-size: 30px;
     font-weight: bold;
     }
-    &__brandBox {
-      &__head {
-        margin-bottom: 15px;
-        .title {
-          font-size: 25px;
-          text-decoration: none;
-          color: #3CCACE;
-        }
+    &__head {
+      margin-bottom: 15px;
+      .title {
+        font-size: 25px;
+        color: #3CCACE;
       }
-      .itemContents {
-        display: flex;
-        justify-content: center;
-        .itemContent {
-          height: 250px;
-          width: 220px;
-          border: 1px solid lightgray;
-          .contentBox {
-            text-decoration: none;
-            color: black;
-            &__top {
-              height: 200px;
-              position: relative;
-              &__image {
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-              }
-              &__price {
-                position: absolute;
-                bottom: 0px;
-                padding: 3px 15px;
-                background-color: rgba(100, 100, 100, 0.5);
-                color: white;
-                border-top-right-radius: 10px;
-                border-bottom-right-radius: 10px;
-              }
+    }
+    .itemContents {
+      display: flex;
+      justify-content: space-around;
+      width: 80vw;
+      margin: 0 auto;
+      .itemContent {
+        height: 250px;
+        width: 220px;
+        border: 1px solid lightgray;
+        box-shadow: 2px 2px 5px gray ;
+        .contentBox {
+          text-decoration: none;
+          color: black;
+          &__top {
+            height: 200px;
+            position: relative;
+            &__image {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
             }
-            &__bottom {
-              height: 50px;
-              font-size: 13px;
-              padding: 5px;
+            &__price {
+              position: absolute;
+              bottom: 0px;
+              padding: 3px 15px;
+              background-color: rgba(100, 100, 100, 0.5);
+              color: white;
+              border-top-right-radius: 10px;
+              border-bottom-right-radius: 10px;
             }
+          }
+          &__bottom {
+            height: 50px;
+            font-size: 13px;
+            padding: 5px;
+            text-align: left;
           }
         }
       }
