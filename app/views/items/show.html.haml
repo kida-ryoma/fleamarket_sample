@@ -2,12 +2,13 @@
   .innerHeader
     .innerHeader__upperHeader
       .image
-        = link_to image_tag("/material/logo/logo.png", class: "image__logo"), "#"
+        = link_to "" do
+          = image_tag "/material/logo/logo.png", class: "image__logo"
       .searchBox
-        %input.searchBox--input{:name => "key", :placeholder => "キーワードから探す"}/
+        %input.searchBox--input{name: "key", placeholder: "キーワードから探す"}/
         %button
           .searchBox__search__icon
-          = link_to image_tag("/material/icon/icon-search1.png", class: "searchBox__search__icon__logo"), "#"
+          = link_to image_tag "/material/icon/icon-search1.png", class: "searchBox__search__icon__logo"
     %nav.innerHeader__lowerHeader
       %ol.leftList
         %li.leftList__category
@@ -24,17 +25,17 @@
     = link_to "", class: "btn" do
       %span
         出品する
-      %img{ src: "/material/icon/icon_camera.png" }
+      = image_tag "/material/icon/icon_camera.png" 
   .item
     .item__name
       プロテイン
     .item__images
       .item__images__big
-        %img.bigImage{ src: "/material/pict/bg-mainVisual-pict_pc.jpg"}
+        = image_tag "/material/pict/bg-mainVisual-pict_pc.jpg", class: "bigImage"
       .item__images__small
-        %img.smallImage{ src: "/material/pict/bg-mainVisual-pict_pc.jpg" }
-        %img.smallImage{ src: "/material/pict/pict-reason-01.jpg" }
-        %img.smallImage{ src: "/material/pict/pict-reason-01.jpg" }
+        = image_tag "/material/pict/bg-mainVisual-pict_pc.jpg" ,class: "smallImage"
+        = image_tag "/material/pict/pict-reason-01.jpg" ,class: "smallImage"
+        = image_tag "/material/pict/pict-reason-01.jpg" ,class: "smallImage"
     .item__price
       ¥30000
       %br
@@ -82,28 +83,28 @@
         .userContent
           = link_to "#", class: "contentBox" do
             .contentBox__top
-              %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
               %p.contentBox__top__price ¥1000-
             .contentBox__bottom
               商品名
         .userContent
           = link_to "#", class: "contentBox" do
             .contentBox__top
-              %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
               %p.contentBox__top__price ¥1000-
             .contentBox__bottom
               商品名
         .userContent
           = link_to "#", class: "contentBox" do
             .contentBox__top
-              %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
               %p.contentBox__top__price ¥1000-
             .contentBox__bottom
               商品名
         .userContent
           = link_to "#", class: "contentBox" do
             .contentBox__top
-              %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
               %p.contentBox__top__price ¥1000-
             .contentBox__bottom
               商品名
@@ -111,28 +112,28 @@
         .userContent
           = link_to "#", class: "contentBox" do
             .contentBox__top
-              %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
               %p.contentBox__top__price ¥1000-
             .contentBox__bottom
               商品名
         .userContent
           = link_to "#", class: "contentBox" do
             .contentBox__top
-              %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
               %p.contentBox__top__price ¥1000-
             .contentBox__bottom
               商品名
         .userContent
           = link_to "#", class: "contentBox" do
             .contentBox__top
-              %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
               %p.contentBox__top__price ¥1000-
             .contentBox__bottom
               商品名
         .userContent
           = link_to "#", class: "contentBox" do
             .contentBox__top
-              %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
               %p.contentBox__top__price ¥1000-
             .contentBox__bottom
               商品名
@@ -143,28 +144,28 @@
         .itemContent
           = link_to "#", class: "contentBox" do
             .contentBox__top
-              %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
               %p.contentBox__top__price ¥1000-
             .contentBox__bottom
               商品名
         .itemContent
           = link_to "#", class: "contentBox" do
             .contentBox__top
-              %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
               %p.contentBox__top__price ¥1000-
             .contentBox__bottom
               商品名
         .itemContent
           = link_to "#", class: "contentBox" do
             .contentBox__top
-              %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
               %p.contentBox__top__price ¥1000-
             .contentBox__bottom
               商品名
         .itemContent
           = link_to "#", class: "contentBox" do
             .contentBox__top
-              %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
               %p.contentBox__top__price ¥1000-
             .contentBox__bottom
               商品名
@@ -172,28 +173,28 @@
         .itemContent
           = link_to "#", class: "contentBox" do
             .contentBox__top
-              %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
               %p.contentBox__top__price ¥1000-
             .contentBox__bottom
               商品名
         .itemContent
           = link_to "#", class: "contentBox" do
             .contentBox__top
-              %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
               %p.contentBox__top__price ¥1000-
             .contentBox__bottom
               商品名
         .itemContent
           = link_to "#", class: "contentBox" do
             .contentBox__top
-              %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
               %p.contentBox__top__price ¥1000-
             .contentBox__bottom
               商品名
         .itemContent
           = link_to "#", class: "contentBox" do
             .contentBox__top
-              %img{alt: "image", src: "material/pict/pict-reason-02.jpg", class: "contentBox__top__image"}
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
               %p.contentBox__top__price ¥1000-
             .contentBox__bottom
               商品名
@@ -205,9 +206,9 @@
       今すぐ無料ダウンロード！
     .inner__icons
       = link_to "" do
-        %img.inner__icons__apple{ src: "/material/icon/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"}
+        = image_tag "/material/icon/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "inner__icons__apple"
       = link_to "" do
-        %img.inner__icons__google{ src: "/material/icon/google-play-badge.png" }
+        = image_tag "/material/icon/google-play-badge.png", class: "inner__icons__google"
 .footer
   .contents
     .content
@@ -241,6 +242,7 @@
         %li.list
           = link_to "お知らせ","", class: "btn"
   .footer__logo
-    %img.logo{ src: "/material/logo/logo-white.png"}
+    = image_tag "/material/logo/logo-white.png", class:"logo"
     %p
       ©︎ FURIMA
+
