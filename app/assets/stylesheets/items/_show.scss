@@ -8,14 +8,14 @@
       display: block;
       padding-top: 90px;
       text-align: center;
-      font-size: 22px;
+      font-size: $fontC;
       color: white;
       text-shadow: #383838 0 0 5px;
       font-weight: bold;
     }
     &__text{
       text-align: center;
-      font-size: 38px;
+      font-size: $fontF;
       color: white;
       text-shadow:#383838 0 0 5px;
     }
@@ -89,7 +89,7 @@
     position: fixed;
     width: 130px;
     height: 130px;
-    background-color: #3CCACE;
+    background-color: $main-color;
     border-radius: 10px;
     text-align: center;
     .btn{
@@ -120,7 +120,7 @@
     overflow: hidden;
     &__name{
       margin-top: 20px;
-      font-size: 30px;
+      font-size: $fontE;
       font-weight: bold;
       text-align: center;
     }
@@ -157,14 +157,14 @@
     &__price{
       height: 120px;
       width: 80%;
-      font-size: 40px;
+      font-size: $fontF;
       font-weight: bold;
       margin: 0px auto 30px auto;
       text-align: center;
       line-height: 120px;
       position: relative;
       span{
-        font-size: 20px;
+        font-size: $fontC;
         font-weight: normal;
         position: absolute;
         text-align: center;
@@ -175,9 +175,9 @@
     &__buy{
       height: 80px;
       width: 80%;
-      background-color: #3CCACE;
+      background-color: $main-color;
       color: white;
-      font-size: 30px;
+      font-size: $fontE;
       font-weight: bold;
       margin: 20px auto;
       text-align: center;
@@ -191,7 +191,7 @@
     &__description{
       width: 80%;
       margin: 10px auto;
-      font-size: 20px;
+      font-size: $fontC;
       text-align: center;
       line-height: normal;
     }
@@ -214,7 +214,7 @@
           width: 380px;
           .btn{
             text-decoration: none;
-            color: #3CCACE;
+            color: $main-color;
           }
         }
       }
@@ -230,11 +230,11 @@
       &__title{
         display: block;
         text-decoration: none;
-        color: #3CCACE;
+        color: $main-color;
         margin: 10px 0px;
         height: 30px;
         line-height: 30px;
-        font-size: 20px;
+        font-size: $fontC;
       }
       .row1{
         margin-bottom: 10px;
@@ -271,7 +271,7 @@
             }
             &__bottom {
               height: 50px;
-              font-size: 13px;
+              font-size: $fontA;
               padding: 5px;
             }
           }
@@ -284,11 +284,11 @@
       &__title{
         display: block;
         text-decoration: none;
-        color: #3CCACE;
+        color: $main-color;
         margin: 10px 0px;
         height: 30px;
         line-height: 30px;
-        font-size: 20px;
+        font-size: $fontC;
       }
       .row1{
         margin-bottom: 10px;
@@ -325,7 +325,7 @@
             }
             &__bottom {
               height: 50px;
-              font-size: 13px;
+              font-size: $fontA;
               padding: 5px;
             }
           }

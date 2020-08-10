@@ -29,7 +29,7 @@ header {
           button {
             height: 36px;
             width: 38px;
-            background-color: #3CCACE;
+            background-color: $main-color;
             position: relative;
             border: none;
           }
@@ -57,7 +57,7 @@ header {
         padding-top: 3px;
       .link {
         text-decoration: none;
-        font-size: 14px;
+        font-size: $fontA;
         color: black;
       }
       .leftList {
@@ -94,7 +94,7 @@ header {
       }
       &__text {
       text-shadow: 0 0 5px black;
-      font-size: 16px;
+      font-size: $fontB;
       color: white;
       }
       &__btn {
@@ -121,14 +121,14 @@ header {
 // フリマが選ばれる3つの理由//
   .introduction {
     padding: 60px 20px;
-    font-size: 26px;
+    font-size: $fontD;
     &__introTitle {
       text-align: center;
       font-weight: bold;
       &__border {
         padding-top: 20px;
         width: 80px;
-        border-bottom: 5px solid #3CCACE;
+        border-bottom: 5px solid $main-color;
         margin: 0 auto;
         margin-bottom: 30px;
       }
@@ -145,19 +145,19 @@ header {
           position: absolute;
           top: 0;
           left: 0;
-          background-color: #3CCACE;
+          background-color: $main-color;
           border-radius: 4%;
           padding: 10px 20px;
         }
       }
       &__text {
         font-weight: bold;
-        font-size: 24px;
+        font-size: $fontD;
         line-height: 50px;
         margin-left: 2px;
         text-align: center;
         .strong {
-          color: #3CCACE;
+          color: $main-color;
         }
       }
     }
@@ -176,16 +176,16 @@ header {
       width: 100%;
       color: #ffffff;
       .subTitle {
-        font-size: 25px;
+        font-size: $fontD;
         text-shadow: 0 0 5px black;
         margin-bottom: 20px;
       }
       .text {
-        font-size: 20px;
+        font-size: $fontC;
         text-shadow: 0 0 5px black;
       }
       .textLast {
-        font-size: 20px;
+        font-size: $fontC;
         text-shadow: 0 0 5px black;
         margin-bottom: 30px;
       }
@@ -215,11 +215,11 @@ header {
     text-align: center;
     &__subtitle {
       font-weight: bold;
-      font-size: 25px;
+      font-size: $fontD;
       &__border {
       padding-top: 20px;
       width: 80px;
-      border-bottom: 5px solid #3CCACE;
+      border-bottom: 5px solid $main-color;
       margin: 0 auto;
       margin-bottom: 30px;
       }
@@ -232,11 +232,11 @@ header {
         padding: 0 20px;
         &__subTitle {
           font-weight: bold;
-          font-size: 20px;
+          font-size: $fontC;
           margin-bottom: 10px;
         }
         &__text {
-          font-size: 15px;
+          font-size: $fontA;
           text-align: left;
         }
       }
@@ -248,14 +248,14 @@ header {
     background-color: #f8f8f8;
     &__topic {
     text-align: center;
-    font-size: 30px;
+    font-size: $fontE;
     font-weight: bold;
     }
     &__head {
       margin-bottom: 15px;
       .title {
-        font-size: 25px;
-        color: #3CCACE;
+        font-size: $fontD;
+        color: $main-color;
       }
     }
     .itemContents {
@@ -291,7 +291,7 @@ header {
           }
           &__bottom {
             height: 50px;
-            font-size: 13px;
+            font-size: $fontA;
             padding: 5px;
             text-align: left;
           }
@@ -311,14 +311,14 @@ header {
       display: block;
       padding-top: 90px;
       text-align: center;
-      font-size: 22px;
+      font-size: $fontC;
       color: white;
       text-shadow: #383838 0 0 5px;
       font-weight: bold;
     }
     &__text{
       text-align: center;
-      font-size: 38px;
+      font-size: $fontF;
       color: white;
       text-shadow:#383838 0 0 5px;
     }
@@ -355,7 +355,7 @@ header {
     .content{
       .title{
         font-weight: bold;
-        margin-bottom: 25px;
+        margin-bottom: $fontD;
         display: block;
       }
       .list{
@@ -387,7 +387,7 @@ header {
   position: fixed;
   width: 130px;
   height: 130px;
-  background-color: #3CCACE;
+  background-color: $main-color;
   border-radius: 10px;
   text-align: center;
   .btn{
