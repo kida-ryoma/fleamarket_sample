@@ -1,0 +1,248 @@
+.header
+  .innerHeader
+    .innerHeader__upperHeader
+      .image
+        = link_to "" do
+          = image_tag "/material/logo/logo.png", class: "image__logo"
+      .searchBox
+        %input.searchBox--input{name: "key", placeholder: "キーワードから探す"}/
+        %button
+          .searchBox__search__icon
+          = link_to image_tag "/material/icon/icon-search1.png", class: "searchBox__search__icon__logo"
+    %nav.innerHeader__lowerHeader
+      %ol.leftList
+        %li.leftList__category
+          = link_to "カテゴリー","#", class: "link"
+        %li.leftList__brand
+          = link_to "ブランド","#",class: "link"
+      %ol.rightList
+        %li.rightList__login
+          = link_to "ログイン","#", class: "link"
+        %li.rightList__memberRegistration
+          = link_to "新規会員登録", "#", class: "link"
+.wrapper
+  .sellBtn
+    = link_to "", class: "btn" do
+      %span
+        出品する
+      = image_tag "/material/icon/icon_camera.png" 
+  .item
+    .item__name
+      プロテイン
+    .item__images
+      .item__images__big
+        = image_tag "/material/pict/bg-mainVisual-pict_pc.jpg", class: "bigImage"
+      .item__images__small
+        = image_tag "/material/pict/bg-mainVisual-pict_pc.jpg" ,class: "smallImage"
+        = image_tag "/material/pict/pict-reason-01.jpg" ,class: "smallImage"
+        = image_tag "/material/pict/pict-reason-01.jpg" ,class: "smallImage"
+    .item__price
+      ¥30000
+      %br
+      %span
+        (税込)送料込み
+    .item__description
+      オイ、オレの筋肉！！本当に対策はあるのかい！？それともないのかい！？どっちなんだい！？あーーーーーる！！さぁー、という訳で今回は『肉離れ』について５つに分けて進めていきます。『肉離れってどんなケガなんだい？』、『肉離れの原因とは？』、『肉離れになったらどうすればいいんだい？』、『肉離れの予防策とは？』、『なかやまきんに君が肉離れをした時の大爆笑エピソードがもしあれば教えて！！』です。
+    .item__details
+      %table{:border => 1, :bordercolor => "#cfcfcf"}
+        %tr
+          %th 出品者
+          %td 
+            = link_to "なかやまきんにくん","", class: "btn"
+        %tr
+          %th カテゴリー
+          %td 
+            = link_to "食品","", class: "btn"
+        %tr
+          %th ブランド
+          %td 
+            = link_to "マイプロテイン","", class: "btn"
+        %tr
+          %th サイズ
+          %td M
+        %tr
+          %th 配送料の負担
+          %td 出品者
+        %tr
+          %th 商品の状態
+          %td 良い
+        %tr
+          %th 配送元地域
+          %td 沖縄
+        %tr
+          %th 配送日の目安
+          %td 1~3日
+    .item__buy
+      = link_to "購入画面に進む", "",class: "btn"
+
+  .otherItems
+    .userItems
+      = link_to "",class: "userItems__title" do
+        なかやまきんにくんさんのその他の出品
+      .userContents.row1
+        .userContent
+          = link_to "#", class: "contentBox" do
+            .contentBox__top
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
+              %p.contentBox__top__price ¥1000-
+            .contentBox__bottom
+              商品名
+        .userContent
+          = link_to "#", class: "contentBox" do
+            .contentBox__top
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
+              %p.contentBox__top__price ¥1000-
+            .contentBox__bottom
+              商品名
+        .userContent
+          = link_to "#", class: "contentBox" do
+            .contentBox__top
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
+              %p.contentBox__top__price ¥1000-
+            .contentBox__bottom
+              商品名
+        .userContent
+          = link_to "#", class: "contentBox" do
+            .contentBox__top
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
+              %p.contentBox__top__price ¥1000-
+            .contentBox__bottom
+              商品名
+      .userContents.row2
+        .userContent
+          = link_to "#", class: "contentBox" do
+            .contentBox__top
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
+              %p.contentBox__top__price ¥1000-
+            .contentBox__bottom
+              商品名
+        .userContent
+          = link_to "#", class: "contentBox" do
+            .contentBox__top
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
+              %p.contentBox__top__price ¥1000-
+            .contentBox__bottom
+              商品名
+        .userContent
+          = link_to "#", class: "contentBox" do
+            .contentBox__top
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
+              %p.contentBox__top__price ¥1000-
+            .contentBox__bottom
+              商品名
+        .userContent
+          = link_to "#", class: "contentBox" do
+            .contentBox__top
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
+              %p.contentBox__top__price ¥1000-
+            .contentBox__bottom
+              商品名
+    .categoryItems
+      = link_to "",class: "categoryItems__title" do
+        食品　その他の出品
+      .itemContents.row1
+        .itemContent
+          = link_to "#", class: "contentBox" do
+            .contentBox__top
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
+              %p.contentBox__top__price ¥1000-
+            .contentBox__bottom
+              商品名
+        .itemContent
+          = link_to "#", class: "contentBox" do
+            .contentBox__top
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
+              %p.contentBox__top__price ¥1000-
+            .contentBox__bottom
+              商品名
+        .itemContent
+          = link_to "#", class: "contentBox" do
+            .contentBox__top
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
+              %p.contentBox__top__price ¥1000-
+            .contentBox__bottom
+              商品名
+        .itemContent
+          = link_to "#", class: "contentBox" do
+            .contentBox__top
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
+              %p.contentBox__top__price ¥1000-
+            .contentBox__bottom
+              商品名
+      .itemContents.row2
+        .itemContent
+          = link_to "#", class: "contentBox" do
+            .contentBox__top
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
+              %p.contentBox__top__price ¥1000-
+            .contentBox__bottom
+              商品名
+        .itemContent
+          = link_to "#", class: "contentBox" do
+            .contentBox__top
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
+              %p.contentBox__top__price ¥1000-
+            .contentBox__bottom
+              商品名
+        .itemContent
+          = link_to "#", class: "contentBox" do
+            .contentBox__top
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
+              %p.contentBox__top__price ¥1000-
+            .contentBox__bottom
+              商品名
+        .itemContent
+          = link_to "#", class: "contentBox" do
+            .contentBox__top
+              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
+              %p.contentBox__top__price ¥1000-
+            .contentBox__bottom
+              商品名
+.appBanner
+  .inner
+    .inner__title
+      だれでもかんたん、人生を変えるフリマアプリ
+    .inner__text
+      今すぐ無料ダウンロード！
+    .inner__icons
+      = link_to "" do
+        = image_tag "/material/icon/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "inner__icons__apple"
+      = link_to "" do
+        = image_tag "/material/icon/google-play-badge.png", class: "inner__icons__google"
+.footer
+  .contents
+    .content
+      %ul
+        %span.title
+          FURIMAについて
+        %li.list
+          = link_to "会社概要", "", class: "btn"
+        %li.list
+          = link_to "プライバシーポリシー","", class: "btn"
+        %li.list
+          = link_to "FURIMA利用規約","", class: "btn"
+        %li.list
+          = link_to "ポイントに関する規約","", class: "btn"
+    .content
+      %ul
+        %span.title
+          FURIMAを見る
+        %li.list
+          = link_to "カテゴリー一覧","", class: "btn"
+        %li.list
+          = link_to "ブランド一覧","", class: "btn"
+    .content
+      %ul
+        %span.title
+          ヘルプ＆ガイド
+        %li.list
+          = link_to "FURIMAガイド","", class: "btn"
+        %li.list
+          = link_to "FURIMAロゴ利用ガイドライン","", class: "btn"
+        %li.list
+          = link_to "お知らせ","", class: "btn"
+  .footer__logo
+    = image_tag "/material/logo/logo-white.png", class:"logo"
+    %p
+      ©︎ FURIMA
+

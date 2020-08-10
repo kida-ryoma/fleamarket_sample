@@ -1,0 +1,410 @@
+.header{
+  height: 97px;
+  width: 100vw;
+  padding-bottom: 15px;
+  .innerHeader {
+    max-width: 1040px;
+    max-height: 82px;
+    padding-top: 15px;
+    margin: 0 auto;
+      &__upperHeader {
+        display: flex;
+        align-items: center;
+        height: 55px;
+        .searchBox {
+          display: flex;
+          margin-left: 30px;
+          &--input {
+            width: 834px;
+            height: 36px;
+            padding-left: 5px;
+          }
+          button {
+            height: 40px;
+            width: 38px;
+            background-color: #3cc;
+            position: relative;
+            border: none;
+          }
+            &_search_icon {
+              height: 20px;
+              width: 36px;
+              box-sizing: border-box;
+              position: absolute;
+              &__logo {
+                height: 18px;
+                width: 18px;
+              }
+            }
+        }
+        .image {
+          &__logo {
+            height: 40px;
+            width: 140px;
+            vertical-align: bottom;
+          }
+        }
+      }
+      &__lowerHeader {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 3px;
+      .link {
+        text-decoration: none;
+        font-size: 14px;
+        color: black;
+      }
+      .leftList {
+        display: flex;
+        &__category {
+          padding-right: 30px;
+      }
+    }
+      .rightList {
+        display: flex;
+        &__memberRegistration {
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+}
+
+.appBanner{
+  height: 350px;
+  background-image: url(/material/pict/bg-appBanner-pict.jpg);
+  background-position: center;
+  background-size: 100%;
+  .inner{
+    &__title{
+      display: block;
+      padding-top: 90px;
+      text-align: center;
+      font-size: 22px;
+      color: white;
+      text-shadow: #383838 0 0 5px;
+      font-weight: bold;
+    }
+    &__text{
+      text-align: center;
+      font-size: 38px;
+      color: white;
+      text-shadow:#383838 0 0 5px;
+    }
+    &__icons{
+      display: flex;
+      justify-content: center;
+      &__apple{
+        height: 48px;
+        margin: 22px 5px;
+      }
+      &__apple:hover{
+        opacity: 0.5;
+      }
+      &__google{
+        height: 70px;
+        margin: 10px 5px;
+      }
+      &__google:hover{
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.footer{
+  height: 350px;
+  background-color: #3d3d3d;
+  .contents{
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+    padding-top: 50px;
+    text-align: center;
+    .content{
+      .title{
+        font-weight: bold;
+        margin-bottom: 25px;
+        display: block;
+      }
+      .list{
+        padding-bottom: 15px;
+        .btn{
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+  &__logo{
+    width: 200px;
+    margin: 0 auto;
+    .logo{
+      height: 55px;
+    }
+    p{
+      text-align: center;
+      color: white;
+    }
+  }
+}
+
+.wrapper{
+  background-color: #eeeeee;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  .sellBtn{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    position: fixed;
+    width: 130px;
+    height: 130px;
+    background-color: #5cebe3;
+    border-radius: 10px;
+    text-align: center;
+    .btn{
+      top:0;
+      left:0;
+      height: 100%;
+      width: 100%;
+      display: block;
+      text-decoration: none;
+      overflow: hidden;
+      span{
+        display: block;
+        padding-top: 4px;
+        color: white;
+        text-align: center;
+        margin-top: 10px;
+      }
+      img{
+        margin-top: 10px;
+        width: 70px;
+      }
+    }
+  }
+  .item{
+    background-color: white;
+    width: 50%;
+    margin: 50px auto;
+    overflow: hidden;
+    &__name{
+      margin-top: 20px;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__images{
+      // background-color: linen;
+      width:80%;
+      margin: 0 auto;
+      overflow: hidden;
+      &__big{
+        overflow: hidden;
+        // width: 400px;
+        // height: 400px;
+        // margin: 0 auto;
+        // display: flex;
+        // これはJS当てる時用
+        .bigImage{
+          // height: 100%;
+          // ↑としたいがそれだと画像が大きくなる、横幅が100%のまま高さを指定して抜き出すことは可能？
+          height: 400px;
+          margin: 15px auto;
+          display: block;
+        }
+      }
+      &__small{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 20px 0px;
+        .smallImage{
+          width: 150px;
+        }
+      }
+    }      
+    
+    &__price{
+      height: 120px;
+      width: 80%;
+      font-size: 40px;
+      font-weight: bold;
+      margin: 0px auto 30px auto;
+      text-align: center;
+      line-height: 120px;
+      position: relative;
+      span{
+        font-size: 20px;
+        font-weight: normal;
+        position: absolute;
+        text-align: center;
+        top: 50px;
+        left: 270px;
+      }
+    }
+    &__buy{
+      height: 80px;
+      width: 80%;
+      background-color: #5cebe3;
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      margin: 20px auto;
+      text-align: center;
+      line-height: 80px;
+      .btn{
+        text-decoration: none;
+        color: white;
+        display: block;
+      }
+    }
+    &__description{
+      width: 80%;
+      margin: 10px auto;
+      font-size: 20px;
+      text-align: center;
+      line-height: normal;
+    }
+    &__details{
+      width:80%;
+      margin: 0 auto;
+      padding: 30px 0px;
+      table{
+        width: 100%;
+        padding: 20px 0px;
+        margin: 0px auto;
+        th{
+          padding: 15px 10px;
+          width: 120px;
+          background-color: #f2f2f2;
+          text-align: center;
+        }
+        td{
+          padding: 15px 10px;
+          width: 380px;
+          .btn{
+            text-decoration: none;
+            color: #5cebe3;
+          }
+        }
+      }
+      
+  }
+  }
+  .otherItems{
+    width: 50%;
+    margin: 0 auto;
+    .categoryItems{
+      width: 100%;
+      margin: 0 auto 50px auto;
+      &__title{
+        display: block;
+        text-decoration: none;
+        color: turquoise;
+        margin: 10px 0px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 20px;
+      }
+      .row1{
+        margin-bottom: 10px;
+      }
+      .itemContents{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        .itemContent {
+          box-shadow: 2px 2px 5px gray ;
+          background-color: white;
+          height: 250px;
+          width: 22%;
+          .contentBox {
+            text-decoration: none;
+            color: black;
+            &__top {
+              height: 200px;
+              position: relative;
+              &__image {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+              }
+              &__price {
+                position: absolute;
+                bottom: 0px;
+                padding: 3px 15px;
+                background-color: rgba(100, 100, 100, 0.5);
+                color: white;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+              }
+            }
+            &__bottom {
+              height: 50px;
+              font-size: 13px;
+              padding: 5px;
+            }
+          }
+        }
+      }
+    }
+    .userItems{
+      width: 100%;
+      margin: 0 auto 50px auto;
+      &__title{
+        display: block;
+        text-decoration: none;
+        color: turquoise;
+        margin: 10px 0px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 20px;
+      }
+      .row1{
+        margin-bottom: 10px;
+      }
+      .userContents{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        .userContent {
+          box-shadow: 2px 2px 5px gray ;
+          background-color: white;
+          height: 250px;
+          width: 22%;
+          .contentBox {
+            text-decoration: none;
+            color: black;
+            &__top {
+              height: 200px;
+              position: relative;
+              &__image {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+              }
+              &__price {
+                position: absolute;
+                bottom: 0px;
+                padding: 3px 15px;
+                background-color: rgba(100, 100, 100, 0.5);
+                color: white;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+              }
+            }
+            &__bottom {
+              height: 50px;
+              font-size: 13px;
+              padding: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  
+
