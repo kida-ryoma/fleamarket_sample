@@ -167,7 +167,6 @@
     display: block;
     width: 100%;
     margin: 8px 0 0;
-    height: 30px;
     padding: 10px 16px 8px;
     border-radius: 4px;
     border: 1px solid #ccc;
@@ -193,7 +192,6 @@
       display: block;
       width: 100%;
       margin: 8px 0 0;
-      height: 30px;
       padding: 10px 16px 8px;
       border-radius: 4px;
       border: 1px solid #ccc;
@@ -221,7 +219,6 @@
     display: block;
     width: 100%;
     margin-top: 8px;
-    height: 30px;
     padding: 10px 16px 8px;
     border-radius: 4px;
     border: 1px solid #ccc;
@@ -274,13 +271,12 @@
       display: flex;
     }
     &__first {
-      height: 30px;
       padding: 10px 16px 8px;
       border-radius: 4px;
       border: 1px solid #ccc;
       background: #fff;
       font-size: 16px;
-      width: 150px;
+      width: 170px;
       margin: 8px 8px 0 0;
     }
   }
