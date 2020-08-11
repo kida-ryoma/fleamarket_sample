@@ -33,6 +33,11 @@
           %span.optional 任意
         = f.text_field :brand, placeholder: "例）シャネル", class: "formBox__input"
         .formBox__title
+          サイズ
+          %span.optional 任意
+        = f.text_field :size, placeholder: "サイズ", class: "formBox__input"
+
+        .formBox__title
           商品の状態
           %span.required 必須
         = f.select :atatuses,{}, { include_blank: "選択してください" }, { class: "formBox__select" }
