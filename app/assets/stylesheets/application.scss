@@ -1,7 +1,8 @@
 @import "reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "items/home_index";
+@import "variables";
+@import "homes/index";
 @import "items/index";
 @import "items/show";
 @import "session/new";
@@ -11,3 +12,5 @@
 @import "signup/user_registration4";
 @import "signup/done";
 @import "signup/user_registration1";
+@import "orders/new";
+@import "items/new";
