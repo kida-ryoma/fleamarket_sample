@@ -16,12 +16,14 @@
 |area_id|references|foreign_key: true|
 |order_id|references|foreign_key: true|
 |user_id|references|foreign_key: true|
+|delivery_responsibility_id|references|foreign_key: true|
 
 
 ### Association
 - belongs_to :category
 - belongs_to :status
 - belongs_to :user
+- belongs_to :delivery_responsibility
 - has_one :area, dependent: :destroy
 - has_one :preparation_day, dependent: :destroy
 - has_one :order, dependent: :destroy
@@ -77,6 +79,16 @@
 
 ### Association
 - belongs_to :item
+
+
+## delivery_responsibilitiesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|responsibility|string|null: false|
+
+### Association
+- has_many :items
 
 ## ordersテーブル
 
