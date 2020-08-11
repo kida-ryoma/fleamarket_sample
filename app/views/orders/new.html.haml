@@ -1,0 +1,56 @@
+.itemBuy--wrapper
+  .exbitHeader
+    =link_to  "", class: "homeLink" do
+      = image_tag("/material/logo/logo.png",class: "upperLogo") 
+  .info
+    .title
+      購入内容の確認
+    .itemDetails
+      .itemDetails__image
+        %img{ src: "/material/pict/pict-reason-01.jpg"}
+      .itemDetails__name
+        プロテイン1kg
+        .itemDetails__name__prices
+          %span
+            送料込み(税込)
+            %span.itemDetails__name__prices__price
+              ￥39
+    .paymentAmount
+      .payment__title
+        支払い金額
+        %span.price
+          ￥39
+    .paymentWay
+      = link_to "変更する >", "",class: "change__btn"
+      .paymentWay__title
+        支払い方法
+      .paymentWay__cardInfo
+        クレジットカード
+        %span
+          42424242424242
+        %span
+          有効期限 07/20
+        %img.paymentWay__cardInfo__brand{ src: "/material/logo/logo.png"}
+    .deliveryDestination
+      = link_to "変更する >", "",class: "change__btn"
+      .destination
+        配送先
+        .destination__info
+          .destination__info__postcode
+            536-0202
+          .destination__info__address
+            和歌山県和歌山市成瀬332-8
+          .destination__info__name
+            木田稜馬
+    .buy
+      .buy__box
+        = link_to "購入する", "", class: "buy__box__btn"
+  .exbitFooter
+    .exbitFooter__content
+      = link_to "プライバシーポリシー", "", class: "policy"
+      = link_to "フリマ利用規約", "", class:  "policy"
+      = link_to "特定商取引先に関する表記", "", class:  "policy"
+    = link_to root_path, class: "homelink" do
+      = image_tag("/material/logo/logo-white.png",class: "footerLogo")
+    %p
+      %samll © 2020 Fmarket
