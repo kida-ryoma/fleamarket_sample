@@ -74,6 +74,12 @@
             %span.deliveryForm__optional
               任意
             = f.text_field :building_name, placeholder: '例) 柳ビル103', class: "deliveryForm__form"
+          .deliveryForm__bellow
+            %label.deliveryForm__label
+              電話（お届け先）
+            %span.deliveryForm__optional
+              任意
+            = f.text_field :delivery_phone_number, placeholder: '例)09012345678', class: "deliveryForm__form"
             = f.submit '次へ進む', class: "addressBtn"
   .exbitFooter
     .exbitFooter__content
