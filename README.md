@@ -7,7 +7,6 @@
 |name|string|null: false|
 |description|text|null: false|
 |price|integer|null: false|
-|delivery_fee|integer|null: false|
 |size|string|
 |brand|string|
 |sales_status|integer|null: false|
