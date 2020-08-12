@@ -154,22 +154,19 @@
       }
     }      
     
-    &__price{
-      height: 120px;
+    &__prices{
       width: 80%;
-      font-size: $fontF;
-      font-weight: bold;
-      margin: 0px auto 30px auto;
+      margin: 30px auto 30px auto;
       text-align: center;
-      line-height: 120px;
-      position: relative;
-      span{
-        font-size: $fontC;
+      &__price{
+        font-size: $fontF;
+        font-weight: bold;
+      }
+      &__details{
+        font-size: $fontB;
         font-weight: normal;
-        position: absolute;
-        text-align: center;
-        top: 50px;
-        left: 270px;
+        width: 100%;
+        margin: 0 auto;
       }
     }
     &__buy{
@@ -190,7 +187,7 @@
     }
     &__description{
       width: 80%;
-      margin: 10px auto;
+      margin: 0px auto;
       font-size: $fontC;
       text-align: center;
       line-height: normal;
