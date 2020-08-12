@@ -7,7 +7,6 @@
 |name|string|null: false|
 |description|text|null: false|
 |price|integer|null: false|
-|delivery_fee|integer|null: false|
 |size|string|
 |brand|string|
 |sales_status|integer|null: false|
@@ -114,6 +113,7 @@
 |image|string|
 |password|string|null: false|
 |password_confirmation|string|null: false|
+|phone_number|integer|null: false|
 
 ### Association
 - has_one :profile
@@ -149,7 +149,7 @@
 |delivery_first_name|string|null: false|
 |delivery_family_name_kana|string|null: false|
 |delivery_first_name_kana|string|null: false|
-|phone_number|integer|null: false|
+|delivery_phone_number|integer|
 |post_code|integer|null: false|
 |prefecture|integer|null: false|
 |city|integer|null: false|
