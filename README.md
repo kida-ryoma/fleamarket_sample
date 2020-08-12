@@ -13,10 +13,10 @@
 |prefecture_code|integer|null: false|
 |category_id|references|foreign_key: true|
 |status_id|references|foreign_key: true|
-|area_id|references|foreign_key: true|
 |order_id|references|foreign_key: true|
 |user_id|references|foreign_key: true|
 |delivery_responsibility_id|references|foreign_key: true|
+|preparation_day_id|references|foreign_key: true|
 
 
 ### Association
@@ -24,7 +24,7 @@
 - belongs_to :status
 - belongs_to :user
 - belongs_to :delivery_responsibility
-- has_one :preparation_day, dependent: :destroy
+- belongs_to :preparation_day
 - has_one :order, dependent: :destroy
 - has_many :item_images, dependent: :destroy
 
@@ -34,7 +34,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|ancestry|string|null: false|
+|ancestry|string|
 
 ### Association
 - has_many :items
@@ -65,10 +65,9 @@
 |Column|Type|Options|
 |------|----|-------|
 |preparation_days|string|null: false|
-|item_id|references|foreign_key: true|
 
 ### Association
-- belongs_to :item
+- has_many :items
 
 
 ## delivery_responsibilitiesテーブル

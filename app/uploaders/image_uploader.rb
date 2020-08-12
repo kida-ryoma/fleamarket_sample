@@ -3,7 +3,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
   if Rails.env.development? || Rails.env.test?
-    stroage :file
+    storage :file
   else  
     storage :fog
   end
