@@ -10,6 +10,7 @@
 |size|string|
 |brand|string|
 |sales_status|integer|null: false|
+|prefecture_code|integer|null: false|
 |category_id|references|foreign_key: true|
 |status_id|references|foreign_key: true|
 |area_id|references|foreign_key: true|
@@ -23,7 +24,6 @@
 - belongs_to :status
 - belongs_to :user
 - belongs_to :delivery_responsibility
-- has_one :area, dependent: :destroy
 - has_one :preparation_day, dependent: :destroy
 - has_one :order, dependent: :destroy
 - has_many :item_images, dependent: :destroy
@@ -59,15 +59,6 @@
 ### Association
 - has_many :items
 
-
-## areasテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|prefecture_id|integer|null: false|
-
-### Association
-- belongs_to :item
 
 ## preparation_daysテーブル
 
@@ -151,7 +142,7 @@
 |delivery_first_name_kana|string|null: false|
 |delivery_phone_number|integer|
 |post_code|integer|null: false|
-|prefecture|integer|null: false|
+|prefecture_code|integer|null: false|
 |city|integer|null: false|
 |house_number|string|null: false|
 |building_name|string|
