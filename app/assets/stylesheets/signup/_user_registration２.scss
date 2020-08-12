@@ -1,0 +1,286 @@
+.userContainer {
+  width:  100%;
+  height: 100%;
+  background-color:rgb(245, 245, 245);
+  .container {
+    display: flex;
+    justify-content: center;
+    .userContainerHeader {
+      height: 128px;
+      text-align: center;
+      &__left {
+        margin: 40px 0 0;
+        .upperHomeLink {
+          width: 185px;
+          height: 49px;
+          line-height: 49px;
+          display: inline-block;
+          margin: 0 8px 0 0;
+          .logo {
+            width: 185px;
+          }
+        }
+      }
+    }
+    .userSignupBar {
+      padding: 40px 0 0 44px;
+      display: inline-block;
+      vertical-align: top;
+      .userSignupBarProgress2 {
+        list-style: none;
+        text-align: center;
+        &__type-red {
+          color: #EA352D;
+          margin: 0 40px 0 0;
+          min-width: 60px;
+          position: relative;
+          z-index: 1;
+          display: inline-block;
+          font-weight: 600;
+          font-size: 12px;
+        }
+        &__rod-red {
+          width: 12px;
+          height: 12px;
+          margin: 8px auto 0;
+          border-radius: 50%;
+          background: #EA352D;
+        }
+        &__rod-red-first {
+          width: 12px;
+          height: 12px;
+          margin: 8px auto 0;
+          border-radius: 50%;
+          background: #ea352d;
+        }
+        &__rod-red-second {
+          width: 12px;
+          height: 12px;
+          margin: 8px auto 0;
+          border-radius: 50%;
+          background: #ea352d;
+        }
+
+        &__rod-red::after {
+          left: 50%;
+          position: absolute;
+          bottom: 5px;
+          z-index: 1;
+          display: block;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: #ccc;
+          margin-left: 6px;
+        }
+        &__rod-red::before {
+          right: 50%;
+          position: absolute;
+          bottom: 5px;
+          z-index: -1;
+          display: block;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: #ea352d;
+        }
+        &__rod-red-first::after {
+          left: 50%;
+          position: absolute;
+          bottom: 5px;
+          z-index: -1;
+          display: block;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: #ea352d;
+        }
+        &__rod-red-second::after {
+          left: 50%;
+          position: absolute;
+          bottom: 5px;
+          z-index: -1;
+          display: block;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: #ea352d;
+        }
+        &__rod-red-second::before {
+          right: 50%;
+          position: absolute;
+          bottom: 5px;
+          z-index: 1;
+          display: block;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: #ea352d;
+        }
+        &__type {
+          margin: 0 40px 0 0;
+          min-width: 60px;
+          position: relative;
+          z-index: 1;
+          display: inline-block;
+          font-weight: 600;
+          font-size: 12px;
+          color: #888;
+        }
+        &__rod {
+          width: 12px;
+          height: 12px;
+          margin: 8px auto 0;
+          border-radius: 50%;
+          background: #ccc;
+        }
+        &__rod::before {
+          right: 50%;
+          position: absolute;
+          bottom: 5px;
+          z-index: -1;
+          display: block;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: #ccc;
+        }
+        &__rod::after {
+          left: 50%;
+          position: absolute;
+          bottom: 5px;
+          z-index: -1;
+          display: block;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: #ccc;
+        }
+        &__rod-last {
+          width: 12px;
+          height: 12px;
+          margin: 8px auto 0;
+          border-radius: 50%;
+          background: #ccc;
+        }
+        &__rod-last::before {
+          right: 50%;
+          position: absolute;
+          bottom: 5px;
+          z-index: -1;
+          display: block;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: #ccc;
+        }
+        &__rod-last-red{
+          width: 12px;
+          height: 12px;
+          margin: 8px auto 0;
+          border-radius: 50%;
+          background: #ea352d;
+        }
+        &__rod-last-red::before{
+          right: 50%;
+          position: absolute;
+          bottom: 5px;
+          z-index: 1;
+          display: block;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: #ea352d;
+        }
+      }
+    }
+  }
+  .signUpBoxHeader{
+    display: flex;
+    justify-content: center;
+    .signUpBox{
+      width: 700px;
+      background-color: #fff;
+      &__title{
+        text-align: center;
+        padding: 32px;
+        font-size: 22px;
+        line-height: 1.4;
+        font-weight: bold;
+        color: #333;
+        border-bottom-style: solid;
+        border-width: 1px;
+        border-color: #f5f5f5;
+      }
+      form.phoneNumberForm{
+        padding: 40px 40px 64px;
+        display: flex;
+        justify-content: center;
+        .signUpPhoneNumberBlock{
+          width: 343px;
+          .inputPhoneNumberBlock{
+            color: #333;
+            .confirmationPnTitle{
+              font-weight: 600;
+              font-size: 14px;
+              &__condition {
+                background-color: #ea352d;
+                font-weight: bold;
+                font-size: 12px;
+                color: #fff;
+                border-radius: 2px;
+                padding: 2px 4px;
+                margin-left: 8px;
+              }
+            }
+            .confirmationPnTitleForm{
+              display: block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              line-height: 30px;
+              padding: 10px;
+              width: 320px;
+            }
+          }
+          .smsPolicy{
+            margin-top: 8px;
+            color: #333;
+            font-size: 14px;
+          }
+          .phoneNumberBtn{
+            margin-top: 32px;
+            background-color: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+  .exbitFooter{
+    height: 270px;
+    text-align: center;
+    font-size: 11px;
+    &__content{
+      padding: 40px;
+      color: #333;
+    }
+    .policy{
+      margin: 0 10px;
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+    }
+    .footerLogo{
+      filter: brightness(50%) sepia(0) saturate(80) hue-rotate(100deg);
+      width: 120px;
+    }
+  }
+}
