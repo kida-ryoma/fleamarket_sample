@@ -104,7 +104,7 @@
 |image|string|
 |password|string|null: false|
 |password_confirmation|string|null: false|
-|phone_number|integer|null: false|
+|phone_number|integer|null: false, unique: true|
 
 ### Association
 - has_one :profile
