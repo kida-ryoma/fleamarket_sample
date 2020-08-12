@@ -8,7 +8,7 @@
       .userCategory__top　新規会員登録
       .registraionFormBox
         .loginCategory
-          = link_to root_path, class: 'loginCategory__email', method: :post do
+          = link_to user_registration1, class: 'loginCategory__email', method: :post do
             = icon('far', 'envelope', class: 'loginIcon')
             メールアドレスでログイン
           = link_to root_path, class: 'loginCategory__facebook', method: :post do
