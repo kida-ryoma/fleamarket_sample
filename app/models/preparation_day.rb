@@ -1,4 +1,4 @@
 class PreparationDay < ApplicationRecord
-  validates :preparation_days, presence: true
+  validates :days, presence: true
   has_many :items
 end

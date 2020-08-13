@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_08_12_134316) do
     t.string "delivery_first_name_kana", null: false
     t.integer "delivery_phone_number"
     t.integer "post_code", null: false
-    t.integer "prefecture_code", null: false
+    t.string "prefecture_code", null: false
     t.integer "city", null: false
     t.string "house_number", null: false
     t.string "building_name"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2020_08_12_134316) do
     t.string "size"
     t.string "brand"
     t.integer "sales_status", null: false
-    t.integer "prefecture_code", null: false
+    t.string "prefecture_code", null: false
     t.bigint "category_id"
     t.bigint "status_id"
     t.bigint "user_id"
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 2020_08_12_134316) do
   end
 
   create_table "phone_numbers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "phone_number", null: false
+    t.string "number", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -102,22 +102,9 @@ ActiveRecord::Schema.define(version: 2020_08_12_134316) do
   end
 
   create_table "preparation_days", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "preparation_days", null: false
+    t.string "days", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "family_name", null: false
-    t.string "first_name", null: false
-    t.string "family_name_kana", null: false
-    t.string "first_name_kana", null: false
-    t.integer "birthday", null: false
-    t.text "introduction"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -139,6 +126,12 @@ ActiveRecord::Schema.define(version: 2020_08_12_134316) do
     t.string "nick_name", null: false
     t.string "email", default: "", null: false
     t.string "image"
+    t.string "family_name", null: false
+    t.string "first_name", null: false
+    t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.date "birthday", null: false
+    t.string "introduction"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -152,6 +145,7 @@ ActiveRecord::Schema.define(version: 2020_08_12_134316) do
   add_foreign_key "credit_cards", "users"
   add_foreign_key "delivery_destinations", "users"
   add_foreign_key "item_images", "items"
+  add_foreign_key "items", "categories"
   add_foreign_key "items", "delivery_responsibilities"
   add_foreign_key "items", "orders"
   add_foreign_key "items", "preparation_days"
@@ -161,6 +155,5 @@ ActiveRecord::Schema.define(version: 2020_08_12_134316) do
   add_foreign_key "orders", "users", column: "buyer_id"
   add_foreign_key "orders", "users", column: "seller_id"
   add_foreign_key "phone_numbers", "users"
-  add_foreign_key "profiles", "users"
   add_foreign_key "sns_credentials", "users"
 end
