@@ -326,3 +326,51 @@ others_8 = others.children.create(name: "事務/店舗用品")
 others_8.children.create([{name: "オフィス用品一般"},{name: "オフィス家具"},{name: "店舗用品"},{name: "OA機器"},{name: "ラッピング/包装"},{name: "その他"}])
 others_9 = others.children.create(name: "その他")
 others_9.children.create([{name: "すべて"}])
+
+
+Status.create!(
+  [
+    {
+      status: '新品、未使用'
+    },
+    {
+      status: '未使用に近い'
+    },
+    {
+      status: '目立った傷や汚れなし'
+    },
+    {
+      status: 'やや傷や汚れあり'
+    },
+    {
+      status: '傷や汚れあり'
+    },
+    {
+      status: '全体的に状態が悪い'
+    }
+  ]
+)
+PreparationDay.create!(
+  [
+    {
+      days: '1〜2日で発送'
+    },
+    {
+      days: '2〜3日で発送'
+    },
+    {
+      days: '4〜7日で発送'
+    }
+  ]
+)
+DeliveryResponsibility.create!(
+  [
+    {
+      delivery_responsibility: '送料込み(出品者負担)'
+    },
+    {
+      delivery_responsibility: '着払い(購入者負担)'
+    }
+  ]
+)
+
