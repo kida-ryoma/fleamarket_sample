@@ -1,0 +1,36 @@
+-# 新規登録最初の画面
+.userLoginContent
+  .exbitHeader
+    =link_to  root_path, class: "homeLink" do
+      = image_tag("/material/logo/logo.png",class: "upperLogo")
+  .userSignInBlock
+    .userCategory
+      .userCategory__top　新規会員登録
+      .registraionFormBox
+        .loginCategory
+          = link_to user_registration1_signup_index_path, class: 'loginCategory__email' do
+            = icon('far', 'envelope', class: 'loginIcon')
+            メールアドレスでログイン
+          = link_to root_path, class: 'loginCategory__facebook' do
+            = icon('fab', 'facebook-square', class: 'loginIcon')
+            Facebookでログイン
+          = link_to root_path, class: 'loginCategory__google' do
+            = icon('fab', 'google', class: 'loginIcon')
+            Goodleでログイン
+          .registrationPolicy
+            %p.privatePolicy
+              登録することで、
+              = link_to "利用規約", "", class: "privatePolicy__link"
+              と
+              = link_to "プライバシーポリシー", "", class: "privatePolicy__link"
+              %br
+              に同意したものとみなされます。
+  .exbitFooter
+    .exbitFooter__content
+      = link_to "プライバシーポリシー", "", class: "policy" 
+      = link_to "フリマ利用規約", "", class:  "policy" 
+      = link_to "特定商取引先に関する表記", "", class:  "policy"
+    = link_to root_path, class: "homelink" do
+      = image_tag("/material/logo/logo-white.png",class: "footerLogo")
+    %p 
+      %samll © 2020 Fmarket
