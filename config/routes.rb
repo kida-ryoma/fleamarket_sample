@@ -9,11 +9,9 @@ Rails.application.routes.draw do
       get 'user_registration3'
       get 'user_registration4'
       get 'done'
-      get 'show'
     end
   end
   resources :items, only: [:index, :show, :new, :create] do
     resources :orders, only: [:new, :create]
   end
-  resources :users, only: [:show]
 end
