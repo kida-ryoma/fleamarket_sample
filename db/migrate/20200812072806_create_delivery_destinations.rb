@@ -11,7 +11,7 @@ class CreateDeliveryDestinations < ActiveRecord::Migration[6.0]
       t.integer :city, null:false
       t.string :house_number, null: false
       t.string :building_name
-      t.references :user, foreign_key: true
+      t.references :user, optional: true
       t.timestamps
     end
   end
