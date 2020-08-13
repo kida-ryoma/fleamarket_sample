@@ -373,4 +373,48 @@ DeliveryResponsibility.create!(
     }
   ]
 )
+User.create!(
+  [
+    {
+      nick_name: 'まめこ',
+      email: 'teiteia1234@gmail.com',
+      image: 'public/material/pict/pict-reason-01.jpg',
+      family_name: '植田',
+      first_name: '真由子',
+      family_name_kana: 'ウエダ',
+      first_name_kana: 'マユコ',
+      birthday: '2000-05-07',
+      introduction: 'こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは',
+      password: '0123456'
+    }
+  ]
+)
+Item.create!(
+  [
+    {
+      name: "aaa",
+      description: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      price: "300",
+      size: "M",
+      brand: "無印良品",
+      sales_status: "1",
+      prefecture_code: "和歌山県",
+      category_id: "15",
+      status_id: "2",
+      user_id: "1",
+      delivery_responsibility_id: "1",
+      preparation_day_id: "2"
+    }
+  ]
+)
+
+ItemImage.create!(
+  [
+    {
+      image: open("/Users/kidaryouba/projects/fleamarket_sample_80h/public/material/pict/pict-reason-01.jpg"),
+      item_id: "1"
+    }
+  ]
+)
+
 
