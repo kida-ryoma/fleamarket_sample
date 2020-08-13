@@ -1,0 +1,195 @@
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+.userMyPage {
+  background-color: #EEEEEE;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  main.myPageContainer {
+    height: 70%;
+    margin: 40px auto 0;
+    width: 70%;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: #FFFFFF;
+    .sideWrapper {
+      width: 30%;
+      background-color:#eeeeee;
+      height: 100%;
+      .listContainer {
+        &__title {
+          font-weight: bold;
+          margin: 30px 0 5px 0;
+        }
+        .list {
+          background-color: white;
+          list-style: none;
+          .listBox {
+            text-decoration: none;
+            &__content {
+              border-bottom: 1px solid #DDDDDD;
+              height: 50px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0 20px;
+              &__title {
+                font-size: 14px;
+                color: #333333;
+              }
+              &__icon {
+                color: #DDDDDD;
+                font-size: 22px;
+              }
+            }
+            &__content:hover {
+              background-color: #F5F5F5;
+            }
+            &__content:hover .listBox__content__icon{
+              transform: translateX(5px);
+              color: #555555;
+            }
+          }
+        }
+      }
+    }
+    .myPageContent {
+      width: 65%;
+      height: 100%;
+      background-color: #EEEEEE;
+      .myPageWrapper {
+      height: 90%;
+      background-color: #FFFFFF;
+      border-bottom: #FFFFFF;
+        &__myPageUserIcon {
+          height: 30%;
+          position: relative;
+          padding: 20px;
+          background-color: aqua;
+          text-align: center;
+          a {
+            position: absolute;
+            left: 270px;
+            top: 40px;
+            color: #000;
+          }
+          a:hover {
+            text-decoration: none;
+            opacity: 0.5;
+          }
+          &__userName {
+            font-size: 15px;
+            font-weight: bold;
+          }
+          &__count {
+            display: flex;
+            justify-content: space-between;
+            &__item {
+              &__number {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+        &__myPageTabContainer {
+          ul.myPageTabs {
+            display: flex;
+            justify-content: space-around;
+            li.myPageTabsActive{
+              line-height: 72px;
+              width: 25%;
+              text-align: center;
+              display: block;
+              margin: 0 auto;
+              border-top: 3px solid red;
+              a.myPageTabsTitle{
+                display: block;
+                color: #000;
+              }
+              a.myPageTabsTitle:hover {
+                text-decoration: none;
+                opacity: 0.5;
+              }
+            }
+            li.myPageTabsActive:hover {
+              opacity: 0.5;
+              text-decoration: none;
+            }
+            li.myPageTabsPassive{
+              line-height: 72px;
+              width: 25%;
+              text-align: center;
+              background-color:#dadfe6;
+              margin: 0 auto;
+              height: 30%;
+              a.myPageTabsTitle{
+                display: block;
+                color: #000;
+              }
+              a.myPageTabsTitle:hover {
+                opacity: 0.5;
+                text-decoration: none;
+              }
+            }
+          }
+          .myPageLists {
+            display: flex;
+            flex-direction: column;
+            .myPageList {
+              padding: 16px;
+              width: 100%;
+              display: flex;
+              color: #000000;
+              position: relative;
+              border-bottom: 1px solid antiquewhite;
+              &__body {
+                margin: 0 40px 0 60px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                &__contentsName {
+                  font-size: 20px;
+                }
+              }
+              .right-icon {
+                position: absolute;
+                right: 3%;
+                bottom: 47%;
+              }
+            }
+            .myPageList:hover {
+              background-color:  #F5F5F5;
+              text-decoration: none;
+            }
+            &__goMyPage {
+              padding: 30px;
+              text-align: center;
+              margin-top: 10%;
+              &__link {
+                display: block;
+                background-color: #eee;
+                line-height: 3;
+                color: #000000;
+              }
+              &__link:hover {
+                text-decoration: none;
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+      }
+    }
+    .myPageGap {
+      width: 5%;
+      background-color: #EEEEEE;
+      height: 100vh;
+    }
+  }
+}
