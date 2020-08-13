@@ -7,5 +7,5 @@ class DeliveryDestination < ApplicationRecord
   validates :prefecture_code, presence: true
   validates :city, presence: true
   validates :house_number, presence: true
-  belongs_to :user, optional: true
+  # belongs_to :user, optional: true
 end
