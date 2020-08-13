@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_one :credit_card
   has_one :phone_number
   has_many :items
-  # has_many :seller_orders, class_name: 'Order', foreign_key: 'seller_id'
-  # has_many :buyer_orders, class_name: 'Order', foreign_key: 'buyer_id'
+  has_many :seller_orders, class_name: 'Order', foreign_key: 'seller_id'
+  has_many :buyer_orders, class_name: 'Order', foreign_key: 'buyer_id'
   has_many :sns_credentials
   accepts_nested_attributes_for :credit_card
   accepts_nested_attributes_for :phone_number
