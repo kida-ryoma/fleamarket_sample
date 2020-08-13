@@ -326,3 +326,95 @@ others_8 = others.children.create(name: "事務/店舗用品")
 others_8.children.create([{name: "オフィス用品一般"},{name: "オフィス家具"},{name: "店舗用品"},{name: "OA機器"},{name: "ラッピング/包装"},{name: "その他"}])
 others_9 = others.children.create(name: "その他")
 others_9.children.create([{name: "すべて"}])
+
+
+Status.create!(
+  [
+    {
+      status: '新品、未使用'
+    },
+    {
+      status: '未使用に近い'
+    },
+    {
+      status: '目立った傷や汚れなし'
+    },
+    {
+      status: 'やや傷や汚れあり'
+    },
+    {
+      status: '傷や汚れあり'
+    },
+    {
+      status: '全体的に状態が悪い'
+    }
+  ]
+)
+PreparationDay.create!(
+  [
+    {
+      days: '1〜2日で発送'
+    },
+    {
+      days: '2〜3日で発送'
+    },
+    {
+      days: '4〜7日で発送'
+    }
+  ]
+)
+DeliveryResponsibility.create!(
+  [
+    {
+      delivery_responsibility: '送料込み(出品者負担)'
+    },
+    {
+      delivery_responsibility: '着払い(購入者負担)'
+    }
+  ]
+)
+User.create!(
+  [
+    {
+      nick_name: 'まめこ',
+      email: 'teiteia1234@gmail.com',
+      image: 'public/material/pict/pict-reason-01.jpg',
+      family_name: '植田',
+      first_name: '真由子',
+      family_name_kana: 'ウエダ',
+      first_name_kana: 'マユコ',
+      birthday: '2000-05-07',
+      introduction: 'こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは',
+      password: '0123456'
+    }
+  ]
+)
+Item.create!(
+  [
+    {
+      name: "aaa",
+      description: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      price: "300",
+      size: "M",
+      brand: "無印良品",
+      sales_status: "1",
+      prefecture_code: "和歌山県",
+      category_id: "15",
+      status_id: "2",
+      user_id: "1",
+      delivery_responsibility_id: "1",
+      preparation_day_id: "2"
+    }
+  ]
+)
+
+ItemImage.create!(
+  [
+    {
+      image: open("/Users/kidaryouba/projects/fleamarket_sample_80h/public/material/pict/pict-reason-01.jpg"),
+      item_id: "1"
+    }
+  ]
+)
+
+

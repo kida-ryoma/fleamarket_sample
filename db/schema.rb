@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2020_08_12_134316) do
     t.bigint "preparation_day_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "order_id", null: false
+    t.bigint "order_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["delivery_responsibility_id"], name: "index_items_on_delivery_responsibility_id"
     t.index ["order_id"], name: "index_items_on_order_id"
@@ -108,19 +108,6 @@ ActiveRecord::Schema.define(version: 2020_08_12_134316) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "family_name", null: false
-    t.string "first_name", null: false
-    t.string "family_name_kana", null: false
-    t.string "first_name_kana", null: false
-    t.integer "birthday", null: false
-    t.text "introduction"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_profiles_on_user_id"
-  end
-
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
@@ -140,12 +127,20 @@ ActiveRecord::Schema.define(version: 2020_08_12_134316) do
     t.string "nick_name", null: false
     t.string "email", default: "", null: false
     t.string "image"
+    t.string "family_name", null: false
+    t.string "first_name", null: false
+    t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.date "birthday", null: false
+    t.string "introduction"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "item_images", "items"
@@ -158,6 +153,5 @@ ActiveRecord::Schema.define(version: 2020_08_12_134316) do
   add_foreign_key "orders", "items"
   add_foreign_key "orders", "users", column: "buyer_id"
   add_foreign_key "orders", "users", column: "seller_id"
-  add_foreign_key "profiles", "users"
   add_foreign_key "sns_credentials", "users"
 end
