@@ -11,6 +11,7 @@ class Item < ApplicationRecord
   has_one :order, dependent: :destroy
   has_many :item_images, dependent: :destroy
   accepts_nested_attributes_for :item_images
-  include JpPrefecture
-  jp_prefecture :prefecture_code
+
+  # include JpPrefecture
+  # jp_prefecture :prefecture_code
 end
