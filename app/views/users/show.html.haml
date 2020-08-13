@@ -1,0 +1,120 @@
+.userMyPage
+  %main.myPageContainer
+    .sideWrapper
+      .listContainer
+        %ul.list
+          = link_to "users/:id", class: "listBox" do
+            %li.listBox__content
+              %p.listBox__content__title
+                マイページ
+              = icon('fas', 'angle-right', class: "listBox__content__icon")
+          = link_to "#", class: "listBox" do
+            %li.listBox__content
+              %p.listBox__content__title
+                出品した商品 - 出品中
+              = icon('fas', 'angle-right', class: "listBox__content__icon")
+          = link_to "#", class: "listBox" do
+            %li.listBox__content
+              %p.listBox__content__title
+                出品した商品 - 売却済み
+              = icon('fas', 'angle-right', class: "listBox__content__icon")
+          = link_to "#", class: "listBox" do
+            %li.listBox__content
+              %p.listBox__content__title
+                購入した商品
+              = icon('fas', 'angle-right', class: "listBox__content__icon")
+          = link_to "#", class: "listBox" do
+            %li.listBox__content
+              %p.listBox__content__title
+                やることリスト
+              = icon('fas', 'angle-right', class: "listBox__content__icon")
+          = link_to "#", class: "listBox" do
+            %li.listBox__content
+              %p.listBox__content__title
+                いいね！一覧
+              = icon('fas', 'angle-right', class: "listBox__content__icon")
+          = link_to "#", class: "listBox" do
+            %li.listBox__content
+              %p.listBox__content__title
+                評価一覧
+              = icon('fas', 'angle-right', class: "listBox__content__icon")
+          = link_to "#", class: "listBox" do
+            %li.listBox__content
+              %p.listBox__content__title
+                お問い合わせ
+              = icon('fas', 'angle-right', class: "listBox__content__icon")
+        %h3.listContainer__title
+          設定
+        %ul.list
+          = link_to "#", class: "listBox" do
+            %li.listBox__content
+              %p.listBox__content__title
+                プロフィール
+              = icon('fas', 'angle-right', class: "listBox__content__icon")
+          = link_to "#", class: "listBox" do
+            %li.listBox__content
+              %p.listBox__content__title
+                支払い方法
+              = icon('fas', 'angle-right', class: "listBox__content__icon")
+          = link_to "#", class: "listBox" do
+            %li.listBox__content
+              %p.listBox__content__title
+                メール/パスワード
+              = icon('fas', 'angle-right', class: "listBox__content__icon")
+          = link_to "#", class: "listBox" do
+            %li.listBox__content
+              %p.listBox__content__title
+                本人情報
+              = icon('fas', 'angle-right', class: "listBox__content__icon")
+          = link_to "#", class: "listBox" do
+            %li.listBox__content
+              %p.listBox__content__title
+                ログアウト
+              = icon('fas', 'angle-right', class: "listBox__content__icon")
+    .myPageGap
+    .myPageContent
+      .myPageWrapper
+        %section.myPageWrapper__myPageUserIcon
+          = link_to "#"  do
+            %figure
+              = image_tag "/material/pict/pict-reason-02.jpg", class: "content__myPageUserIcon__photo", heght: "60", width: "60"
+            %h2.myPageWrapper__myPageUserIcon__userName
+              なかやまきんにくん
+            .myPageWrapper__myPageUserIcon__count
+              .myPageContent__myPageUserIcon__count__item
+                評価
+                %span.myPageWrapper__myPageUserIcon__count__item__number
+                  0
+              .myPageWrapper__myPageUserIcon__count__item
+                出品数
+                %span.myPageWrapper__myPageUserIcon__count__item__number
+                  0
+        %section.myPageWrapper__myPageTabContainer
+          %ul.myPageTabs
+            %li.myPageTabsActive
+              = link_to "出品中", "#", class: "myPageTabsTitle"
+            %li.myPageTabsPassive
+              = link_to "取引中", "#", class: "myPageTabsTitle"
+            %li.myPageTabsPassive
+              = link_to "購入した商品", "#", class: "myPageTabsTitle"
+            %li.myPageTabsPassive
+              = link_to "出品する", "#", class: "myPageTabsTitle"
+          .myPageLists
+            = link_to "#", class: "myPageList" do
+              =image_tag "/material/pict/pict-reason-02.jpg", class: "myPageListsBox__top__image", heght: "90", width: "90"
+              .myPageList__body
+                .myPageList__body__contentsName
+                  商品名
+                .myPageList__body__price
+                  ¥1,000
+              =icon("fas", "chevron-right", class: "right-icon")
+            = link_to "#", class: "myPageList" do
+              =image_tag "/material/pict/pict-reason-02.jpg", class: "myPageListsBox__top__image", heght: "90", width: "90"
+              .myPageList__body
+                .myPageList__body__contentsName
+                  商品名
+                .myPageList__body__price
+                  ¥1,000
+              =icon("fas", "chevron-right", class: "right-icon")
+            .myPageLists__goMyPage
+            
