@@ -10,7 +10,7 @@ class Item < ApplicationRecord
   belongs_to :preparation_day
   has_one :order, dependent: :destroy
   has_many :item_images, dependent: :destroy
-  accepts_nested_attributes_for :item_images
+  accepts_nested_attributes_for :item_images, allow_destroy: true
   include JpPrefecture
   jp_prefecture :prefecture_code
 end

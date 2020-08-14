@@ -3,16 +3,37 @@
     =link_to  root_path, class: "homeLink" do
       = image_tag("/material/logo/logo.png",class: "upperLogo")
   .body
-    = form_with url: "#", class: "form" do |f|
+    = form_with(model:@item, locale: true,id: 'new_item', class: "form") do |f|
       .formBox
         .formBox__title
           商品画像
           %span.required 必須
         .imageExplanation
           最大10枚までアップロードできます
-        = f.label :image, class: "imageBox" do
-          = icon('fas', 'camera', class: 'imageBox__icon')
-          = f.file_field :image, class: "imageBox__file"
+          #image-box
+            #previews
+              -if @item.persisted?
+                - @item.item_images.each_with_index do |image, i|
+                  = image_tag image.src.url, {data:{ index: "i"}} , height: '100', width: '100'
+            = f.fields_for :item_iamges do |image|
+              .js-file_group{data:{index: "image.index"}}
+                = image.file_field :image, class: "js-file"
+                %br
+                .js-remove　削除
+              - if @item.persisted?
+                = image.check_box :_destory, {data:{ index: "image.index"}}, calss: "hidden-destroy"
+              - if @item.persisted?
+                .js-file_group{data:{index: "@item.images.count"}}
+                  = file_field_tag :image, name: "item[item_iamges.attributes][${@item.images.count}][image]", calss: "js-file"
+                  .js-remove　削除
+
+
+        -# = f.label :image, class: "imageBox" do
+        -#   = icon('fas', 'camera', class: 'imageBox__icon')
+        -#   = f.fields_for :item_images do |i|
+        -#     .jsFile_group{data: {index: "i.index"}}
+        -#     = i.file_field :image, class: "jsFile", id: "", type: 'file', name: "item_images[image][]"
+        -#     %span.jsRemove 削除
       .formBox
         .formBox__title
           商品名
@@ -27,7 +48,7 @@
         .formBox__title
           カテゴリー
           %span.required 必須
-        = f.select :ctegories,{}, { include_blank: "選択してください" }, { class: "formBox__select" }
+        = f.select :ctegory, Category.All,{},{ class: "formBox__select", id: "parent_category"}
         .formBox__title
           ブランド
           %span.optional 任意
