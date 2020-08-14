@@ -25,14 +25,14 @@
     .signUpNewInfoBox
       %h2.signUpNewInfoBox__title
         会員情報入力
-      = form_with model: @user, url:"/users", class: "Box", local: true do |f|
+      = form_with model: @user, url: users_sign_up_phone_number_path, class: "Box", local: true do |f|
         .signUpNewBoxContent
           .signUpForm
           %label.signUpForm__label
             ニックネーム
           %span.signUpForm__span
             必須
-          = f.text_field :nickname, class: "signupForm1", placeholder: "例) メルカリ太郎"
+          = f.text_field :nick_name, class: "signupForm1", placeholder: "例) メルカリ太郎"
           .singleUpEmail
             %label.signUpEmail__label
               メールアドレス

@@ -25,7 +25,7 @@
     .signUpCreditCardBox
       %h2.signUpCreditCardBox__title
         クレジットカード情報入力
-      = form_with html: { class: "creditCardForm"}, local: true do |f|
+      = form_with model: @credit_card, url: "/users/sign_in", class: "creditCardForm",local: true do |f|
         .signUpCreditCardBlock
           .inputCreditCardBlock
             %label.confirmationCcTitle

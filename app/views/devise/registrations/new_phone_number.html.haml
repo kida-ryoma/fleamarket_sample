@@ -25,7 +25,7 @@
     .signUpBox
       %h2.signUpBox__title
         電話番号登録
-      = form_with  html: { class: "phoneNumberForm"}, local: true do |f|
+      = form_with  model: @phone_number, url: users_sign_up_address_path, class: "phoneNumberForm",local: true do |f|
         .signUpPhoneNumberBlock
           .inputPhoneNumberBlock
             %label.confirmationPnTitle

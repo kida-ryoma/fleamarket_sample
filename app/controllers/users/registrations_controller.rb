@@ -54,10 +54,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @phone_number = Phone_number.new(session["phone_number"])
     @address = Address.new(session["address"])
     @credit_card = Credit_card.new(credit_card_params)
-    unless @credit_card.valid?
-      flash.now[:alert] = @credit_card.errors.full_messages
-      render :new_credit_card and return
-    end
+    # unless @credit_card.valid?
+    #   flash.now[:alert] = @credit_card.errors.full_messages
+    #   render :new_credit_card and return
+    # end
     @user.build_address(@address.attributes)
     @user.build_phone_number(@phone_number.attributes)
     @user.build_credit_card(@credit_card.attributes)
@@ -69,7 +69,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def sign_up_params
-    params.require(:user).permit(:nick_name, :email, :password, :password_confirmation)
+    params.permit(:nick_name, :email, :password, :password_confirmation)
   end
 
   def phone_number_params

@@ -25,7 +25,7 @@
     .completeRegiBox
       %h2.completeRegiBox__title
         会員登録完了
-      = form_with html: { class: "completeRegiForm"}, local: true do |f|
+      = form_with @user, url: "/users",local: true do |f|
         .completeRegiBlock
           .completeRegiBlock__message
             ありがとうございます。
