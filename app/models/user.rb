@@ -3,6 +3,16 @@ class User < ApplicationRecord
         :recoverable, :rememberable, :validatable
 
   validates :nick_name, presence: true
+  validates :family_name, presence: true
+  validates :first_name, presence: true
+  validates :family_name_kana, presence: true
+  validates :first_name_kana, presence: true
+  require 'date'
+
+  private def date_valid?(str)
+    !! Date.parse(str) rescue false
+  end
+
   has_one :delivery_destination
   has_one :credit_card
   has_one :phone_number

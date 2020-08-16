@@ -25,7 +25,8 @@
     .signUpNewInfoBox
       %h2.signUpNewInfoBox__title
         会員情報入力
-      = form_with model: @user, url: users_sign_up_phone_number_path, class: "Box", local: true do |f|
+      = form_with model: @user, url: user_registration_path, class: "Box", local: true do |f|
+        = render "devise/shared/error_messages", resource: @user
         .signUpNewBoxContent
           .signUpForm
           %label.signUpForm__label

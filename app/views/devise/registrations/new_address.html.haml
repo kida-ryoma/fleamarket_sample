@@ -25,22 +25,23 @@
     .signUpBox
       %h2.signUpBox__title
         お届け先住所入力
-      = form_with  model: @address ,url: users_sign_up_credit_card_path,class: "deliveryAddressForm", local: true do |f|
+      = form_with  model: @address ,url: users_sign_up_address_path, class: "deliveryAddressForm", local: true do |f|
+        = render "devise/shared/error_messages", resource: @address
         .deliveryAddressBox
           .deliveryForm
             %label.deliveryForm__label
               お名前
             %span.deliveryForm__condition
               必須
-            = f.text_field :family_name, placeholder: '例）山田', class: "deliveryForm__form"
-            = f.text_field :first_name, placeholder: '例）彩', class: "deliveryForm__form"
+            = f.text_field :delivery_family_name, placeholder: '例）山田', class: "deliveryForm__form"
+            = f.text_field :delivery_first_name, placeholder: '例）彩', class: "deliveryForm__form"
           .deliveryForm__bellow
             %label.deliveryForm__label
               お名前カナ
             %span.deliveryForm__condition
               必須
-            = f.text_field :family_name_kana, placeholder: '例）ヤマダ', class: "deliveryForm__form"
-            = f.text_field :first_name_kana, placeholder: '例）アヤ', class: "deliveryForm__form"
+            = f.text_field :delivery_family_name_kana, placeholder: '例）ヤマダ', class: "deliveryForm__form"
+            = f.text_field :delivery_first_name_kana, placeholder: '例）アヤ', class: "deliveryForm__form"
           .deliveryForm__bellow
             %label.deliveryForm__label
               郵便番号
@@ -54,7 +55,7 @@
             %span.deliveryForm__condition
               必須
             .prefectureWrap
-              = f.text_field :prefecture, placeholder: '北海道', class: "prefectureBox"
+              = f.text_field :prefecture_code, placeholder: '北海道', class: "prefectureBox"
               = icon('fas', 'chevron-down', class: 'prefectureBoxIcon')
           .deliveryForm__bellow
             %label.deliveryForm__label

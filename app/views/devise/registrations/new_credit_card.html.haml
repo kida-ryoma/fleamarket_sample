@@ -25,26 +25,31 @@
     .signUpCreditCardBox
       %h2.signUpCreditCardBox__title
         クレジットカード情報入力
-      = form_with model: @credit_card, url: "/users/sign_in", class: "creditCardForm",local: true do |f|
+      = form_with model: @credit_card, url: users_sign_up_credit_card_path, class: "creditCardForm",id: "cardCreateForm",local: true do |f|
+        = render "devise/shared/error_messages", resource: @credit_card
         .signUpCreditCardBlock
           .inputCreditCardBlock
-            %label.confirmationCcTitle
+            %label.confirmationCcTitle(for="cardnumber-input")
               カード番号
             %span.confirmationCcTitle__condition
               必須
-            = f.text_field :card_number,name: "card_number", placeholder: "半角数字のみ", class: "confirmationCcTitleForm",maxlength: "16"
+            = f.text_field :customer_id,name: "card_number", placeholder: "半角数字のみ", class: "confirmationCcTitleForm",maxlength: "16",id:'card-number'
             %label.confirmationCcTitle
               有効期限
             %span.confirmationCcTitle__condition
               必須
             .inputCreditCardBlock__date
-              != sprintf(f.date_select(:expiration_date,with_css_classes:'creditCard--date', order:[:month,:year,:day], use_month_numbers:true, discard_day:true, start_year:Time.now.year-2000, end_year:Time.now.year-2000+10, date_separator:'%s'),'月') + '年'
+              = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: 'dateSelect', name: 'exp_month',id:"credit_exp_month"
+              月
+              = f.select :exp_year, [["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , class: 'dateSelect', name: 'exp_year',id: "credit_exp_year"
+              .expiration-text 年
             %label.confirmationCcTitle
               セキュリティコード
             %span.confirmationCcTitle__condition
               必須
-            = f.text_field :card_number,name: "card_number", placeholder: "カード背面4桁もしくは3桁の数字", class: "confirmationCcTitleForm",maxlength: "16"
-            = f.submit "登録する", class: "creditCardBtn"
+              = f.text_field :cvc,name: "card_number", placeholder: "カード背面4桁もしくは3桁の数字", class: "confirmationCcTitleForm",maxlength: "4",id: 'cvc'
+            #card_token.creditForm__submitfield
+              = f.submit "登録する", class: "creditCardBtn",  id: 'token_submit'
   .exbitFooter
     .exbitFooter__content
       = link_to "プライバシーポリシー", "", class: "policy"
