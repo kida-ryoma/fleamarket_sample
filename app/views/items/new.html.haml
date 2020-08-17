@@ -16,16 +16,16 @@
                 - @item.item_images.each_with_index do |image, i|
                   = image_tag image.src.url, {data:{ index: "i"}} , height: '100', width: '100'
             = f.fields_for :item_images do |image|
-              .js-file_group{data:{index: "image.index"}}
-                = image.file_field :image, class: "jsFile" 
+              .jsFile_group{data:{index: "image.index"}}
+                = image.file_field :image, class: "file" 
                 %br
-                .js-remove 削除
+                .jsRemove 削除
               - if @item.persisted?
                 = image.check_box :_destory, {data:{ index: "image.index"}}, calss: "hiddenDestroy"
               - if @item.persisted?
                 .js-file_group{data:{index: "@item.images.count"}}
-                  = file_field_tag :image, name: "item[item_images_attributes][#{@item.item_images.count}][image]", calss: "jsFile"
-                  .js-remove 削除
+                  = file_field_tag :image, name: "item[item_images_attributes][#{@item.item_images.count}][image]", calss: "file"
+                  .jsRemove 削除
       .formBox
         .formBox__title
           商品名
