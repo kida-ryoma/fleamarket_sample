@@ -13,8 +13,11 @@ Rails.application.routes.draw do
       get 'show'
     end
   end
-  resources :items, only: [:index, :show, :new, :create] do
+  resources :items, only: [:index, :show, :new, :create, :destroy, :edit] do
     resources :orders, only: [:new, :create]
+    member do
+      get 'destroy_confirmation'
+    end
   end
   resources :users, only: [:show]
 end
