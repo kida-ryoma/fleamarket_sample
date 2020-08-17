@@ -2,7 +2,6 @@ class Item < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :price, presence: true
-  validates :sales_status, presence: true
   belongs_to :category
   belongs_to :status
   belongs_to :user

@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :new, :get_category_children, :get_category_grandchildren]
+  before_action :authenticate_user!, except: [:show, :new, :create, :get_category_children, :get_category_grandchildren]
   before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
   
   def index
@@ -14,7 +14,6 @@ class ItemsController < ApplicationController
     @item.item_images.new
     @category_parent_array = ["---"]
     @category_parent_array = Category.where(ancestry: nil)
-    @status = Status.all
   end
 
   def create
@@ -43,13 +42,13 @@ class ItemsController < ApplicationController
   def item_params
     params.
       require(:item)
-        permit(:name, :description, :brand,
+        .permit(:name, :description, :brand,
         :price, :size, :sales_status,
-        :status_id, :area_id,
-        :category_id,
-        :order_id, :user_id, :delivery_id,
+        :status_id, :prefecture_code,
+        :category_id, :delivery_responsibility_id,
+        :order_id, :user_id,:preparation_day_id,
         item_images_attributes: [:image, :_destory, :id])
-        .merge(user_id: current_user.id)
+        .merge(user_id: 1)
   end
 
   def set_item

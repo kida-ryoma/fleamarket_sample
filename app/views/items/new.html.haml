@@ -3,7 +3,7 @@
     =link_to  root_path, class: "homeLink" do
       = image_tag("/material/logo/logo.png",class: "upperLogo")
   .body
-    = form_with(model:@item, locale: true,id: 'new_item', class: "form") do |f|
+    = form_with(model:@item, local: true,id: 'new_item', class: "form") do |f|
       .formBox
         .formBox__title
           商品画像
@@ -19,13 +19,13 @@
               .js-file_group{data:{index: "image.index"}}
                 = image.file_field :image, class: "js-file"
                 %br
-                .js-remove　削除
+                .js-remove 削除
               - if @item.persisted?
                 = image.check_box :_destory, {data:{ index: "image.index"}}, calss: "hidden-destroy"
               - if @item.persisted?
                 .js-file_group{data:{index: "@item.images.count"}}
                   = file_field_tag :image, name: "item[item_iamges.attributes][${@item.images.count}][image]", calss: "js-file"
-                  .js-remove　削除
+                  .js-remove 削除
 
 
         -# = f.label :image, class: "imageBox" do
@@ -61,21 +61,21 @@
         .formBox__title
           商品の状態
           %span.required 必須
-        = f.select :status_id, Status.all, { include_blank: "選択してください" }, { class: "formBox__select" }
+        = f.collection_select :status_id, Status.all, :id, :status,{} ,{class: "formBox__select"} 
       .formBox
         .listGroup 配送について
         .formBox__title
           配送料の負担
           %span.required 必須
-        = f.select :ctegories,{}, { include_blank: "選択してください" }, { class: "formBox__select" }
+        = f.collection_select :delivery_responsibility_id, DeliveryResponsibility.all, :id, :delivery_responsibility, {}, { class: "formBox__select" }
         .formBox__title
           配送元の地域
           %span.required 必須
-        = f.select :area,{}, { include_blank: "選択してください" }, { class: "formBox__select" }
+        = f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, {}, { class: "formBox__select" }
         .formBox__title
           配送までの日数
           %span.required 必須
-        = f.select :preparetionday,{}, { include_blank: "選択してください" }, { class: "formBox__select" }
+        = f.collection_select :preparation_day_id, PreparationDay.all, :id, :days, {}, { class: "formBox__select" }
       .formBox
         .listGroup 価格
         .price
