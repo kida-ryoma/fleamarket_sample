@@ -11,7 +11,10 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-  resources :items, only: [:index, :show, :new, :create] do
+  resources :items, only: [:index, :show, :new, :create, :destroy, :edit] do
     resources :orders, only: [:new, :create]
+    member do
+      get 'destroy_confirmation'
+    end
   end
 end
