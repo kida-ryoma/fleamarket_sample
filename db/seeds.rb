@@ -411,7 +411,7 @@ Item.create!(
 ItemImage.create!(
   [
     {
-      image: open("/Users/mayukoueda/projects/fleamarket_sample_80h/public/material/pict/pict-reason-01.jpg"),
+      image: open("/Users/ishikawaryo/team-projects/fleamarket_sample_80h/public/material/pict/pict-reason-01.jpg"),
       item_id: "1"
     }
   ]
