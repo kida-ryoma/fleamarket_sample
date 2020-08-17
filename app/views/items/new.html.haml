@@ -48,7 +48,8 @@
         .formBox__title
           カテゴリー
           %span.required 必須
-        = f.select :ctegory, Category.All,{},{ class: "formBox__select", id: "parent_category"}
+        #formBoxCategory
+          = f.collection_select :category_id, Category.where(ancestry: nil),:id, :name,{prompt: '---'},class: "formBox__select", id: "parent_category"
         .formBox__title
           ブランド
           %span.optional 任意
@@ -57,11 +58,10 @@
           サイズ
           %span.optional 任意
         = f.text_field :size, placeholder: "サイズ", class: "formBox__input"
-
         .formBox__title
           商品の状態
           %span.required 必須
-        = f.select :atatuses,{}, { include_blank: "選択してください" }, { class: "formBox__select" }
+        = f.select :status_id, Status.all, { include_blank: "選択してください" }, { class: "formBox__select" }
       .formBox
         .listGroup 配送について
         .formBox__title
