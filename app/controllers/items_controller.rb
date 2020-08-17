@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @item_images = @item.item_images
     @user_items = @item.user.items.where(order_id: nil)
     category_id = @item.category_id
@@ -26,10 +25,13 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy
-    # redirect_to controller: :users, action: :show
-    # 本当は↑に飛ばしたいが今ルーティングとアクションの設定がない
-    redirect_to root_path
+    if @item.destroy
+      # redirect_to controller: :users, action: :show
+      # 本当は↑に飛ばしたいが今ルーティングとアクションの設定がない
+      redirect_to root_path
+    else
+      render :destroy_confirmation
+    end
   end
   
   private
