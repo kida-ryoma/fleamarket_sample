@@ -10,30 +10,22 @@
           %span.required 必須
         .imageExplanation
           最大10枚までアップロードできます
-          #image-box
+          #imageBox
             #previews
               -if @item.persisted?
                 - @item.item_images.each_with_index do |image, i|
                   = image_tag image.src.url, {data:{ index: "i"}} , height: '100', width: '100'
-            = f.fields_for :item_iamges do |image|
+            = f.fields_for :item_images do |image|
               .js-file_group{data:{index: "image.index"}}
-                = image.file_field :image, class: "js-file"
+                = image.file_field :image, class: "jsFile" 
                 %br
                 .js-remove 削除
               - if @item.persisted?
-                = image.check_box :_destory, {data:{ index: "image.index"}}, calss: "hidden-destroy"
+                = image.check_box :_destory, {data:{ index: "image.index"}}, calss: "hiddenDestroy"
               - if @item.persisted?
                 .js-file_group{data:{index: "@item.images.count"}}
-                  = file_field_tag :image, name: "item[item_iamges.attributes][${@item.images.count}][image]", calss: "js-file"
+                  = file_field_tag :image, name: "item[item_images_attributes][#{@item.item_images.count}][image]", calss: "jsFile"
                   .js-remove 削除
-
-
-        -# = f.label :image, class: "imageBox" do
-        -#   = icon('fas', 'camera', class: 'imageBox__icon')
-        -#   = f.fields_for :item_images do |i|
-        -#     .jsFile_group{data: {index: "i.index"}}
-        -#     = i.file_field :image, class: "jsFile", id: "", type: 'file', name: "item_images[image][]"
-        -#     %span.jsRemove 削除
       .formBox
         .formBox__title
           商品名

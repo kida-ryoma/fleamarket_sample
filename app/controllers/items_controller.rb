@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.item_images.new
+    @item.item_images.build
     @category_parent_array = ["---"]
     @category_parent_array = Category.where(ancestry: nil)
   end
@@ -47,8 +47,9 @@ class ItemsController < ApplicationController
         :status_id, :prefecture_code,
         :category_id, :delivery_responsibility_id,
         :order_id, :user_id,:preparation_day_id,
-        item_images_attributes: [:image, :_destory, :id])
+        item_images_attributes:[:image, :_destory, :id])
         .merge(user_id: 1)
+        #ユーザー登録が現状ないので、1としてしています。
   end
 
   def set_item
