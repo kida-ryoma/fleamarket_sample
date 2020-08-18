@@ -1,8 +1,11 @@
 class ItemsController < ApplicationController
-  # before_action :authenticate_user!, except: [:show]
-  before_action :set_item, except: [:index, :new, :create]
+
+  # before_action :authenticate_user!, except: [:show, :new, :create, :get_category_children, :get_category_grandchildren]
+  before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
+
   
   def index
+    
   end
 
   def show
@@ -13,13 +16,33 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
+    @item.item_images.build
   end
 
   def create
+    @item = Item.new(item_params)
+    if (@item.save) && (@item.item_images.present?)
+      redirect_to root_path
+    else
+      redirect_to new_item_path
+    end
   end
 
   def edit
   end
+  
+
+  def get_category_children
+    @category_children = Category.find(params[:parent_id]).children
+  end
+
+  
+  def get_category_grandchildren
+    @category_grandchildren = Category.find(params[:child_id]).children
+  end
+
+  
   
   def destroy_confirmation
   end
@@ -35,16 +58,19 @@ class ItemsController < ApplicationController
   end
   
   private
-  def itme_params
+  def item_params
     params.
       require(:item)
-        permit(:name, :description, :brand,
+        .permit(:name, :description, :brand,
         :price, :size, :sales_status,
-        :category_id, :status_id, :area_id,
-        :order_id, :user_id, :delivery_id,
-        item_images_attributes:[:id, :item_id, :image])
-        .merge(user_id: current_user.id)
+        :status_id, :prefecture_code,
+        :category_id, :delivery_responsibility_id,
+        :order_id, :user_id,:preparation_day_id,
+        item_images_attributes:[:image, :_destory, :id])
+        .merge(user_id: 1)
+        #ユーザー登録が現状ないので、1としてしています。
   end
+
   def set_item
     @item = Item.find(params[:id])
   end

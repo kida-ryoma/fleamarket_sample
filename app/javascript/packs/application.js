@@ -5,9 +5,11 @@
 
 require("@rails/ujs").start()
 require("turbolinks").start()
-require("jquery")
+require('jquery');
 require("@rails/activestorage").start()
-require("channels")
+require("channels");
+require("../products");
+require("../category");
 require("../change-images")
 
 // Uncomment to copy all static images under ../images to the output folder and reference

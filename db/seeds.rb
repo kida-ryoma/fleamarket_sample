@@ -399,7 +399,7 @@ Item.create!(
       brand: "無印良品",
       sales_status: "1",
       prefecture_code: "和歌山県",
-      category_id: "15",
+      category_id: "1",
       status_id: "2",
       user_id: "1",
       delivery_responsibility_id: "1",

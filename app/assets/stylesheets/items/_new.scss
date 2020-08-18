@@ -30,7 +30,8 @@
             margin-top: 20px;
           }
           &__file {
-            display: none;
+            // 読み込みのファイルを一旦みやすくするため、機能のみの実現をさせた。後に、マークアップ当てる予定。
+            // display: none;
           }
         }
         .imageExplanation {
