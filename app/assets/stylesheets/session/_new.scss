@@ -12,7 +12,6 @@
     width: 193px;
   }
   main.singleMain{
-    height: 100%;
     display: flex;
     justify-content: center;
     .userLoginPageBlock{
@@ -26,7 +25,8 @@
         text-align: center;
         font-size: 14px;
         &__btn{
-          margin-top: 8px 0 0;
+          margin-top: 8px;
+          width: 100%;
           display: block;
           background-color: #0099E8;
           color: #fff;
@@ -75,14 +75,14 @@
     padding: 24px 32px;
     &__email{
       height: 50px;
-      width: 95%;
+      width: 100%;
       border: 1px solid #ccc;
       border-radius: 4px;
       padding-left: 16px;
     }
     &__password{
       height: 50px;
-      width: 95%;
+      width: 100%;
       border: 1px solid #ccc;
       border-radius: 4px;
       padding-left: 16px;
@@ -124,15 +124,16 @@
     height: 220px;
     text-align: center;
     font-size: 11px;
+    background-color: $background-color;
     &__content{
       padding: 40px;
       color: #333;
-    }
-    .policy{
-      margin: 0 10px;
-      text-align: center;
-      text-decoration: none;
-      color: #333;
+      .policy{
+        margin: 0 10px;
+        text-align: center;
+        text-decoration: none;
+        color: #333;
+      }
     }
     .footerLogo{
       filter: brightness(50%) sepia(0) saturate(80) hue-rotate(100deg);
