@@ -16,8 +16,6 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_images.build
-    @category_parent_array = ["---"]
-    @category_parent_array = Category.where(ancestry: nil)
   end
 
   def create

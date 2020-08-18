@@ -40,15 +40,15 @@ require 'rails_helper'
         item.valid?
         expect(item.errors[:price]).to include("can't be blank")
       end
-      it "is invalid without a category_id" do
+      it "is invalid without a status_id" do
         category = create(:category)
         status = create(:status)
         delivery_responsibility = create(:delivery_responsibility)
         user = create(:user)
         preparation_day = create(:preparation_day)
-        item = build(:item, category_id: nil, category_id: category[:id], status_id: status[:id], user_id: user[:id], delivery_responsibility_id: delivery_responsibility[:id], preparation_day_id: preparation_day[:id] )
+        item = build(:item, status_id: nil,  category_id: category[:id], user_id: user[:id], delivery_responsibility_id: delivery_responsibility[:id], preparation_day_id: preparation_day[:id] )
         item.valid?
-        expect(item.errors[:category_id]).to include("can't be blank")
+        expect(item.errors[:status_id]).to include("can't be blank")
       end
   end
 end
