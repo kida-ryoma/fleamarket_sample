@@ -1,0 +1,20 @@
+.exbitFooter{
+  background-color: $background-color;
+  height: 180px;
+  text-align: center;
+  font-size: 11px;
+  &__content{
+    padding: 40px;
+    color: #333;
+  }
+  .policy{
+    margin: 0 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+  }
+  .footerLogo{
+    filter: brightness(50%) sepia(0) saturate(80) hue-rotate(100deg);
+    width: 120px;
+  }
+}

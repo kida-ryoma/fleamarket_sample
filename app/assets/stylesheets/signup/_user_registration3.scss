@@ -1,186 +1,181 @@
-.userContainer#a{
-  width:  100%;
-  height: 100%;
-  background-color:$background-color;
-  .container {
-    display: flex;
-    justify-content: center;
-    .userContainerHeader {
-      height: 128px;
-      text-align: center;
-      &__left {
-        margin: 40px 0 0;
-        .upperHomeLink {
+.container {
+  display: flex;
+  justify-content: center;
+  .userContainerHeader {
+    height: 128px;
+    text-align: center;
+    &__left {
+      margin: 40px 0 0;
+      .upperHomeLink {
+        width: 185px;
+        height: 49px;
+        line-height: 49px;
+        display: inline-block;
+        margin: 0 8px 0 0;
+        .logo {
           width: 185px;
-          height: 49px;
-          line-height: 49px;
-          display: inline-block;
-          margin: 0 8px 0 0;
-          .logo {
-            width: 185px;
-          }
-        }
-      }
-    }
-    .userSignupBar {
-      padding: 40px 0 0 44px;
-      display: inline-block;
-      vertical-align: top;
-      .userSignupBarProgress2 {
-        list-style: none;
-        text-align: center;
-        &__type-red {
-          color: #EA352D;
-          margin: 0 40px 0 0;
-          min-width: 60px;
-          position: relative;
-          z-index: 1;
-          display: inline-block;
-          font-weight: 600;
-          font-size: 12px;
-        }
-        &__rod-red {
-          width: 12px;
-          height: 12px;
-          margin: 8px auto 0;
-          border-radius: 50%;
-          background: #EA352D;
-        }
-        &__rod-red-first {
-          width: 12px;
-          height: 12px;
-          margin: 8px auto 0;
-          border-radius: 50%;
-          background: #ea352d;
-        }
-        &__rod-red-second {
-          width: 12px;
-          height: 12px;
-          margin: 8px auto 0;
-          border-radius: 50%;
-          background: #ea352d;
-        }
-
-        &__rod-red::after {
-          left: 50%;
-          position: absolute;
-          bottom: 5px;
-          z-index: 1;
-          display: block;
-          content: '';
-          width: 100%;
-          height: 2px;
-          background: #ccc;
-          margin-left: 6px;
-        }
-        &__rod-red::before {
-          right: 50%;
-          position: absolute;
-          bottom: 5px;
-          z-index: -1;
-          display: block;
-          content: '';
-          width: 100%;
-          height: 2px;
-          background: #ea352d;
-        }
-        &__rod-red-first::after {
-          left: 50%;
-          position: absolute;
-          bottom: 5px;
-          z-index: -1;
-          display: block;
-          content: '';
-          width: 100%;
-          height: 2px;
-          background: #ea352d;
-        }
-        &__rod-red-second::after {
-          left: 50%;
-          position: absolute;
-          bottom: 5px;
-          z-index: -1;
-          display: block;
-          content: '';
-          width: 100%;
-          height: 2px;
-          background: #ea352d;
-        }
-        &__rod-red-second::before {
-          right: 50%;
-          position: absolute;
-          bottom: 5px;
-          z-index: 1;
-          display: block;
-          content: '';
-          width: 100%;
-          height: 2px;
-          background: #ea352d;
-        }
-        &__type {
-          margin: 0 40px 0 0;
-          min-width: 60px;
-          position: relative;
-          z-index: 1;
-          display: inline-block;
-          font-weight: 600;
-          font-size: 12px;
-          color: #888;
-        }
-        &__rod {
-          width: 12px;
-          height: 12px;
-          margin: 8px auto 0;
-          border-radius: 50%;
-          background: #ccc;
-        }
-        &__rod::before {
-          right: 50%;
-          position: absolute;
-          bottom: 5px;
-          z-index: -1;
-          display: block;
-          content: '';
-          width: 100%;
-          height: 2px;
-          background: #ccc;
-        }
-        &__rod::after {
-          left: 50%;
-          position: absolute;
-          bottom: 5px;
-          z-index: -1;
-          display: block;
-          content: '';
-          width: 100%;
-          height: 2px;
-          background: #ccc;
-        }
-        &__rod-last {
-          width: 12px;
-          height: 12px;
-          margin: 8px auto 0;
-          border-radius: 50%;
-          background: #ccc;
-        }
-        &__rod-last::before {
-          right: 50%;
-          position: absolute;
-          bottom: 5px;
-          z-index: -1;
-          display: block;
-          content: '';
-          width: 100%;
-          height: 2px;
-          background: #ccc;
         }
       }
     }
   }
-  .signUpBoxHeader{
-      display: flex;
-      justify-content: center;
-    .signUpBox{
+  .userSignupBar {
+    padding: 40px 0 0 44px;
+    display: inline-block;
+    vertical-align: top;
+    .userSignupBarProgress2 {
+      list-style: none;
+      text-align: center;
+      &__type-red {
+        color: #EA352D;
+        margin: 0 40px 0 0;
+        min-width: 60px;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 12px;
+      }
+      &__rod-red {
+        width: 12px;
+        height: 12px;
+        margin: 8px auto 0;
+        border-radius: 50%;
+        background: #EA352D;
+      }
+      &__rod-red-first {
+        width: 12px;
+        height: 12px;
+        margin: 8px auto 0;
+        border-radius: 50%;
+        background: #ea352d;
+      }
+      &__rod-red-second {
+        width: 12px;
+        height: 12px;
+        margin: 8px auto 0;
+        border-radius: 50%;
+        background: #ea352d;
+      }
+      &__rod-red::after {
+        left: 50%;
+        position: absolute;
+        bottom: 5px;
+        z-index: 1;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #ccc;
+        margin-left: 6px;
+      }
+      &__rod-red::before {
+        right: 50%;
+        position: absolute;
+        bottom: 5px;
+        z-index: -1;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #ea352d;
+      }
+      &__rod-red-first::after {
+        left: 50%;
+        position: absolute;
+        bottom: 5px;
+        z-index: -1;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #ea352d;
+      }
+      &__rod-red-second::after {
+        left: 50%;
+        position: absolute;
+        bottom: 5px;
+        z-index: -1;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #ea352d;
+      }
+      &__rod-red-second::before {
+        right: 50%;
+        position: absolute;
+        bottom: 5px;
+        z-index: 1;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #ea352d;
+      }
+      &__type {
+        margin: 0 40px 0 0;
+        min-width: 60px;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 12px;
+        color: #888;
+      }
+      &__rod {
+        width: 12px;
+        height: 12px;
+        margin: 8px auto 0;
+        border-radius: 50%;
+        background: #ccc;
+      }
+      &__rod::before {
+        right: 50%;
+        position: absolute;
+        bottom: 5px;
+        z-index: -1;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #ccc;
+      }
+      &__rod::after {
+        left: 50%;
+        position: absolute;
+        bottom: 5px;
+        z-index: -1;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #ccc;
+      }
+      &__rod-last {
+        width: 12px;
+        height: 12px;
+        margin: 8px auto 0;
+        border-radius: 50%;
+        background: #ccc;
+      }
+      &__rod-last::before {
+        right: 50%;
+        position: absolute;
+        bottom: 5px;
+        z-index: -1;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #ccc;
+      }
+    }
+  }
+}
+.signUpAddressBar{
+  background-color: $background-color;
+  .signUpBoxAddress{
+      margin: 0 auto;
       width: 700px;
       background-color: #fff;
       &__title{
@@ -261,7 +256,6 @@
               color: #888;
               font-size: 8px;
             }
-
           }
           .addressBtn{
             margin-top: 24px;
@@ -276,10 +270,9 @@
             text-align: center;
             border-radius: 4px;
           }
-          
-        }
 
-      }
+        }
+      
     } 
   }
 }
