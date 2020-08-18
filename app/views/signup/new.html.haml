@@ -10,13 +10,14 @@
         .loginCategory
           = link_to root_path, class: 'loginCategory__email', method: :post do
             = icon('far', 'envelope', class: 'loginIcon')
-            メールアドレスでログイン
-          = link_to root_path, class: 'loginCategory__facebook', method: :post do
-            = icon('fab', 'facebook-square', class: 'loginIcon')
-            Facebookでログイン
-          = link_to root_path, class: 'loginCategory__google', method: :post do
-            = icon('fab', 'google', class: 'loginIcon')
-            Goodleでログイン
+            メールアドレスで登録する
+          -# 以下は追加実装のためコメントアウト
+          -# = link_to root_path, class: 'loginCategory__facebook', method: :post do
+          -#   = icon('fab', 'facebook-square', class: 'loginIcon')
+          -#   Facebookでログイン
+          -# = link_to root_path, class: 'loginCategory__google', method: :post do
+          -#   = icon('fab', 'google', class: 'loginIcon')
+          -#   Goodleでログイン
           .registrationPolicy
             %p.privatePolicy
               登録することで、
