@@ -41,6 +41,7 @@ ja:
         post_code: 郵便番号
         prefecture_code: 都道府県
         city: 市区町村
+        house_number: 番地
 
     models:
       user: ユーザー

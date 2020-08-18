@@ -26,6 +26,12 @@
       %h2.signUpNewInfoBox__title
         会員情報入力
       = form_with model: @user, url: user_registration_path, class: "Box", local: true do |f|
+        - if @user.errors.any?
+          .SettingRegistrationErrors
+            %h2= "#{@user.errors.full_messages.count}件のエラーが発生しました。"
+            %ul
+              - @user.errors.full_messages.each do |message|
+                %li= message
         .signUpNewBoxContent
           .signUpForm
           = f.label :nick_name, class: "signUpForm__label"
