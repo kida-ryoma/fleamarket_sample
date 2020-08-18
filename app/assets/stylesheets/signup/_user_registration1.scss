@@ -1,13 +1,32 @@
-.userContainer {
+.userContainer#a{
   width:  100%;
   height: 100%;
-  background-color:rgb(245, 245, 245);
+  background-color:$background-color;
   .containar {
+    height: 128px;
     display: flex;
     justify-content: center;
   }
+  .exbitFooter{
+    height: 220px;
+    text-align: center;
+    font-size: 11px;
+    &__content{
+      padding: 40px;
+      color: #333;
+    }
+    .policy{
+      margin: 0 10px;
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+    }
+    .footerLogo{
+      filter: brightness(50%) sepia(0) saturate(80) hue-rotate(100deg);
+      width: 120px;
+    }
+  }
   .userContainerHeader {
-    height: 128px;
     text-align: center;
     &__left {
       margin: 40px 0 0;
@@ -338,7 +357,7 @@
     background-color: #EA352D;
     border: 1px solid #EA352D;
     color: #fff;
-    width: 375px;
+    width: 100%;
     line-height: 48px;
     font-size: 14px;
     border-radius: 4px;

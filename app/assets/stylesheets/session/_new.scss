@@ -25,7 +25,8 @@
         text-align: center;
         font-size: 14px;
         &__btn{
-          margin-top: 8px 0 0;
+          margin-top: 8px;
+          width: 100%;
           display: block;
           background-color: #0099E8;
           color: #fff;
@@ -74,14 +75,14 @@
     padding: 24px 32px;
     &__email{
       height: 50px;
-      width: 95%;
+      width: 100%;
       border: 1px solid #ccc;
       border-radius: 4px;
       padding-left: 16px;
     }
     &__password{
       height: 50px;
-      width: 95%;
+      width: 100%;
       border: 1px solid #ccc;
       border-radius: 4px;
       padding-left: 16px;
