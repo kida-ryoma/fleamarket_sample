@@ -12,7 +12,6 @@
     width: 193px;
   }
   main.singleMain{
-    height: 100%;
     display: flex;
     justify-content: center;
     .userLoginPageBlock{
@@ -124,15 +123,16 @@
     height: 220px;
     text-align: center;
     font-size: 11px;
+    background-color: $background-color;
     &__content{
       padding: 40px;
       color: #333;
-    }
-    .policy{
-      margin: 0 10px;
-      text-align: center;
-      text-decoration: none;
-      color: #333;
+      .policy{
+        margin: 0 10px;
+        text-align: center;
+        text-decoration: none;
+        color: #333;
+      }
     }
     .footerLogo{
       filter: brightness(50%) sepia(0) saturate(80) hue-rotate(100deg);
