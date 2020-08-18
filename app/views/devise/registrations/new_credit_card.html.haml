@@ -46,8 +46,8 @@
               セキュリティコード
             %span.confirmationCcTitle__condition
               必須
-              = f.text_field :cvc,name: "card_number", placeholder: "カード背面4桁もしくは3桁の数字", class: "confirmationCcTitleForm",maxlength: "4",id: 'cvc'
-              = f.submit "登録する", class: "creditCardBtn",  id: 'card_token'
+            = f.text_field :cvc,name: "card_number", placeholder: "カード背面4桁もしくは3桁の数字", class: "confirmationCcTitleForm",maxlength: "4",id: 'cvc'
+            = f.submit "登録する", class: "creditCardBtn",  id: 'card_token'
   .exbitFooter
     .exbitFooter__content
       = link_to "プライバシーポリシー", "", class: "policy"
