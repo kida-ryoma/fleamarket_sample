@@ -26,7 +26,6 @@ $(document).on('turbolinks:load', function() {
     }
     $('#parent_category').on('change', function(){
       var parent_category_id = document.getElementById('parent_category').value;
-      console.log(parent_category_id)
         if (parent_category_id != "---"){
           $.ajax({
             url: ' /items/get_category_children',
