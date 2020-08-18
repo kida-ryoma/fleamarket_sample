@@ -25,13 +25,13 @@
     .completeRegiBox
       %h2.completeRegiBox__title
         会員登録完了
-      = form_with model: @user, url: users_sign_up_done_path,  class: "completeRegiForm", local: true do |f|
+      .completeRegiForm
         .completeRegiBlock
           .completeRegiBlock__message
             ありがとうございます。
             %br
             会員登録が完了しました。
-          = f.submit 'FURIMAをはじめる', class: "completeRegiBlock__btn"
+          = link_to 'FURIMAをはじめる', root_path, class: "completeRegiBlock__btn"
   .exbitFooter
     .exbitFooter__content
       = link_to "プライバシーポリシー", "", class: "policy"

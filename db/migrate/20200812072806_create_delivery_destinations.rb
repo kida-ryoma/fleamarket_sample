@@ -3,9 +3,9 @@ class CreateDeliveryDestinations < ActiveRecord::Migration[6.0]
     create_table :delivery_destinations do |t|
       t.string :delivery_family_name, null: false
       t.string :delivery_first_name, null: false
-      t.string :delivery_family_name_kana, null: false
-      t.string :delivery_first_name_kana, null: false
-      t.integer :delivery_phone_number
+      t.string :delivery_family_name_kana, null: false, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'はカタカナで入力して下さい。'}
+      t.string :delivery_first_name_kana, null: false, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'はカタカナで入力して下さい。'}
+      t.string :delivery_phone_number
       t.integer :post_code, null: false
       t.string :prefecture_code, null: false
       t.integer :city, null:false

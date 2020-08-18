@@ -26,7 +26,6 @@
       %h2.signUpBox__title
         電話番号登録
       = form_with  model: @phone_number, url: users_sign_up_phone_number_path, class: "phoneNumberForm",local: true do |f|
-        = render "devise/shared/error_messages", resource: @phone_number
         .signUpPhoneNumberBlock
           .inputPhoneNumberBlock
             %label.confirmationPnTitle

@@ -26,7 +26,6 @@
       %h2.signUpBox__title
         お届け先住所入力
       = form_with  model: @address ,url: users_sign_up_address_path, class: "deliveryAddressForm", local: true do |f|
-        = render "devise/shared/error_messages", resource: @address
         .deliveryAddressBox
           .deliveryForm
             %label.deliveryForm__label

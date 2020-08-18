@@ -1,13 +1,14 @@
 $(function() {
   $('#cardCreateForm').on('submit', function(e) {
     e.preventDefault()
-    Payjp.setPublicKey(['pk_test_cf241efe47cd23679b76022d']);
+    Payjp.setPublicKey('pk_test_cf241efe47cd23679b76022d');
     var card = {
       number: document.getElementById("card-number").value,
       exp_month: document.getElementById("credit_exp_month").value,
       exp_year: document.getElementById("credit_exp_year").value,
       cvc: document.getElementById("cvc").value
     };
+    console.log(card)
     if (card.number == "" || card.cvc == "") {
       alert("入力もれがあります");
     } else {

@@ -14,8 +14,15 @@
           = link_to "カテゴリー","#", class: "link"
         %li.leftList__brand
           = link_to "ブランド","#",class: "link"
-      %ol.rightList
-        %li.rightList__login
-          = link_to "ログイン",user_session_path, class: "link"
-        %li.rightList__memberRegistration
-          = link_to "新規会員登録", new_user_registration_path, class: "link"
+      - if user_signed_in?
+        %ol.rightList
+          %li.rightList__mypage
+            = link_to "マイページ","#", class: "link"
+          %li.rightList__memberRegistration
+            = link_to "ログアウト", destroy_user_session_path, method: :delete,class: "link"
+      - else
+        %ol.rightList
+          %li.rightList__login
+            = link_to "ログイン",user_session_path, class: "link"
+          %li.rightList__memberRegistration
+            = link_to "新規会員登録", new_user_registration_path, class: "link"
