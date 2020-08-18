@@ -34,7 +34,6 @@ $(document).on('turbolinks:load', function() {
             dataType: 'json'
           })
           .done(function(children){
-            console.log(children)
             $('#children_wrapper').remove(); 
             $('#grandchildren_wrapper').remove();
             var insertHTML = '';
