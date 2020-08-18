@@ -1,89 +1,90 @@
-  .signUpCreditCard{
-  display: flex;
-  justify-content: center;
-    .signUpCreditCardBox{
-      width: 700px;
-      background-color: #fff;
-      &__title{
-        text-align: center;
-        padding: 32px;
-        font-size: 22px;
-        line-height: 1.4;
-        font-weight: bold;
-        color: #333;
-        border-bottom-style: solid;
-        border-width: 1px;
-        border-color: #F5F5F5;
-      }
-      .creditCardForm{
-        padding: 40px 40px 64px;
-        display: flex;
-        justify-content: center;
-        .signUpCreditCardBlock{
-          width: 343px;
-          .inputCreditCardBlock{
-            color: #333;
-            .confirmationCcTitle{
-              font-weight: 600;
-              font-size: 14px;
-              &__condition {
-                background-color: #EA352D;
-                font-weight: bold;
-                font-size: 12px;
-                color: #fff;
-                border-radius: 2px;
-                padding: 2px 4px;
-                margin-left: 8px;
-              }
+.signUpCreditCard{
+display: flex;
+justify-content: center;
+background-color: #eeeeee;
+  .signUpCreditCardBox{
+    width: 700px;
+    background-color: #fff;
+    &__title{
+      text-align: center;
+      padding: 32px;
+      font-size: 22px;
+      line-height: 1.4;
+      font-weight: bold;
+      color: #333;
+      border-bottom-style: solid;
+      border-width: 1px;
+      border-color: #F5F5F5;
+    }
+    .creditCardForm{
+      padding: 40px 40px 64px;
+      display: flex;
+      justify-content: center;
+      .signUpCreditCardBlock{
+        width: 343px;
+        .inputCreditCardBlock{
+          color: #333;
+          .confirmationCcTitle{
+            font-weight: 600;
+            font-size: 14px;
+            &__condition {
+              background-color: #EA352D;
+              font-weight: bold;
+              font-size: 12px;
+              color: #fff;
+              border-radius: 2px;
+              padding: 2px 4px;
+              margin-left: 8px;
             }
-            .confirmationCcTitleForm{
-              margin-top: 10px;
-              margin-bottom: 20px;
-              display: block;
+          }
+          .confirmationCcTitleForm{
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            line-height: 30px;
+            padding: 10px;
+            width: 100%;
+          }
+          .creditCardBtn{
+            margin-top: 32px;
+            background-color: #EA352D;
+            border: 1px solid #EA352D;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 4px;
+          }
+          &__date{
+            display: block;
+            display: flex;
+            height: 70px;
+            line-height: 70px;
+            margin-bottom: 10px;
+            .year{
+              margin: 10px 10px 10px 10px;
+              padding: 10px;
+              height: 50px;
+              width: 139px;
               border: 1px solid #ccc;
               border-radius: 4px;
-              line-height: 30px;
+            }
+            .month{
+              margin: 10px 10px 10px 0px;
               padding: 10px;
-              width: 100%;
-            }
-            .creditCardBtn{
-              margin-top: 32px;
-              background-color: #EA352D;
-              border: 1px solid #EA352D;
-              color: #fff;
-              display: block;
-              width: 100%;
-              line-height: 48px;
-              font-size: 14px;
-              cursor: pointer;
-              text-align: center;
+              height: 50px;
+              width: 139px;
+              border: 1px solid #ccc;
               border-radius: 4px;
-            }
-            &__date{
-              display: block;
-              display: flex;
-              height: 70px;
-              line-height: 70px;
-              margin-bottom: 10px;
-              .year{
-                margin: 10px 10px 10px 10px;
-                padding: 10px;
-                height: 50px;
-                width: 139px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-              }
-              .month{
-                margin: 10px 10px 10px 0px;
-                padding: 10px;
-                height: 50px;
-                width: 139px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-              }
             }
           }
         }
       }
     }
   }
+}
