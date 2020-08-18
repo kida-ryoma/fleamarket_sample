@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
-  before_action :autenticate_user!
-  before_action :set_item
+  # before_action :autenticate_user!
+  # before_action :set_item
+  # ↑ログイン機能と商品購入機能の実装まだの為コメントアウト
   def new
     @oreder  = Order.new
   end

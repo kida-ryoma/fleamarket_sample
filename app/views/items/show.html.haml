@@ -7,179 +7,93 @@
       = image_tag "/material/icon/icon_camera.png" 
   .item
     .item__name
-      プロテイン
+      = @item.name
     .item__images
       .item__images__big
-        = image_tag "/material/pict/bg-mainVisual-pict_pc.jpg", class: "bigImage"
+        = image_tag @item_images.first.image_url, class: "bigImage"
       .item__images__small
-        = image_tag "/material/pict/bg-mainVisual-pict_pc.jpg" ,class: "smallImage"
-        = image_tag "/material/pict/pict-reason-01.jpg" ,class: "smallImage"
-        = image_tag "/material/pict/pict-reason-01.jpg" ,class: "smallImage"
+        - @item_images.each do |img|
+          = image_tag img.image_url, class: "smallImage"
     .item__prices
       .item__prices__price
-        ¥30000
+        = "¥#{@item.price}"
       .item__prices__details
         (税込み)送料込み
     .item__description
-      オイ、オレの筋肉！！本当に対策はあるのかい！？それともないのかい！？どっちなんだい！？あーーーーーる！！さぁー、という訳で今回は『肉離れ』について５つに分けて進めていきます。『肉離れってどんなケガなんだい？』、『肉離れの原因とは？』、『肉離れになったらどうすればいいんだい？』、『肉離れの予防策とは？』、『なかやまきんに君が肉離れをした時の大爆笑エピソードがもしあれば教えて！！』です。
+      = @item.description
     .item__details
       %table{:border => 1, :bordercolor => "#cfcfcf"}
         %tr
           %th 出品者
           %td 
-            = link_to "なかやまきんにくん","", class: "btn"
+            = link_to "#{@item.user.nick_name}","", class: "btn"
         %tr
           %th カテゴリー
           %td 
-            = link_to "食品","", class: "btn"
+            = link_to "#{@item.category.name}","", class: "btn"
         %tr
           %th ブランド
           %td 
-            = link_to "マイプロテイン","", class: "btn"
+            = link_to "#{@item.brand}","", class: "btn"
         %tr
           %th サイズ
-          %td M
+          %td 
+            = @item.size
         %tr
           %th 配送料
           %td 300円
         %tr
           %th 配送料の負担
-          %td 出品者
+          %td
+            = @item.delivery_responsibility.delivery_responsibility
         %tr
           %th 商品の状態
-          %td 良い
+          %td
+            = @item.status.status
         %tr
           %th 配送元地域
-          %td 沖縄
+          %td
+            = @item.prefecture.name
         %tr
           %th 配送日の目安
-          %td 1~3日
+          %td
+            = @item.preparation_day.days
+    -# - if current_user == @item.user
+    -# ↑ログイン機能がまだ無い為コメントアウトしてます
+    .item__edit
+      = link_to "商品を編集する", "/items/#{@item.id}/edit",class: "btn"
+    .item__destroy
+      = link_to "商品を削除する", "/items/#{@item.id}/destroy_confirmation",class: "btn"
+    -# - else
     .item__buy
-      = link_to "購入画面に進む", "",class: "btn"
-
+      = link_to "購入画面に進む", new_item_order_path(@item),class: "btn"
   .otherItems
     .userItems
       = link_to "",class: "userItems__title" do
-        なかやまきんにくんさんのその他の出品
+        = "#{@item.user.nick_name}さんのその他の出品"
       .userContents.row1
-        .userContent
-          = link_to "#", class: "contentBox" do
-            .contentBox__top
-              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
-              %p.contentBox__top__price ¥1000-
-            .contentBox__bottom
-              商品名
-        .userContent
-          = link_to "#", class: "contentBox" do
-            .contentBox__top
-              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
-              %p.contentBox__top__price ¥1000-
-            .contentBox__bottom
-              商品名
-        .userContent
-          = link_to "#", class: "contentBox" do
-            .contentBox__top
-              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
-              %p.contentBox__top__price ¥1000-
-            .contentBox__bottom
-              商品名
-        .userContent
-          = link_to "#", class: "contentBox" do
-            .contentBox__top
-              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
-              %p.contentBox__top__price ¥1000-
-            .contentBox__bottom
-              商品名
-      .userContents.row2
-        .userContent
-          = link_to "#", class: "contentBox" do
-            .contentBox__top
-              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
-              %p.contentBox__top__price ¥1000-
-            .contentBox__bottom
-              商品名
-        .userContent
-          = link_to "#", class: "contentBox" do
-            .contentBox__top
-              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
-              %p.contentBox__top__price ¥1000-
-            .contentBox__bottom
-              商品名
-        .userContent
-          = link_to "#", class: "contentBox" do
-            .contentBox__top
-              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
-              %p.contentBox__top__price ¥1000-
-            .contentBox__bottom
-              商品名
-        .userContent
-          = link_to "#", class: "contentBox" do
-            .contentBox__top
-              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
-              %p.contentBox__top__price ¥1000-
-            .contentBox__bottom
-              商品名
+        - @user_items.last(8).each do |item|
+          .userContent
+            = link_to item_path(item.id), method: :get, class: "contentBox" do
+              .contentBox__top
+                = image_tag item.item_images.first.image_url, alt: "image",  class: "contentBox__top__image"
+                %p.contentBox__top__price
+                  = "¥#{item.price}"
+              .contentBox__bottom
+                = item.name
     .categoryItems
       = link_to "",class: "categoryItems__title" do
-        食品　その他の出品
+        = "#{@item.category.name}　その他の商品"
       .itemContents.row1
-        .itemContent
-          = link_to "#", class: "contentBox" do
-            .contentBox__top
-              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
-              %p.contentBox__top__price ¥1000-
-            .contentBox__bottom
-              商品名
-        .itemContent
-          = link_to "#", class: "contentBox" do
-            .contentBox__top
-              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
-              %p.contentBox__top__price ¥1000-
-            .contentBox__bottom
-              商品名
-        .itemContent
-          = link_to "#", class: "contentBox" do
-            .contentBox__top
-              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
-              %p.contentBox__top__price ¥1000-
-            .contentBox__bottom
-              商品名
-        .itemContent
-          = link_to "#", class: "contentBox" do
-            .contentBox__top
-              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
-              %p.contentBox__top__price ¥1000-
-            .contentBox__bottom
-              商品名
-      .itemContents.row2
-        .itemContent
-          = link_to "#", class: "contentBox" do
-            .contentBox__top
-              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
-              %p.contentBox__top__price ¥1000-
-            .contentBox__bottom
-              商品名
-        .itemContent
-          = link_to "#", class: "contentBox" do
-            .contentBox__top
-              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
-              %p.contentBox__top__price ¥1000-
-            .contentBox__bottom
-              商品名
-        .itemContent
-          = link_to "#", class: "contentBox" do
-            .contentBox__top
-              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
-              %p.contentBox__top__price ¥1000-
-            .contentBox__bottom
-              商品名
-        .itemContent
-          = link_to "#", class: "contentBox" do
-            .contentBox__top
-              = image_tag "/material/pict/pict-reason-02.jpg",alt: "image",  class: "contentBox__top__image"
-              %p.contentBox__top__price ¥1000-
-            .contentBox__bottom
-              商品名
+        - @category_items.last(8).each do |item|
+          .itemContent
+            = link_to item_path(item.id), method: :get, class: "contentBox" do
+              .contentBox__top
+                = image_tag item.item_images.first.image_url, alt: "image",  class: "contentBox__top__image"
+                %p.contentBox__top__price
+                  = "¥#{item.price}"
+              .contentBox__bottom
+                = item.name
 .appBanner
   .inner
     .inner__title

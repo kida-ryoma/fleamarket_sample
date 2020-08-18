@@ -7,6 +7,10 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item_images = @item.item_images
+    @user_items = @item.user.items.where(order_id: nil)
+    category_id = @item.category_id
+    @category_items = Item.where(category_id: category_id)
   end
 
   def new
@@ -24,7 +28,11 @@ class ItemsController < ApplicationController
       redirect_to new_item_path
     end
   end
+
+  def edit
+  end
   
+
   def get_category_children
     @category_children = Category.find(params[:parent_id]).children
   end
@@ -36,6 +44,18 @@ class ItemsController < ApplicationController
 
   
   
+  def destroy_confirmation
+  end
+
+  def destroy
+    if @item.destroy
+      # redirect_to controller: :users, action: :show
+      # 本当は↑に飛ばしたいが今ルーティングとアクションの設定がない
+      redirect_to root_path
+    else
+      render :destroy_confirmation
+    end
+  end
   
   private
   def item_params
@@ -54,5 +74,4 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-
 end
