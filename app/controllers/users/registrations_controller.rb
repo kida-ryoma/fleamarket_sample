@@ -80,6 +80,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.save
     session["devise.regist_data"]["user"].clear
     session["delivery_destination"].clear
+    session["phone_number"].clear
     sign_in(:user, @user)
     redirect_to users_sign_up_done_path
   end
