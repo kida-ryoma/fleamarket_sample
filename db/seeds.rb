@@ -408,13 +408,13 @@ Item.create!(
   ]
 )
 
-ItemImage.create!(
-  [
-    {
-      image: open("/Users/hideki/fleamarket_sample_80h/public/material/pict/pict-reason-02.jpg"),
-      item_id: "1"
-    }
-  ]
-)
+# ItemImage.create!(
+#   [
+#     {
+#       image: open("/Users/hideki/fleamarket_sample_80h/public/material/pict/pict-reason-02.jpg"),
+#       item_id: "1"
+#     }
+#   ]
+# )
 
 
