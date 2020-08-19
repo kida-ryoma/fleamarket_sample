@@ -411,7 +411,27 @@ Item.create!(
 ItemImage.create!(
   [
     {
-      image: open("/Users/ishikawaryo/team-projects/fleamarket_sample_80h/public/material/pict/pict-reason-01.jpg"),
+      image: open("/Users/kidaryouba/projects/fleamarket_sample_80h/public/samples/51jPOB5B+vL.jpg"),
+      item_id: "1"
+    },
+    {
+      image: open("/Users/kidaryouba/projects/fleamarket_sample_80h/public/samples/51jPOB5B+vL.jpg"),
+      item_id: "1"
+    },
+    {
+      image: open("/Users/kidaryouba/projects/fleamarket_sample_80h/public/samples/51jPOB5B+vL.jpg"),
+      item_id: "1"
+    },
+    {
+      image: open("/Users/kidaryouba/projects/fleamarket_sample_80h/public/samples/51jPOB5B+vL.jpg"),
+      item_id: "1"
+    },
+    {
+      image: open("/Users/kidaryouba/projects/fleamarket_sample_80h/public/samples/51jPOB5B+vL.jpg"),
+      item_id: "1"
+    },
+    {
+      image: open("/Users/kidaryouba/projects/fleamarket_sample_80h/public/samples/51jPOB5B+vL.jpg"),
       item_id: "1"
     }
   ]
