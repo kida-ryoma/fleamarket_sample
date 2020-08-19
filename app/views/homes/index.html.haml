@@ -73,8 +73,8 @@
       ピックアップカテゴリー
       .pickUpContainer__head
         =link_to "新規投稿商品", "#", class: "title" 
-        - @items.each do |item|
-          .itemContents
+        .itemContents
+          - @items.each do |item|
             .itemContent
               = link_to item_path(item.id), class: "contentBox" do
                 .contentBox__top
