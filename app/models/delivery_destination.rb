@@ -8,4 +8,5 @@ class DeliveryDestination < ApplicationRecord
   validates :city, presence: true
   validates :house_number, presence: true
   belongs_to :user, optional: true
+
 end

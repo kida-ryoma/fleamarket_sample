@@ -12,7 +12,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create # /users
-    # params[:birthday] = birthday_join
     @user = User.new(sign_up_params)
     unless @user.valid?
       flash.now[:alert] = @user.errors.full_messages
@@ -93,23 +92,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def address_params
-    params.require(:delivery_destination).permit(:delivery_family_name, :delivery_first_name, :delivery_family_name_kana, :delivery_first_name_kana, :delivery_phone_number, :post_code, :prefecture_code, :city, :house_number, :building_name)
+    params.permit(:delivery_family_name, :delivery_first_name, :delivery_family_name_kana, :delivery_first_name_kana, :delivery_phone_number, :post_code, :prefecture_code, :city, :house_number, :building_name)
   end
 
   def credit_card_params
     params.require(:credit_card).permit(:customer_id, :card_id)
-  end
-
-  def birthday_join
-    # パラメータ取得
-    date = params[:birthday]
-
-    # ブランク時のエラー回避のため、ブランクだったら何もしない
-    if date["birthday(1i)"].empty? && date["birthday(2i)"].empty? && date["birthday(3i)"].empty?
-      return
-    end
-
-    # 年月日別々できたものを結合して新しいDate型変数を作って返す
-    Date.new date["birthday(1i)"].to_i,date["birthday(2i)"].to_i,date["birthday(3i)"].to_i
   end
 end

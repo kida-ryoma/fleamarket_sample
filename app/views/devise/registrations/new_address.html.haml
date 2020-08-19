@@ -54,15 +54,13 @@
             %span.deliveryForm__condition
               必須
             = f.text_field :post_code, placeholder: '例) 123-4567', class: "deliveryForm__form"
-          -# ここは、gem jp_prefectureを使用して、prefecture.allなどでid とnameを出す予定
           .deliveryForm__bellow
             %label.deliveryForm__label
               都道府県
             %span.deliveryForm__condition
               必須
             .prefectureWrap
-              = f.text_field :prefecture_code, placeholder: '北海道', class: "prefectureBox"
-              = icon('fas', 'chevron-down', class: 'prefectureBoxIcon')
+              = f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name,{}, {class: "prefectureBox"}
           .deliveryForm__bellow
             %label.deliveryForm__label
               市区町村
