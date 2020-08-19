@@ -1,0 +1,90 @@
+.exbitHeader
+  =link_to  root_path, class: "homeLink" do
+    = image_tag("/material/logo/logo.png",class: "upperLogo")
+.bodyItem
+  .body
+    = form_with(model:@item, local: true,id: 'new_item', class: "form") do |f|
+      .formBox
+        .formBox__title
+          商品画像
+          %span.required 必須
+        .imageExplanation
+          最大10枚までアップロードできます
+          #imageBox
+            #previews
+              -if @item.persisted?
+                - @item.item_images.each_with_index do |image, i|
+                  = image_tag image.src.url, {data:{ index: "i"}}, height: '100', width: '100'
+            = f.fields_for :item_images do |image|
+              .jsFile_group{data:{index: "image.index"}}
+                = image.file_field :image, class: "jsFile"
+                %br
+                .jsRemove 削除
+              - if @item.persisted?
+                = image.check_box :_destory, {data:{ index: "image.index"}}, calss: "hiddenDestroy"
+              - if @item.persisted?
+                .js-file_group{data:{index: "@item.images.count"}}
+                  = file_field_tag :image, name: "item[item_images_attributes][#{@item.item_images.count}][image]", calss: "jsFile"
+                  .jsRemove 削除
+      .formBox
+        .formBox__title
+          商品名
+          %span.required 必須
+        = f.text_field :name, placeholder: "商品名", class: "formBox__input"
+        .formBox__title
+          商品の説明
+          %span.required 必須
+        = f.text_area :description, placeholder: "商品の説明（色、素材、重さ、定価、注意点など）", class: "formBox__input", rows: "7"
+      .formBox
+        .listGroup 商品の詳細
+        .formBox__title
+          カテゴリー
+          %span.required 必須
+        #formBoxCategory
+          = f.collection_select :category_id, Category.where(ancestry: nil),:id, :name,{prompt: '---'},class: "formBox__select", id: "parent_category"
+        .formBox__title
+          ブランド
+          %span.optional 任意
+        = f.text_field :brand, placeholder: "例）シャネル", class: "formBox__input"
+        .formBox__title
+          サイズ
+          %span.optional 任意
+        = f.text_field :size, placeholder: "サイズ", class: "formBox__input"
+        .formBox__title
+          商品の状態
+          %span.required 必須
+        = f.collection_select :status_id, Status.all, :id, :status,{} ,{class: "formBox__select"} 
+      .formBox
+        .listGroup 配送について
+        .formBox__title
+          配送料の負担
+          %span.required 必須
+        = f.collection_select :delivery_responsibility_id, DeliveryResponsibility.all, :id, :delivery_responsibility, {}, { class: "formBox__select" }
+        .formBox__title
+          配送元の地域
+          %span.required 必須
+        = f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, {}, { class: "formBox__select" }
+        .formBox__title
+          配送までの日数
+          %span.required 必須
+        = f.collection_select :preparation_day_id, PreparationDay.all, :id, :days, {}, { class: "formBox__select" }
+      .formBox
+        .listGroup 価格
+        .price
+          .price__title
+            販売価格
+            %span.required 必須
+          .price__input
+            .price__input__mark
+              ¥
+            = f.text_field :price, type: "number", placeholder: "0", class: "price__input__box"
+        = f.submit "出品する", class: "formBox__btn"
+.exbitFooter
+  .exbitFooter__content
+    = link_to "プライバシーポリシー", "", class: "policy"
+    = link_to "フリマ利用規約", "", class:  "policy"
+    = link_to "特定商取引先に関する表記", "", class: "policy"
+  = link_to root_path, class: "homelink" do
+    = image_tag("/material/logo/logo-white.png",class: "footerLogo")
+  %p
+    %samll © 2020 Fmarket
