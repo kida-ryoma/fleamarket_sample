@@ -1,0 +1,21 @@
+.userContainer
+  .container
+    .userContainerHeader
+      %h1.userContainerHeader__left
+        = link_to root_path, class: "upperHomeLink" do
+          = image_tag("/material/logo/logo.png",class: "logo")
+.delete-main
+  .deleteBox
+    .deleteBox__title
+      本当にこの商品を削除しますか？
+    .deleteBox__delete
+      = link_to "削除する", "/items/#{@item.id}", method: :delete, class: "btn"
+.exbitFooter
+  .exbitFooter__content
+    = link_to "プライバシーポリシー", "", class: "policy"
+    = link_to "フリマ利用規約", "", class:  "policy"
+    = link_to "特定商取引先に関する表記", "", class:  "policy"
+  = link_to root_path, class: "homelink" do
+    = image_tag("/material/logo/logo-white.png",class: "footerLogo")
+  %p
+    %samll © 2020 Fmarket

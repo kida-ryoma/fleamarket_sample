@@ -65,8 +65,8 @@ ActiveRecord::Schema.define(version: 2020_08_12_134316) do
     t.integer "price", null: false
     t.string "size"
     t.string "brand"
-    t.integer "sales_status", null: false
-    t.string "prefecture_code", null: false
+    t.integer "sales_status"
+    t.integer "prefecture_code", null: false
     t.bigint "category_id"
     t.bigint "status_id"
     t.bigint "user_id"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2020_08_12_134316) do
     t.bigint "preparation_day_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "order_id", null: false
+    t.bigint "order_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["delivery_responsibility_id"], name: "index_items_on_delivery_responsibility_id"
     t.index ["order_id"], name: "index_items_on_order_id"

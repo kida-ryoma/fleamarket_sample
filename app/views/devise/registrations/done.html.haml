@@ -1,43 +1,42 @@
-.userContainer
-  .container
-    .userContainerHeader
-      %h1.userContainerHeader__left
-        = link_to root_path, class: "upperHomeLink" do
-          = image_tag("/material/logo/logo.png",class: "logo")
-    %nav.userSignupBar
-      %ol.userSignupBarProgress2
-        %li.userSignupBarProgress2__type
-          会員情報
-          .userSignupBarProgress2__rod-red-first
-        %li.userSignupBarProgress2__type
-          電話番号登録
-          .userSignupBarProgress2__rod-red-second
-        %li.userSignupBarProgress2__type
-          お届け先住所入力
-          .userSignupBarProgress2__rod-red-second
-        %li.userSignupBarProgress2__type
-          支払い方法
-          .userSignupBarProgress2__rod-red-second
-        %li.userSignupBarProgress2__type-red
-          完了
-          .userSignupBarProgress2__rod-last-red
-  .completeRegi
-    .completeRegiBox
-      %h2.completeRegiBox__title
-        会員登録完了
-      .completeRegiForm
-        .completeRegiBlock
-          .completeRegiBlock__message
-            ありがとうございます。
-            %br
-            会員登録が完了しました。
-          = link_to 'FURIMAをはじめる', root_path, class: "completeRegiBlock__btn"
-  .exbitFooter
-    .exbitFooter__content
-      = link_to "プライバシーポリシー", "", class: "policy"
-      = link_to "フリマ利用規約", "", class:  "policy"
-      = link_to "特定商取引先に関する表記", "", class:  "policy"
-    = link_to root_path, class: "homelink" do
-      = image_tag("/material/logo/logo-white.png",class: "footerLogo")
-    %p
-      %samll © 2020 Fmarket
+.container
+  .userContainerHeader
+    %h1.userContainerHeader__left
+      = link_to root_path, class: "upperHomeLink" do
+        = image_tag("/material/logo/logo.png",class: "logo")
+  %nav.userSignupBar
+    %ol.userSignupBarProgress2
+      %li.userSignupBarProgress2__type
+        会員情報
+        .userSignupBarProgress2__rod-red-first
+      %li.userSignupBarProgress2__type
+        電話番号登録
+        .userSignupBarProgress2__rod-red-second
+      %li.userSignupBarProgress2__type
+        お届け先住所入力
+        .userSignupBarProgress2__rod-red-second
+      %li.userSignupBarProgress2__type
+        支払い方法
+        .userSignupBarProgress2__rod-red-second
+      %li.userSignupBarProgress2__type-red
+        完了
+        .userSignupBarProgress2__rod-last-red
+.completeRegi
+  .completeRegiBox
+    %h2.completeRegiBox__title
+      会員登録完了
+    = form_with html: { class: "completeRegiForm"}, local: true do |f|
+      .completeRegiBlock
+        .completeRegiBlock__message
+          ありがとうございます。
+          %br
+          会員登録が完了しました。
+        = f.submit 'FURIMAをはじめる', class: "completeRegiBlock__btn"
+.exbitFooter
+  .exbitFooter__content
+    = link_to "プライバシーポリシー", "", class: "policy"
+    = link_to "フリマ利用規約", "", class:  "policy"
+    = link_to "特定商取引先に関する表記", "", class:  "policy"
+  = link_to root_path, class: "homelink" do
+    = image_tag("/material/logo/logo-white.png",class: "footerLogo")
+  %p
+    %samll © 2020 Fmarket

@@ -1,97 +1,96 @@
-.userContainer
-  %header.containar
-    .userContainerHeader
-      %h1.userContainerHeader__left
-        = link_to root_path, class: "homeLink" do
-          = image_tag("/material/logo/logo.png",class: "logo")
-    %nav.userSignUpBar
-      %ol.userSignUpBarProgress
-        %li.userSignUpBarProgress__type-red
-          会員情報
-          .userSignUpBarProgress__rod-red
-        %li.userSignUpBarProgress__type
-          電話番号認証
-          .userSignUpBarProgress__rod
-        %li.userSignUpBarProgress__type
-          お届け先住所入力
-          .userSignUpBarProgress__rod
-        %li.userSignUpBarProgress__type
-          支払い方法
-          .userSignUpBarProgress__rod
-        %li.userSignUpBarProgress__type
-          完了
-          .userSignUpBarProgress__rod-last
-  .signUpNewInfo
-    .signUpNewInfoBox
-      %h2.signUpNewInfoBox__title
-        会員情報入力
-      = form_with html: {class: "Box"}, local: true do |f|
-        .signUpNewBoxContent
-          .signUpForm
-          %label.signUpForm__label
-            ニックネーム
-          %span.signUpForm__span
+.container
+  .userContainerHeader
+    %h1.userContainerHeader__left
+      = link_to root_path, class: "upperHomeLink" do
+        = image_tag("/material/logo/logo.png",class: "logo")
+  %nav.userSignupBar
+    %ol.userSignupBarProgress2
+      %li.userSignupBarProgress2__type-red
+        会員情報
+        .userSignupBarProgress2__rod-red-zero
+      %li.userSignupBarProgress2__type
+        電話番号登録
+        .userSignupBarProgress2__rod
+      %li.userSignupBarProgress2__type
+        お届け先住所入力
+        .userSignupBarProgress2__rod
+      %li.userSignupBarProgress2__type
+        支払い方法
+        .userSignupBarProgress2__rod
+      %li.userSignupBarProgress2__type
+        完了
+        .userSignupBarProgress2__rod-last
+.signUpNewInfo
+  .signUpNewInfoBox
+    %h2.signUpNewInfoBox__title
+      会員情報入力
+    = form_with html: {class: "Box"}, local: true do |f|
+      .signUpNewBoxContent
+        .signUpForm
+        %label.signUpForm__label
+          ニックネーム
+        %span.signUpForm__span
+          必須
+        = f.text_field :nickname, class: "signupForm1", placeholder: "例) にゃんころ"
+        .singleUpEmail
+          %label.signUpEmail__label
+            メールアドレス
+          %span.signUpEmail__span
             必須
-          = f.text_field :nick_name, class: "signupForm1", placeholder: "例) メルカリ太郎"
-          .singleUpEmail
-            %label.signUpEmail__label
-              メールアドレス
-            %span.signUpEmail__span
-              必須
-            = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: "signUpEmail1"
-          .signUpPassWord
-            %label.signUpPassPord__label
-              パスワード
-            %span.signUpPassWord__span
-              必須
-            = f.password_field :password, placeholder: "7文字以上の半角英数字", class: "signUpPassword1"
-            %span.infoText__span
-              ※英字と数字の両方を含めて設定してください
-          .signUpPassWord
-            %label.signUpPassPord__label
-              パスワード確認
-            %span.signUpPassWord__span
-              必須
-            = f.password_field :password_confirmation, placeholder: "上記と同じパスワードを入力してください", class: "signUpPassword1"
-            %span.infoText__span
-          .identification
-            %h3.signUpIdentification
-              本人確認
-            %p.signUpIdentification__explanation
-              安心・安全にご利用いただくために、お客様の本人情報の登録にご協力ください。他のお客様に公開されることはありません
-          .signUpName
-            %label.signUpName__label
-              お名前(全角)
-            %span.signUpName__span
-              必須
-            .signUpName__box
-              = f.text_field :family_name, placeholder: "例)山田", class: "signUpName__first"
-              = f.text_field :first_name, placeholder: "例)彩", class: "signUpName__first"
-          .signUpName
-            %label.signUpName__label
-              お名前カナ(全角)
-            %span.signUpName__span
-              必須
-            .signUpName__box
-              = f.text_field :family_name_kana, placeholder: "例)ヤマダ", class: "signUpName__first"
-              = f.text_field :first_name_kana, placeholder: "例)アヤ", class: "signUpName__first"
-          .signUpBirthday
-            %label.signUpBirthday__label
-              生年月日
-            %span.signUpBirthday__span
-              必須
-            .birthday
-              .birthdayBox
-                != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
-            %p.attentionText
-              ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-          = f.submit "次へ進む", class: "signUpBtn"
-  .exbitFooter
-    .exbitFooter__content
-      = link_to "プライバシーポリシー", "", class: "policy"
-      = link_to "フリマ利用規約", "", class:  "policy"
-      = link_to "特定商取引先に関する表記", "", class:  "policy"
-    = link_to root_path, class: "homelink" do
-      = image_tag("/material/logo/logo-white.png",class: "footerLogo")
-    %p
-      %samll © 2020 Fmarket
+          = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: "signUpEmail1"
+        .signUpPassWord
+          %label.signUpPassPord__label
+            パスワード
+          %span.signUpPassWord__span
+            必須
+          = f.password_field :password, placeholder: "7文字以上の半角英数字", class: "signUpPassword1"
+          %span.infoText__span
+            ※英字と数字の両方を含めて設定してください
+        .signUpPassWord
+          %label.signUpPassPord__label
+            パスワード確認
+          %span.signUpPassWord__span
+            必須
+          = f.password_field :password_confirmation, placeholder: "上記と同じパスワードを入力してください", class: "signUpPassword1"
+          %span.infoText__span
+        .identification
+          %h3.signUpIdentification
+            本人確認
+          %p.signUpIdentification__explanation
+            安心・安全にご利用いただくために、お客様の本人情報の登録にご協力ください。他のお客様に公開されることはありません
+        .signUpName
+          %label.signUpName__label
+            お名前(全角)
+          %span.signUpName__span
+            必須
+          .signUpName__box
+            = f.text_field :family_name, placeholder: "例)山田", class: "signUpName__first"
+            = f.text_field :first_name, placeholder: "例)彩", class: "signUpName__first"
+        .signUpName
+          %label.signUpName__label
+            お名前カナ(全角)
+          %span.signUpName__span
+            必須
+          .signUpName__box
+            = f.text_field :family_name_kana, placeholder: "例)ヤマダ", class: "signUpName__first"
+            = f.text_field :first_name_kana, placeholder: "例)アヤ", class: "signUpName__first"
+        .signUpBirthday
+          %label.signUpBirthday__label
+            生年月日
+          %span.signUpBirthday__span
+            必須
+          .birthday
+            .birthdayBox
+              != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+          %p.attentionText
+            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        = f.submit "次へ進む", class: "signUpBtn"
+.exbitFooter
+  .exbitFooter__content
+    = link_to "プライバシーポリシー", "", class: "policy"
+    = link_to "フリマ利用規約", "", class:  "policy"
+    = link_to "特定商取引先に関する表記", "", class:  "policy"
+  = link_to root_path, class: "homelink" do
+    = image_tag("/material/logo/logo-white.png",class: "footerLogo")
+  %p
+    %samll © 2020 Fmarket
