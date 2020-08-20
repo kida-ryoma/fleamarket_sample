@@ -30,7 +30,13 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item.item_images
+    @item.item_images.build
+    # ログイン機能を未実装なのでコメントアウトしています
+    # if current_user == @item.user_id
+    #   @item.item_images.build
+    # else
+    #   redirect_to root_path
+    # end
   end
 
   def update
