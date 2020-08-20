@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+.exbitHeader{
+  display: flex;
+  justify-content: center;
+  height: 128px;
+  align-items: center;
+}
+.upperLogo{
+  width: 193px;
+}
+.bodyItem{
+  background-color: $background-color;
+  .body {
+    background-color: white;
+    width: 50%;
+    margin: 0 auto;
+    .form {
+      .formBox {
+        border-bottom: 1px solid rgb(245, 245, 245);
+        padding: 20px 40px;
+        #imageBox {
+          #previews img{
+            width: 100px;
+          }
+          &__file {
+            // 読み込みのファイルを一旦みやすくするため、機能のみの実現をさせた。後に、マークアップ当てる予定。
+            // display: none;
+          }
+        }
+        .imageExplanation {
+          font-size: 12px;
+          margin: 10px 0 10px 0;
+        }
+        &__title {
+          font-size: 14px;
+          margin: 30px 0 10px 0;
+          font-weight: bold;
+          color: #333333;
+        }
+        &__input {
+          width: 100%;
+          border: 1px solid lightgray;
+          padding: 10px;
+          border-radius: 4px;
+        }
+        &__select {
+          width: 100%;
+          border: 1px solid lightgray;
+          height: 47px;
+          padding: 0 8px;
+          border-radius: 4px;
+        }
+        .price {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 30px 0 50px 0;
+          &__title {
+            font-size: 14px;
+          }
+          &__input {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            &__box {
+              text-align: right;
+              width: 250px;
+              border: 1px solid lightgray;
+              padding: 10px;
+              border-radius: 4px;
+            }
+            &__mark {
+              margin-right: 10px;
+            }
+          }
+        }
+        &__btn {
+          background-color: red;
+          width: 50%;
+          border: none;
+          border-radius: 3px;
+          color: white;
+          padding: 10px 0;
+          display: block;
+          margin: 0 auto;
+          cursor: pointer;
+        }
+        .required {
+          font-size: 12px;
+          background-color: red;
+          color: white;
+          padding: 3px;
+          border-radius: 3px;
+          margin-left: 5px;
+        }
+        .optional {
+          font-size: 12px;
+          background-color: lightgray;
+          color: white;
+          padding: 3px;
+          border-radius: 3px;
+          margin-left: 5px;
+        }
+        .listGroup {
+          color: gray;
+          font-size: 14px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
