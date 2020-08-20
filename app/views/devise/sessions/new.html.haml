@@ -14,7 +14,7 @@
         = icon('fab', 'google', class: 'icon')
         Googleでログイン
     .userLoginForm
-      = form_with  html: { class: "userLoginForm__form"}, local: true do |f|
+      = form_with model: @user, url: new_session_path(resource_name), html: { class: "userLoginForm__form"}, local: true do |f|
         .formField
           = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "userLoginForm__email"
         .formField

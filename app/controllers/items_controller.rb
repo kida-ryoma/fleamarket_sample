@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  # before_action :authenticate_user!, except: [:show, :new, :create, :get_category_children, :get_category_grandchildren]
+  before_action :authenticate_user!, except: :show
   before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
 
   
@@ -82,8 +82,7 @@ class ItemsController < ApplicationController
         :category_id, :delivery_responsibility_id,
         :order_id, :user_id,:preparation_day_id,
         item_images_attributes:[:image, :_destroy, :id])
-        .merge(user_id: 1)
-        #ユーザー登録が現状ないので、1としてしています。
+        .merge(user_id: current_user.id)
   end
 
   def set_item
