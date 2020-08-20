@@ -389,52 +389,6 @@ User.create!(
     }
   ]
 )
-Item.create!(
-  [
-    {
-      name: "aaa",
-      description: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      price: "300",
-      size: "M",
-      brand: "無印良品",
-      sales_status: "1",
-      prefecture_code: "和歌山県",
-      category_id: "1",
-      status_id: "2",
-      user_id: "1",
-      delivery_responsibility_id: "1",
-      preparation_day_id: "2"
-    }
-  ]
-)
 
-ItemImage.create!(
-  [
-    {
-      image: open("/Users/kidaryouba/projects/fleamarket_sample_80h/public/samples/51jPOB5B+vL.jpg"),
-      item_id: "1"
-    },
-    {
-      image: open("/Users/kidaryouba/projects/fleamarket_sample_80h/public/samples/51jPOB5B+vL.jpg"),
-      item_id: "1"
-    },
-    {
-      image: open("/Users/kidaryouba/projects/fleamarket_sample_80h/public/samples/51jPOB5B+vL.jpg"),
-      item_id: "1"
-    },
-    {
-      image: open("/Users/kidaryouba/projects/fleamarket_sample_80h/public/samples/51jPOB5B+vL.jpg"),
-      item_id: "1"
-    },
-    {
-      image: open("/Users/kidaryouba/projects/fleamarket_sample_80h/public/samples/51jPOB5B+vL.jpg"),
-      item_id: "1"
-    },
-    {
-      image: open("/Users/kidaryouba/projects/fleamarket_sample_80h/public/samples/51jPOB5B+vL.jpg"),
-      item_id: "1"
-    }
-  ]
-)
 
 
