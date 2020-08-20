@@ -12,10 +12,13 @@
           最大10枚までアップロードできます
           #imageBox
             #previews
+              - @item.item_images.each_with_index do |image, i|
+                -if image.persisted?
+                  = image_tag image.image.url, data:{ index: i}, size: "100 x 100"
             = f.fields_for :item_images do |image|
+              = image.check_box :_destroy, data:{ index: image.index}, class: "hiddenDestroy" if image.object.persisted?
               .jsFile_group{data:{index: image.index}}
                 = image.file_field :image, class: "jsFile"
-                %br
                 .jsRemove 削除
       .formBox
         .formBox__title
