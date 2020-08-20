@@ -30,6 +30,21 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item.item_images.build
+    # ログイン機能を未実装なのでコメントアウトしています
+    # if current_user == @item.user_id
+    #   @item.item_images.build
+    # else
+    #   redirect_to root_path
+    # end
+  end
+
+  def update
+    if @item.update(item_params) && (@item.item_images.present?)
+      redirect_to root_path
+    else
+      redirect_to edit_item_path(@item)
+    end
   end
   
 
@@ -66,7 +81,7 @@ class ItemsController < ApplicationController
         :status_id, :prefecture_code,
         :category_id, :delivery_responsibility_id,
         :order_id, :user_id,:preparation_day_id,
-        item_images_attributes:[:image, :_destory, :id])
+        item_images_attributes:[:image, :_destroy, :id])
         .merge(user_id: 1)
         #ユーザー登録が現状ないので、1としてしています。
   end
