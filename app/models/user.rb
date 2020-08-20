@@ -3,6 +3,17 @@ class User < ApplicationRecord
         :recoverable, :rememberable, :validatable
 
   validates :nick_name, presence: true
+  validates :family_name, presence: true,             format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'は全角で入力して下さい。'}
+  validates :first_name, presence: true,              format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'は全角で入力して下さい。'}
+  validates :family_name_kana, presence: true,        format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'はカタカナで入力して下さい。'}
+  validates :first_name_kana, presence: true,         format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'はカタカナで入力して下さい。'}
+  validates :birthday, presence: true
+  require 'date'
+
+  private def date_valid?(str)
+    !! Date.parse(str) rescue false
+  end
+
   has_one :delivery_destination
   has_one :credit_card
   has_one :phone_number

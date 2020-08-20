@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_08_12_134316) do
   end
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "cutomer_id", null: false
+    t.integer "customer_id", null: false
     t.integer "card_id", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -30,13 +30,13 @@ ActiveRecord::Schema.define(version: 2020_08_12_134316) do
 
   create_table "delivery_destinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "delivery_family_name", null: false
-    t.string "delivery_fisrt_name", null: false
+    t.string "delivery_first_name", null: false
     t.string "delivery_family_name_kana", null: false
     t.string "delivery_first_name_kana", null: false
-    t.integer "delivery_phone_number"
+    t.string "delivery_phone_number"
     t.integer "post_code", null: false
-    t.string "prefecture_code", null: false
-    t.integer "city", null: false
+    t.integer "prefecture_code", null: false
+    t.string "city", null: false
     t.string "house_number", null: false
     t.string "building_name"
     t.bigint "user_id"
