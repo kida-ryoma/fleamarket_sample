@@ -40,8 +40,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item.update(item_params)
-    if (@item.update) && (@item.item_images.present?)
+    if @item.update(item_params) && (@item.item_images.present?)
       redirect_to root_path
     else
       redirect_to edit_item_path(@item)
