@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
-  before_action :autenticate_user!
+  # ログイン機能未実装なのでコメントアウト中
+  # before_action :authenticate_user!
   before_action :set_user
 
   def show
@@ -8,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   private
-  def ser_user
+  def set_user
     @user = User.find(params[:id])
   end
 end
