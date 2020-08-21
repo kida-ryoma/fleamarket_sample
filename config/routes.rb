@@ -27,4 +27,6 @@ root to: "homes#index"
     end
   end
   resources :users, only: [:show]
+  resources :credit_cards, only: [:index, :new, :create, :destroy]
+
 end
