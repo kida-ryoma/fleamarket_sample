@@ -1,3 +1,6 @@
+= render 'layouts/header'
+- breadcrumb :user
+= render 'layouts/breadcrumbs'
 .userMyPage
   %main.myPageContainer
     .sideWrapper
@@ -77,9 +80,12 @@
         %section.myPageWrapper__myPageUserIcon
           = link_to "#"  do
             %figure
-              = image_tag "/material/pict/pict-reason-02.jpg", class: "content__myPageUserIcon__photo", heght: "60", width: "60"
+            - if current_user.image?
+              = image_tag current_user.image.url, class: 'content__myPageUserIcon__photo', height: '60', width: '60'
+            - else
+              = image_tag "/assets/profile.default1.png", class: "content__myPageUserIcon__photo", heght: "60", width: "60"
             %h2.myPageWrapper__myPageUserIcon__userName
-              なかやまきんにくん
+              = current_user.nick_name
             .myPageWrapper__myPageUserIcon__count
               .myPageContent__myPageUserIcon__count__item
                 評価
@@ -100,21 +106,22 @@
             %li.myPageTabsPassive
               = link_to "出品する", "#", class: "myPageTabsTitle"
           .myPageLists
-            = link_to "#", class: "myPageList" do
-              =image_tag "/material/pict/pict-reason-02.jpg", class: "myPageListsBox__top__image", heght: "90", width: "90"
-              .myPageList__body
-                .myPageList__body__contentsName
-                  商品名
-                .myPageList__body__price
-                  ¥1,000
-              =icon("fas", "chevron-right", class: "right-icon")
-            = link_to "#", class: "myPageList" do
-              =image_tag "/material/pict/pict-reason-02.jpg", class: "myPageListsBox__top__image", heght: "90", width: "90"
-              .myPageList__body
-                .myPageList__body__contentsName
-                  商品名
-                .myPageList__body__price
-                  ¥1,000
-              =icon("fas", "chevron-right", class: "right-icon")
+            - @user_items.each do |item|
+              = link_to item_path(item.id), class: "myPageList" do
+                =image_tag item.item_images.first.image.url, class: "myPageListsBox__top__image", heght: "90", width: "90"
+                .myPageList__body
+                  .myPageList__body__contentsName
+                    = item.name
+                  .myPageList__body__price
+                    = "¥#{item.price}"
+                =icon("fas", "chevron-right", class: "right-icon")
             .myPageLists__goMyPage
-            
+.exbitFooter
+  .exbitFooter__content
+    = link_to "プライバシーポリシー", "", class: "policy"
+    = link_to "フリマ利用規約", "", class:  "policy"
+    = link_to "特定商取引先に関する表記", "", class:  "policy"
+  = link_to root_path, class: "homelink" do
+    = image_tag("/material/logo/logo-white.png",class: "footerLogo")
+  %p
+    %samll © 2020 Fmarket

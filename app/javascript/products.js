@@ -33,7 +33,7 @@ $(document).on('turbolinks:load', ()=> {
   $('#imageBox').on('click', '.jsRemove', function() {
     $(this).parent().remove();
     const targetIndex = $(this).parent().data('index')
-    const hiddenCheck = $(`input[data-index = "${targetIndex}"].hiddenDestroy`)
+    const hiddenCheck = $(`input[data-index = ${targetIndex}].hiddenDestroy`)
     if (hiddenCheck) hiddenCheck.prop('checked', true);
     if ($('.jsFile').length == 0) $('#imageBox').append(buildFileField(fileIndex[0]));
     $(`img[data-index= ${targetIndex}]`).remove();
