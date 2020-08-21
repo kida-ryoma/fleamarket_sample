@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
 
   before_action :authenticate_user!, except: :show
   before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
-
+  
+  require"payjp"
   
   def index
     
@@ -47,6 +48,7 @@ class ItemsController < ApplicationController
     end
   end
   
+  
 
   def get_category_children
     @category_children = Category.find(params[:parent_id]).children
@@ -70,6 +72,19 @@ class ItemsController < ApplicationController
     else
       render :destroy_confirmation
     end
+  end
+
+  def purchase
+  end
+
+  def pay
+    Payjp.api_key = ENV['PRIVATE_KEY']
+    charge = Payjp::Charge.create(
+    amount: @item.price,
+    card: params['payjp-token'],
+    currency: 'jpy'
+    )
+    redirect_to root_path
   end
   
   private
