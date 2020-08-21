@@ -1,3 +1,6 @@
+= render 'layouts/header'
+- breadcrumb :user
+= render 'layouts/breadcrumbs'
 .userMyPage
   %main.myPageContainer
     .sideWrapper
@@ -117,4 +120,12 @@
                   ¥1,000
               =icon("fas", "chevron-right", class: "right-icon")
             .myPageLists__goMyPage
-            
+.exbitFooter
+  .exbitFooter__content
+    = link_to "プライバシーポリシー", "", class: "policy"
+    = link_to "フリマ利用規約", "", class:  "policy"
+    = link_to "特定商取引先に関する表記", "", class:  "policy"
+  = link_to root_path, class: "homelink" do
+    = image_tag("/material/logo/logo-white.png",class: "footerLogo")
+  %p
+    %samll © 2020 Fmarket

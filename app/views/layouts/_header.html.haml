@@ -17,7 +17,7 @@
       - if user_signed_in?
         %ol.rightList
           %li.rightList__mypage
-            = link_to "マイページ","#", class: "link"
+            = link_to "マイページ",user_path(current_user.id), class: "link"
           %li.rightList__memberRegistration
             = link_to "ログアウト", destroy_user_session_path, method: :delete,class: "link"
       - else
