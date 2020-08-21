@@ -83,7 +83,7 @@
             - if current_user.image?
               = image_tag current_user.image.url, class: 'content__myPageUserIcon__photo', height: '60', width: '60'
             - else
-              = image_tag "/assets/profile.default1.png", class: "content__myPageUserIcon__photo", heght: "60", width: "60"
+              = image_tag asset_path('profile.default1.png'), class: "content__myPageUserIcon__photo", heght: "60", width: "60"
             %h2.myPageWrapper__myPageUserIcon__userName
               = current_user.nick_name
             .myPageWrapper__myPageUserIcon__count
