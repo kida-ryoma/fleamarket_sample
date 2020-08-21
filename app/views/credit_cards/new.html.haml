@@ -1,0 +1,64 @@
+= render 'layouts/header'
+.signUpCreditCard
+  .CreditCardBox
+    %h2.CreditCardBox__title
+      クレジットカード情報入力
+    = form_with url: credit_cards_path,  class: "creditCardForm",id: "cardCreateForm",local: true do |f|
+      .signUpCreditCardBlock
+        .inputCreditCardBlock
+          %label.confirmationCcTitle(for="cardnumber-input")
+            カード番号
+          %span.confirmationCcTitle__condition
+            必須
+          = f.text_field :customer_id,name: "card_number", placeholder: "半角数字のみ", class: "confirmationCcTitleForm",maxlength: "16",id:'card-number'
+          %label.confirmationCcTitle
+            有効期限
+          %span.confirmationCcTitle__condition
+            必須
+          .inputCreditCardBlock__date
+            = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: 'dateSelect', name: 'exp_month',id:"credit_exp_month"
+            月
+            = f.select :exp_year, [["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , class: 'dateSelect', name: 'exp_year',id: "credit_exp_year"
+            .expiration-text 年
+          %label.confirmationCcTitle
+            セキュリティコード
+          %span.confirmationCcTitle__condition
+            必須
+          = f.text_field :cvc,name: "card_number", placeholder: "カード背面4桁もしくは3桁の数字", class: "confirmationCcTitleForm",maxlength: "4",id: 'cvc'
+          = f.submit "登録する", class: "creditCardBtn",  id: 'card_token'
+.footer
+  .contents
+    .content
+      %ul
+        %span.title
+          FURIMAについて
+        %li.list
+          = link_to "会社概要", "", class: "btn"
+        %li.list
+          = link_to "プライバシーポリシー","", class: "btn"
+        %li.list
+          = link_to "FURIMA利用規約","", class: "btn"
+        %li.list
+          = link_to "ポイントに関する規約","", class: "btn"
+    .content
+      %ul
+        %span.title
+          FURIMAを見る
+        %li.list
+          = link_to "カテゴリー一覧","", class: "btn"
+        %li.list
+          = link_to "ブランド一覧","", class: "btn"
+    .content
+      %ul
+        %span.title
+          ヘルプ＆ガイド
+        %li.list
+          = link_to "FURIMAガイド","", class: "btn"
+        %li.list
+          = link_to "FURIMAロゴ利用ガイドライン","", class: "btn"
+        %li.list
+          = link_to "お知らせ","", class: "btn"
+  .footer__logo
+    = image_tag "/material/logo/logo-white.png", class:"logo"
+    %p
+      ©︎ FURIMA

@@ -11,7 +11,6 @@ require("channels");
 require("../products");
 require("../category");
 require("../change-images");
-require('jquery');
 require('../payjp');
 
 // Uncomment to copy all static images under ../images to the output folder and reference

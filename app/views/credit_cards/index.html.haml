@@ -1,0 +1,57 @@
+= render 'layouts/header'
+.wrapper
+  .creditCardBox
+    .creditCardBox__title
+      クレジットカード一覧
+    - if @credit_card.present?
+      .creditCardBox__container
+        .creditCardInfo
+          = image_tag "/uploads/credit_cards/#{@card_image}",width:'50',height:'50', class: "creditCardInfo__logo"
+          %ol.creditCardInfo__number
+            %li.creditCardInfo__number__card
+              = "**** **** **** " + @card_info.last4
+            %li.creditCardInfo__number__deadline
+              有効期限
+              = @exp_month + " / " + @exp_year
+        = button_to "削除する", credit_card_path(@credit_card), method: :delete, class:"creditCardBox__container__delete",  data: { confirm: '削除しますか？' }
+    - else
+      .new-card
+        = link_to new_credit_card_path, class:"new-card-btn" do
+          = icon('far', 'credit-card')
+          クレジットカードを登録する
+.footer
+  .contents
+    .content
+      %ul
+        %span.title
+          FURIMAについて
+        %li.list
+          = link_to "会社概要", "", class: "btn"
+        %li.list
+          = link_to "プライバシーポリシー","", class: "btn"
+        %li.list
+          = link_to "FURIMA利用規約","", class: "btn"
+        %li.list
+          = link_to "ポイントに関する規約","", class: "btn"
+    .content
+      %ul
+        %span.title
+          FURIMAを見る
+        %li.list
+          = link_to "カテゴリー一覧","", class: "btn"
+        %li.list
+          = link_to "ブランド一覧","", class: "btn"
+    .content
+      %ul
+        %span.title
+          ヘルプ＆ガイド
+        %li.list
+          = link_to "FURIMAガイド","", class: "btn"
+        %li.list
+          = link_to "FURIMAロゴ利用ガイドライン","", class: "btn"
+        %li.list
+          = link_to "お知らせ","", class: "btn"
+  .footer__logo
+    = image_tag "/material/logo/logo-white.png", class:"logo"
+    %p
+      ©︎ FURIMA
