@@ -16,7 +16,6 @@ class CreditCardsController < ApplicationController
         card: params['payjp-token'],
       )
       @credit_card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
-      binding.pry
       if @credit_card.save
         redirect_to user_path(current_user.id)
       else
@@ -55,9 +54,9 @@ class CreditCardsController < ApplicationController
     customer = Payjp::Customer.retrieve(@credit_card.customer_id.to_s)
     customer.delete
     if @credit_card.destroy
-      redirect_to user_path(current_user.id), notice: "削除しました"
+      redirect_to user_path(current_user.id)
     else
-      redirect_to user_path(current_user.id), alert: "削除できませんでした"
+      redirect_to user_path(current_user.id)
     end
   end
 

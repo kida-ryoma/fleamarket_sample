@@ -373,22 +373,22 @@ DeliveryResponsibility.create!(
     }
   ]
 )
-User.create!(
-  [
-    {
-      nick_name: 'まめこ',
-      email: 'teiteia1234@gmail.com',
-      image: 'public/material/pict/pict-reason-01.jpg',
-      family_name: '植田',
-      first_name: '真由子',
-      family_name_kana: 'ウエダ',
-      first_name_kana: 'マユコ',
-      birthday: '2000-05-07',
-      introduction: 'こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは',
-      password: '0123456'
-    }
-  ]
-)
+# User.create!(
+#   [
+#     {
+#       nick_name: 'まめこ',
+#       email: 'teiteia1234@gmail.com',
+#       image: 'public/material/pict/pict-reason-01.jpg',
+#       family_name: '植田',
+#       first_name: '真由子',
+#       family_name_kana: 'ウエダ',
+#       first_name_kana: 'マユコ',
+#       birthday: '2000-05-07',
+#       introduction: 'こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは',
+#       password: '0123456'
+#     }
+#   ]
+# )
 
 
 

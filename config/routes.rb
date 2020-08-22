@@ -24,6 +24,7 @@ root to: "homes#index"
     resources :orders, only: [:new, :create]
     member do
       get 'destroy_confirmation'
+      post 'item_orders'
     end
   end
   resources :users, only: [:show]

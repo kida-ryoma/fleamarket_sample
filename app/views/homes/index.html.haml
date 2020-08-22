@@ -83,6 +83,9 @@
                     ="¥#{item.price}"
                 .contentBox__bottom
                   = item.name
+                  -if @item_buyer_id.present? 
+                    .items-box_photo__sold
+                      .items-box_photo__sold__inner SOLD
   .appBanner
     .inner
       .inner__title
