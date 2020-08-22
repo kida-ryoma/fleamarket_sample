@@ -9,7 +9,6 @@
 |price|integer|null: false|
 |size|string|
 |brand|string|
-|sales_status|integer|null: false|
 |prefecture_code|integer|null: false|
 |category_id|references|foreign_key: true|
 |status_id|references|foreign_key: true|
