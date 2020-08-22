@@ -35,7 +35,7 @@
           .destination__info__postcode
             = "〒#{@address.post_code}"
           .destination__info__address
-            = @address.prefecture_code
+            = @item.prefecture.name
             = @address.city
             = @address.house_number
             = @address.building_name
