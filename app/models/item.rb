@@ -12,4 +12,8 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :item_images, allow_destroy: true
   include JpPrefecture
   jp_prefecture :prefecture_code
+
+  def self.search(search)
+    Item.where('name LIKE(?) OR brand LIKE(?)', "%#{search}%","%#{search}%")
+  end
 end

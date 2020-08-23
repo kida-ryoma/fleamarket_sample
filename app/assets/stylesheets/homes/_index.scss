@@ -19,29 +19,31 @@ header {
         align-items: center;
         height: 55px;
         .searchBox {
-          display: flex;
           margin-left: 30px;
-          &--input {
-            width: 834px;
-            height: 36px;
-            padding-left: 5px;
-          }
-          button {
-            height: 36px;
-            width: 38px;
-            background-color: $main-color;
-            position: relative;
-            border: none;
-          }
-            &__search__icon {
-              height: 20px;
-              width: 36px;
-              position: absolute;
-              &__logo {
-                height: 18px;
-                width: 18px;
-              }
+          .searchForm {
+            display: flex;
+            &__input {
+              width: 834px;
+              height: 36px;
+              padding-left: 5px;
             }
+            &__btn {
+              height: 36px;
+              width: 38px;
+              background-color: $main-color;
+              // position: relative;
+              border: none;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              &__img {
+                height: 22px;
+                width: 22px;
+                // position: absolute;
+              }
+
+            }
+          }
         }
         .image {
           &__logo {
