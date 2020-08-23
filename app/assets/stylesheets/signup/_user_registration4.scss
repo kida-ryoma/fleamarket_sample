@@ -45,7 +45,7 @@ background-color: #eeeeee;
             border-radius: 4px;
             line-height: 30px;
             padding: 10px;
-            width: 100%;
+            width: 320px;
           }
           .creditCardBtn{
             margin-top: 32px;
@@ -66,19 +66,11 @@ background-color: #eeeeee;
             height: 70px;
             line-height: 70px;
             margin-bottom: 10px;
-            .year{
+            .dateSelect{
               margin: 10px 10px 10px 10px;
               padding: 10px;
               height: 50px;
-              width: 139px;
-              border: 1px solid #ccc;
-              border-radius: 4px;
-            }
-            .month{
-              margin: 10px 10px 10px 0px;
-              padding: 10px;
-              height: 50px;
-              width: 139px;
+              width: 125px;
               border: 1px solid #ccc;
               border-radius: 4px;
             }
@@ -88,3 +80,4 @@ background-color: #eeeeee;
     }
   }
 }
+

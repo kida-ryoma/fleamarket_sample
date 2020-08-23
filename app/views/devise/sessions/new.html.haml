@@ -5,7 +5,7 @@
   .userLoginPageBlock
     .userCreate
       %p.userCreate__explanation アカウントをお持ちでない方はこちら
-      =link_to "新規会員登録", root_path, class: 'userCreate__btn'
+      =link_to "新規会員登録", new_user_registration_path, class: 'userCreate__btn'
     .userLoginSnsMethod
       = link_to root_path, class: 'userLoginSnsMethod__facebook', method: :post do
         = icon('fab', 'facebook-square', class: 'icon')
@@ -14,7 +14,7 @@
         = icon('fab', 'google', class: 'icon')
         Googleでログイン
     .userLoginForm
-      = form_with  html: { class: "userLoginForm__form"}, local: true do |f|
+      = form_with model: @user, url: new_session_path(resource_name), html: { class: "userLoginForm__form"}, local: true do |f|
         .formField
           = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "userLoginForm__email"
         .formField

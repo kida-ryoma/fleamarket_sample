@@ -254,20 +254,22 @@ header {
     font-weight: bold;
     }
     &__head {
-      margin-bottom: 15px;
       .title {
         font-size: $fontD;
         color: $main-color;
+        display: block;
+        margin: 10px 0 10px;
       }
     }
     .itemContents {
-      display: flex;
-      justify-content: space-around;
-      width: 80vw;
       margin: 0 auto;
+      width: 80vw;
+      display: grid;
+      grid-template-columns: 18% 18% 18% 18% 18%;
+      grid-column-gap: 2%;
+      grid-row-gap: 20px;
       .itemContent {
         height: 250px;
-        width: 220px;
         border: 1px solid lightgray;
         box-shadow: 2px 2px 5px gray ;
         .contentBox {

@@ -1,9 +1,31 @@
 * {
   box-sizing: border-box;
 }
+.breadcrumbs{
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  .breadcrumbs-list{
+    overflow: visible;
+    width: 1045px;
+    margin: 0 auto;
+    padding: 16px 0;
+    white-space: normal;
+      a{
+        text-decoration-line: none;
+        color:#333;
+
+      }
+      .current{
+        font-weight: 600;
+      }
+
+  }
+}
+
 a {
   text-decoration: none;
 }
+
 
 .userMyPage {
   background-color: #EEEEEE;

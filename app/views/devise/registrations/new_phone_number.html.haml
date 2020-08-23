@@ -24,14 +24,20 @@
   .signUpBox
     %h2.signUpBox__title
       電話番号登録
-    = form_with  html: { class: "phoneNumberForm"}, local: true do |f|
+    = form_with  model: @phone_number, url: users_sign_up_phone_number_path, class: "phoneNumberForm",local: true do |f|
+      - if @phone_number.errors.any?
+        .SettingRegistrationErrors
+          %h2= "#{@phone_number.errors.full_messages.count}件のエラーが発生しました。"
+          %ul
+            - @phone_number.errors.full_messages.each do |message|
+              %li= message
       .signUpPhoneNumberBlock
         .inputPhoneNumberBlock
           %label.confirmationPnTitle
             電話番号登録
           %span.confirmationPnTitle__condition
             必須
-          = f.text_field :tel, placeholder: '携帯電話の番号を入力', class: "confirmationPnTitleForm"
+          = f.text_field :number, placeholder: '携帯電話の番号を入力', class: "confirmationPnTitleForm"
           %p.smsPolicy
             ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
           = f.submit '次へ進む', class: "phoneNumberBtn"

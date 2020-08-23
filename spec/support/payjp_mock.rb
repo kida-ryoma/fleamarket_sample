@@ -1,0 +1,3 @@
+module PayjpMock
+  
+end
