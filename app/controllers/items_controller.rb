@@ -1,8 +1,6 @@
 class ItemsController < ApplicationController
-
   before_action :authenticate_user!, except: :show
-  before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
-  
+　before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren, :search]
 
   
   def index
@@ -72,6 +70,10 @@ class ItemsController < ApplicationController
     else
       render :destroy_confirmation
     end
+  end
+
+  def search
+    @items = Item.search(params[:keyword]).order("created_at DESC")
   end
 
   

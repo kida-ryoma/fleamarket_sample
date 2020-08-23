@@ -1,5 +1,27 @@
 require 'rails_helper'
 describe Item  do
+  describe '#search' do
+    context "search by '新垣結衣（写真集）'" do
+      it "returns item" do
+        item = create(:item)
+        item2 = create(:item, name: "長澤まさみ（写真集）")
+        expect(Item.search("新垣結衣（写真集）")).to include(item)
+      end
+      it "doesn't return item2" do
+        item = create(:item)
+        item2 = create(:item, name: "長澤まさみ（写真集）")
+        expect(Item.search("新垣結衣（写真集）")).to_not include(item2)
+      end
+    end
+    context "search by '剛力彩芽（写真集）'" do
+      it "returns empty" do
+        item = create(:item)
+        item2 = create(:item, name: "長澤まさみ（写真集）")
+        expect(Item.search("剛力彩芽（写真集）")).to be_empty
+      end
+    end
+  end
+
   describe '#create' do
     it "is valid with a name, price, description, sales_status, size, brand,category_id,prefecture_code, status_id, user_id, delivery_responsibility_id, preparation_day_id" do
       category = create(:category)

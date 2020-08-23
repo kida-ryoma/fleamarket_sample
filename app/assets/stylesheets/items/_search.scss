@@ -1,0 +1,58 @@
+.itemSearchWrapper {
+  width: 100vw;
+  padding-bottom: 100px;
+  background-color: $background-color;
+  .searchList {
+    width: 75%;
+    margin: 0 auto;
+    &__title {
+      height: 80px;
+      font-weight: bold;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+    }
+    &__body {
+      display: grid;
+      grid-template-columns: 18% 18% 18% 18% 18%;
+      grid-column-gap: 2.5%;
+      grid-row-gap: 20px;
+      &__msg {
+        width: 800px;
+      }
+      .itemContent {
+        height: 250px;
+        border: 1px solid lightgray;
+        box-shadow: 2px 2px 5px gray ;
+        background-color: white;
+        .contentBox {
+          text-decoration: none;
+          color: black;
+          &__top {
+            height: 200px;
+            position: relative;
+            &__image {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+            &__price {
+              position: absolute;
+              bottom: 0px;
+              padding: 3px 15px;
+              background-color: rgba(100, 100, 100, 0.5);
+              color: white;
+              border-top-right-radius: 10px;
+              border-bottom-right-radius: 10px;
+            }
+          }
+          &__bottom {
+            height: 50px;
+            font-size: 13px;
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+}

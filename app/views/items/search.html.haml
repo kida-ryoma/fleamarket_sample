@@ -1,0 +1,72 @@
+= render 'layouts/header'
+.itemSearchWrapper
+  .searchList
+    .searchList__title
+      = "#{params[:keyword]}の検索結果"
+    .searchList__body
+      - if (@items.count) != 0
+        - @items.each do |item|
+          .itemContent
+            = link_to item_path(item.id), method: :get, class: "contentBox" do
+              .contentBox__top
+                = image_tag item.item_images.first.image_url, alt: "image",  class: "contentBox__top__image"
+                %p.contentBox__top__price
+                  = "¥#{item.price}"
+              .contentBox__bottom
+                = item.name
+      - else
+        .searchList__body__msg
+          該当する商品が見つかりません。検索条件を変えて、再度お試しください。
+.appBanner
+  .inner
+    .inner__title
+      だれでもかんたん、人生を変えるフリマアプリ
+    .inner__text
+      今すぐ無料ダウンロード！
+    .inner__icons
+      = link_to "#" do
+        %img.inner__icons__apple{ src: "/material/icon/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"}
+      = link_to "#" do
+        %img.inner__icons__google{ src: "/material/icon/google-play-badge copy.png" }
+.footer
+  .contents
+    .content
+      %ul
+        %span.title
+          FURIMAについて
+        %li.list
+          = link_to "会社概要", "#", class: "btn"
+        %li.list
+          = link_to "プライバシーポリシー","#", class: "btn"
+        %li.list
+          = link_to "FURIMA利用規約","", class: "btn"
+        %li.list
+          = link_to "ポイントに関する規約","", class: "btn"
+    .content
+      %ul
+        %span.title
+          FURIMAを見る
+        %li.list
+          = link_to "カテゴリー一覧","#", class: "btn"
+        %li.list
+          = link_to "ブランド一覧","#", class: "btn"
+    .content
+      %ul
+        %span.title
+          ヘルプ＆ガイド
+        %li.list
+          = link_to "FURIMAガイド","#", class: "btn"
+        %li.list
+          = link_to "FURIMAロゴ利用ガイドライン","#", class: "btn"
+        %li.list
+          = link_to "お知らせ","#", class: "btn"
+  .footer__logo
+    %img.logo{ src: "/material/logo/logo-white.png"}
+    %p
+      ©︎ FURIMA
+
+.sellBtn
+  = link_to new_item_path, class: "btn"do
+    %span
+      出品する
+    = image_tag "/material/icon/icon_camera.png" 
