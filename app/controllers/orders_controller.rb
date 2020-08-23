@@ -34,9 +34,13 @@ class OrdersController < ApplicationController
     @credit_card = CreditCard.where(user_id: current_user.id).first
     Payjp.api_key = ENV['SECRET_KEY']
     Payjp::Charge.create(
+      # 支払いの処理を呼び出す
     amount: @item.price,
+    # その商品の値段
     customer: Payjp::Customer.retrieve(@credit_card.customer_id),
+    # 顧客が持っているカード情報を呼び出す
     currency: 'jpy'
+    # 日本円で支払う
     )
     @order.update(buyer_id: current_user.id)
     @order.update(item_id: @item.id)

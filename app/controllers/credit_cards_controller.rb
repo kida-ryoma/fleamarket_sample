@@ -14,6 +14,7 @@ class CreditCardsController < ApplicationController
     else
       customer = Payjp::Customer.create(
         card: params['payjp-token'],
+        # jsで作ったトークンを呼び出し、それをcustomerに代入
       )
       @credit_card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @credit_card.save
@@ -26,9 +27,13 @@ class CreditCardsController < ApplicationController
 
   def index
     if @credit_card.present?
+      # クレジットカードがあるか確認をする
       Payjp.api_key = ENV["SECRET_KEY"]
+      # もしあれば秘密鍵を呼び出す
       customer = Payjp::Customer.retrieve(@credit_card.customer_id)
+      # 顧客情報の呼び出し
       @card_info = customer.cards.retrieve(customer.default_card)
+      # デフォルトカードとはカスタマーが現在持っているカード
       @card_brand = @card_info.brand.to_s
       @exp_month = @card_info.exp_month.to_s
       @exp_year = @card_info.exp_year.to_s.slice(2,3)
