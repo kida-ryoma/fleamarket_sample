@@ -7,10 +7,10 @@ FactoryBot.define do
     size        {"M"}
     brand    {"エルメス"}
     prefecture_code {38}
-    category_id {27}
-    status_id {3}
-    user_id {1}
-    delivery_responsibility_id {1}
-    preparation_day_id {1}
+    category
+    status
+    user
+    delivery_responsibility
+    preparation_day
   end
 end
