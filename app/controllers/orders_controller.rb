@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   require"payjp"
 
   def new
-    @order  = Order.new
+    Order.new
     @address = DeliveryDestination.where(user_id: current_user.id).first
     @user = current_user
     Payjp.api_key = ENV["SECRET_KEY"]
@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.create(seller_id: @item.user_id, buyer_id: current_user.id, item_id: @item_id)
+    Order.create(seller_id: @item.user_id, buyer_id: current_user.id, item_id: @item_id)
     @credit_card = CreditCard.where(user_id: current_user.id).first
     Payjp.api_key = ENV['SECRET_KEY']
     Payjp::Charge.create(
