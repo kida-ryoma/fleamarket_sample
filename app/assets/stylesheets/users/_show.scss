@@ -164,6 +164,7 @@ a {
           .myPageLists {
             display: flex;
             flex-direction: column;
+            overflow: scroll; 
             .myPageList {
               padding: 16px;
               width: 100%;
