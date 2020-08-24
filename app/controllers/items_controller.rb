@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: :show
-　before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren, :search]
+  before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren, :search]
 
   
   def index

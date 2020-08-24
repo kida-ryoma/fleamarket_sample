@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
 
   def new
     Order.new
-    @address = DeliveryDestination.where(user_id: current_user.id).first
+    @address = DeliveryDestination.find_by(user_id: current_user.id)
     @user = current_user
     Payjp.api_key = ENV["SECRET_KEY"]
       customer = Payjp::Customer.retrieve(@credit_card.customer_id)
@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
 
   def create
     Order.create(seller_id: @item.user_id, buyer_id: current_user.id, item_id: @item_id)
-    @credit_card = CreditCard.where(user_id: current_user.id).first
+    @credit_card = CreditCard.find_by(user_id: current_user.id)
     Payjp.api_key = ENV['SECRET_KEY']
     Payjp::Charge.create(
     amount: @item.price,
@@ -48,7 +48,7 @@ class OrdersController < ApplicationController
   def set_item
     @item = Item.find(params[:item_id])
     @item_images = @item.item_images
-    @credit_card = CreditCard.where(user_id: current_user.id).first
+    @credit_card = CreditCard.find_by(user_id: current_user.id)
   end
 
 end
