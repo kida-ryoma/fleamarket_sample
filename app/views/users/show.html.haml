@@ -69,7 +69,7 @@
               %p.listBox__content__title
                 本人情報
               = icon('fas', 'angle-right', class: "listBox__content__icon")
-          = link_to "#", class: "listBox" do
+          = link_to destroy_user_session_path, method: :delete, class: "listBox" do
             %li.listBox__content
               %p.listBox__content__title
                 ログアウト
