@@ -5,7 +5,7 @@
 }
 .signUpNewInfoBox {
   width: 700px;
-  background-color: #fff;
+  background-color: $field-color;
   &__title {
     text-align: center;
     padding: 32px;
@@ -31,11 +31,11 @@
       font-size: 14px;
     }
     &__span {
-    background: #EA352D;
+    background: $red-action;
     margin: 0 0 0 8px;
     padding: 2px 4px;
     border-radius: 2px;
-    color: #fff;
+    color: $field-color;
     font-size: 12px;
     }
   }
@@ -45,8 +45,8 @@
     margin: 8px 0 0;
     padding: 10px 16px 8px;
     border-radius: 4px;
-    border: 1px solid #ccc;
-    background: #fff;
+    @include border;
+    background: $field-color;
     line-height: 1.5;
     font-size: 16px;
   }
@@ -57,11 +57,11 @@
       font-size: 14px;
     }
     .signUpEmail__span {
-      background: #EA352D;
+      background: $red-action;
       margin: 0 0 0 8px;
       padding: 2px 4px;
       border-radius: 2px;
-      color: #fff;
+      color: $field-color;
       font-size: 12px;
     }
     .signUpEmail1 {
@@ -70,8 +70,8 @@
       margin: 8px 0 0;
       padding: 10px 16px 8px;
       border-radius: 4px;
-      border: 1px solid #ccc;
-      background: #fff;
+      @include border;
+      background: $field-color;
       line-height: 1.5;
       font-size: 16px;
     }
@@ -84,11 +84,11 @@
     font-size: 14px;
   }
   .signUpPassWord__span {
-    background: #EA352D;
+    background: $red-action;
     margin: 0 0 0 8px;
     padding: 2px 4px;
     border-radius: 2px;
-    color: #fff;
+    color: $field-color;
     font-size: 12px;
   }
   .signUpPassword1 {
@@ -97,8 +97,8 @@
     margin-top: 8px;
     padding: 10px 16px 8px;
     border-radius: 4px;
-    border: 1px solid #ccc;
-    background: #fff;
+    @include border;
+    background: $field-color;
     line-height: 1.5;
     font-size: 16px;
   }
@@ -136,11 +136,11 @@
       font-size: 14px;
     }
     &__span {
-      background: #EA352D;
+      background: $red-action;
       margin: 0 0 0 8px;
       padding: 2px 4px;
       border-radius: 2px;
-      color: #fff;
+      color: $field-color;
       font-size: 12px;
     }
     &__box {
@@ -149,8 +149,8 @@
     &__first {
       padding: 10px 16px 8px;
       border-radius: 4px;
-      border: 1px solid #ccc;
-      background: #fff;
+      @include border;
+      background: $field-color;
       font-size: 16px;
       width: 170px;
       margin: 8px 8px 0 0;
@@ -163,17 +163,17 @@
       font-size: 14px;
     }
     &__span {
-      background: #EA352D;
+      background: $red-action;
       margin: 0 0 0 8px;
       padding: 2px 4px;
       border-radius: 2px;
-      color: #fff;
+      color: $field-color;
       font-size: 12px;
     }
     .birthday {
       .birthdayBox {
         position: relative;
-        background: #fff;
+        background: $field-color;
         margin-top: 8px;
         display: flex;
         align-items: center;
@@ -182,7 +182,7 @@
           padding: 10px;
           height: 50px;
           width: 135px;
-          border: 1px solid #ccc;
+          @include border;
           border-radius: 4px;
         }
         .month{
@@ -190,7 +190,7 @@
           padding: 10px;
           height: 50px;
           width: 135px;
-          border: 1px solid #ccc;
+          @include border;
           border-radius: 4px;
         }
         .day {
@@ -198,7 +198,7 @@
           padding: 10px;
           height: 50px;
           width: 135px;
-          border: 1px solid #ccc;
+          @include border;
           border-radius: 4px;
         }
       }
@@ -211,9 +211,9 @@
   }
   .signUpBtn {
     margin-top :24px;
-    background-color: #EA352D;
-    border: 1px solid #EA352D;
-    color: #fff;
+    background-color: $red-action;
+    border: 1px solid $red-action;
+    color: $field-color;
     width: 100%;
     line-height: 48px;
     font-size: 14px;

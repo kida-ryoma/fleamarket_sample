@@ -3,7 +3,7 @@
   justify-content: center;
   height: 128px;
   align-items: center;
-  background-color: #eeeeee;
+  background-color: $background-color;
 }
 .upperLogo{
   width: 193px;
@@ -11,13 +11,13 @@
 .userSignInBlock{
   display: flex;
   justify-content: center;
-  background-color: #eeeeee;
+  background-color: $background-color;
   height: calc(100vh - 180px - 128px);
   .userCategory{
     height: 80%;
     width: 700px;
     text-align: center;
-    background-color: #fff;
+    background-color: $field-color;
     &__top{
       border-bottom-style: solid;
       border-width: 1px;
@@ -35,8 +35,8 @@
         margin: 0 auto;
         &__email {
           width: 100%;
-          background-color: #EA352D;
-          color: #fff;
+          background-color: $red-action;
+          color: $field-color;
           text-decoration: none;
           border-radius: 4px;
           border: 1px solid transparent;
@@ -50,7 +50,7 @@
           background-color: #385185;
           line-height: 50px;
           text-decoration: none;
-          color: #fff;
+          color: $field-color;
           border: 1px solid transparent;
           border-radius: 4px;
           position: relative;
@@ -58,7 +58,7 @@
         &__google{
           display: block;
           margin-top: 16px;
-          background-color: #fff;
+          background-color: $field-color;
           color: #333;
           line-height: 50px;
           text-decoration: none;
