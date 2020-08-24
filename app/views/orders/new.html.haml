@@ -1,25 +1,20 @@
 .itemBuy--wrapper
   .exbitHeader
     =link_to  "", class: "homeLink" do
-      = image_tag("/material/logo/logo.png",class: "upperLogo") 
+      = image_tag("/material/logo/logo.png",class: "upperLogo")
   .info
     .title
       購入内容の確認
     .itemDetails
       .itemDetails__image
-        %img{ src: "/material/pict/pict-reason-01.jpg"}
+        = image_tag @item_images.first.image_url
       .itemDetails__name
-        プロテイン1kg
-        .itemDetails__name__prices
-          %span
-            送料込み(税込)
-            %span.itemDetails__name__prices__price
-              ￥39
+        = @item.name
     .paymentAmount
       .payment__title
         支払い金額
         %span.price
-          ￥39
+          = "¥#{@item.price}"
     .paymentWay
       = link_to "変更する >", "",class: "change__btn"
       .paymentWay__title
@@ -27,24 +22,30 @@
       .paymentWay__cardInfo
         クレジットカード
         %span
-          42424242424242
+          = "**** **** **** " + @card_info.last4
         %span
-          有効期限 07/20
-        %img.paymentWay__cardInfo__brand{ src: "/material/logo/logo.png"}
+          有効期限
+          = @exp_month + " / " + @exp_year
+        = image_tag "/uploads/credit_cards/#{@card_image}",width:'50',height:'50', class: "creditCardInfo__logo"
     .deliveryDestination
       = link_to "変更する >", "",class: "change__btn"
       .destination
         配送先
         .destination__info
           .destination__info__postcode
-            536-0202
+            = "〒#{@address.post_code}"
           .destination__info__address
-            和歌山県和歌山市成瀬332-8
+            = @item.prefecture.name
+            = @address.city
+            = @address.house_number
+            = @address.building_name
           .destination__info__name
-            木田稜馬
+            = @address.delivery_family_name
+            = @address.delivery_first_name
     .buy
       .buy__box
-        = link_to "購入する", "", class: "buy__box__btn"
+        = form_tag(action: :create, method: :post) do
+          %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_cf241efe47cd23679b76022d"}
   .exbitFooter
     .exbitFooter__content
       = link_to "プライバシーポリシー", "", class: "policy"
