@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item
+  before_action :item_price
   require"payjp"
 
   def new
@@ -49,6 +50,15 @@ class OrdersController < ApplicationController
     @item = Item.find(params[:item_id])
     @item_images = @item.item_images
     @credit_card = CreditCard.find_by(user_id: current_user.id)
+  end
+
+  def item_price
+    @item = Item.find(params[:item_id])
+    if @item.delivery_responsibility_id == 1
+      @item_price = @item.price
+    else
+      @item_price = @item.price + 300
+    end
   end
 
 end
