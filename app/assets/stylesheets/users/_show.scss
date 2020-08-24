@@ -85,7 +85,7 @@ a {
     .myPageContent {
       width: 65%;
       height: 100%;
-      background-color: #EEEEEE;
+      overflow: scroll;
       .myPageWrapper {
       height: 90%;
       background-color: #FFFFFF;
@@ -164,7 +164,6 @@ a {
           .myPageLists {
             display: flex;
             flex-direction: column;
-            overflow: scroll; 
             .myPageList {
               padding: 16px;
               width: 100%;
@@ -192,9 +191,7 @@ a {
               text-decoration: none;
             }
             &__goMyPage {
-              padding: 30px;
               text-align: center;
-              margin-top: 10%;
               &__link {
                 display: block;
                 background-color: #eee;
