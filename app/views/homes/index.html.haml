@@ -74,7 +74,7 @@
       .pickUpContainer__head
         =link_to "新規投稿商品", "#", class: "title" 
         .itemContents
-          - @items.each do |item|
+          - @items.last(10).each do |item|
             .itemContent
               = link_to item_path(item.id), class: "contentBox" do
                 .contentBox__top

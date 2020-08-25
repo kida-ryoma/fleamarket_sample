@@ -94,7 +94,7 @@
               .myPageWrapper__myPageUserIcon__count__item
                 出品数
                 %span.myPageWrapper__myPageUserIcon__count__item__number
-                  0
+                  = @user.items.count
         %section.myPageWrapper__myPageTabContainer
           %ul.myPageTabs
             %li.myPageTabsActive
@@ -106,16 +106,17 @@
             %li.myPageTabsPassive
               = link_to "出品する", "#", class: "myPageTabsTitle"
           .myPageLists
-            - @user_items.each do |item|
-              = link_to item_path(item.id), class: "myPageList" do
-                =image_tag item.item_images.first.image.url, class: "myPageListsBox__top__image", heght: "90", width: "90"
-                .myPageList__body
-                  .myPageList__body__contentsName
-                    = item.name
-                  .myPageList__body__price
-                    = "¥#{item.price}"
-                =icon("fas", "chevron-right", class: "right-icon")
-            .myPageLists__goMyPage
+            - if @user_items.exists?
+              - @user_items.each do |item|
+                = link_to item_path(item.id), class: "myPageList" do
+                  =image_tag item.item_images.first.image.url, class: "myPageListsBox__top__image", heght: "90", width: "90"
+                  .myPageList__body
+                    .myPageList__body__contentsName
+                      = item.name
+                    .myPageList__body__price
+                      = "¥#{item.price}"
+                  =icon("fas", "chevron-right", class: "right-icon")
+              .myPageLists__goMyPage
 .exbitFooter
   .exbitFooter__content
     = link_to "プライバシーポリシー", "", class: "policy"
