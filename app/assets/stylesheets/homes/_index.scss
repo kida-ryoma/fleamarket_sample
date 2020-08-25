@@ -90,14 +90,14 @@ header {
       padding-top: 35px;
       &__catchCopy {
       font-size: 60px;
-      color: white;
+      color: $field-color;
       text-shadow: 0 0 5px black;
       margin-bottom: 30px;
       }
       &__text {
       text-shadow: 0 0 5px black;
       font-size: $fontB;
-      color: white;
+      color: $field-color;
       }
       &__btn {
         margin-top: 15px;
@@ -176,7 +176,7 @@ header {
       max-width: 1040px;
       margin: 0 auto;
       width: 100%;
-      color: #ffffff;
+      color: $field-color;
       .subTitle {
         font-size: $fontD;
         text-shadow: 0 0 5px black;
@@ -270,7 +270,7 @@ header {
       grid-row-gap: 20px;
       .itemContent {
         height: 250px;
-        border: 1px solid lightgray;
+        @include border;
         box-shadow: 2px 2px 5px gray ;
         .contentBox {
           text-decoration: none;
@@ -288,7 +288,7 @@ header {
               bottom: 0px;
               padding: 3px 15px;
               background-color: rgba(100, 100, 100, 0.5);
-              color: white;
+              color: $field-color;
               border-top-right-radius: 10px;
               border-bottom-right-radius: 10px;
             }
@@ -316,14 +316,14 @@ header {
       padding-top: 90px;
       text-align: center;
       font-size: $fontC;
-      color: white;
+      color: $field-color;
       text-shadow: #383838 0 0 5px;
       font-weight: bold;
     }
     &__text{
       text-align: center;
       font-size: $fontF;
-      color: white;
+      color: $field-color;
       text-shadow:#383838 0 0 5px;
     }
     &__icons{
@@ -352,7 +352,7 @@ header {
   background-color: #3D3D3D;
   .contents{
     display: flex;
-    color: white;
+    color: $field-color;
     justify-content: space-evenly;
     padding-top: 50px;
     text-align: center;
@@ -366,7 +366,7 @@ header {
         padding-bottom: 15px;
         .btn{
           text-decoration: none;
-          color: white;
+          color: $field-color;
         }
       }
     }
@@ -379,7 +379,7 @@ header {
     }
     p{
       text-align: center;
-      color: white;
+      color: $field-color;
     }
   }
 }
@@ -405,7 +405,7 @@ header {
     span{
       display: block;
       padding-top: 4px;
-      color: white;
+      color: $field-color;
       text-align: center;
       margin-top: 10px;
     }

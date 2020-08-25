@@ -18,166 +18,13 @@
       }
     }
   }
-  .userSignupBar {
-    padding: 40px 0 0 44px;
-    display: inline-block;
-    vertical-align: top;
-    .userSignupBarProgress2 {
-      list-style: none;
-      text-align: center;
-      &__type-red {
-        color: #EA352D;
-        margin: 0 40px 0 0;
-        min-width: 60px;
-        position: relative;
-        z-index: 1;
-        display: inline-block;
-        font-weight: 600;
-        font-size: 12px;
-      }
-      &__rod-red {
-        width: 12px;
-        height: 12px;
-        margin: 8px auto 0;
-        border-radius: 50%;
-        background: #EA352D;
-      }
-      &__rod-red-first {
-        width: 12px;
-        height: 12px;
-        margin: 8px auto 0;
-        border-radius: 50%;
-        background: #ea352d;
-      }
-      &__rod-red-second {
-        width: 12px;
-        height: 12px;
-        margin: 8px auto 0;
-        border-radius: 50%;
-        background: #ea352d;
-      }
-      &__rod-red::after {
-        left: 50%;
-        position: absolute;
-        bottom: 5px;
-        z-index: 1;
-        display: block;
-        content: '';
-        width: 100%;
-        height: 2px;
-        background: #ccc;
-        margin-left: 6px;
-      }
-      &__rod-red::before {
-        right: 50%;
-        position: absolute;
-        bottom: 5px;
-        z-index: -1;
-        display: block;
-        content: '';
-        width: 100%;
-        height: 2px;
-        background: #ea352d;
-      }
-      &__rod-red-first::after {
-        left: 50%;
-        position: absolute;
-        bottom: 5px;
-        z-index: -1;
-        display: block;
-        content: '';
-        width: 100%;
-        height: 2px;
-        background: #ea352d;
-      }
-      &__rod-red-second::after {
-        left: 50%;
-        position: absolute;
-        bottom: 5px;
-        z-index: -1;
-        display: block;
-        content: '';
-        width: 100%;
-        height: 2px;
-        background: #ea352d;
-      }
-      &__rod-red-second::before {
-        right: 50%;
-        position: absolute;
-        bottom: 5px;
-        z-index: 1;
-        display: block;
-        content: '';
-        width: 100%;
-        height: 2px;
-        background: #ea352d;
-      }
-      &__type {
-        margin: 0 40px 0 0;
-        min-width: 60px;
-        position: relative;
-        z-index: 1;
-        display: inline-block;
-        font-weight: 600;
-        font-size: 12px;
-        color: #888;
-      }
-      &__rod {
-        width: 12px;
-        height: 12px;
-        margin: 8px auto 0;
-        border-radius: 50%;
-        background: #ccc;
-      }
-      &__rod::before {
-        right: 50%;
-        position: absolute;
-        bottom: 5px;
-        z-index: -1;
-        display: block;
-        content: '';
-        width: 100%;
-        height: 2px;
-        background: #ccc;
-      }
-      &__rod::after {
-        left: 50%;
-        position: absolute;
-        bottom: 5px;
-        z-index: -1;
-        display: block;
-        content: '';
-        width: 100%;
-        height: 2px;
-        background: #ccc;
-      }
-      &__rod-last {
-        width: 12px;
-        height: 12px;
-        margin: 8px auto 0;
-        border-radius: 50%;
-        background: #ccc;
-      }
-      &__rod-last::before {
-        right: 50%;
-        position: absolute;
-        bottom: 5px;
-        z-index: -1;
-        display: block;
-        content: '';
-        width: 100%;
-        height: 2px;
-        background: #ccc;
-      }
-    }
-  }
 }
 .signUpAddressBar{
   background-color: $background-color;
   .signUpBoxAddress{
       margin: 0 auto;
       width: 700px;
-      background-color: #fff;
+      background-color: $field-color;
       &__title{
         text-align: center;
         padding: 32px;
@@ -190,11 +37,10 @@
         border-color: #f5f5f5;
       }
       .deliveryAddressForm {
-        display: flex;
-        justify-content: center;
         padding: 24px 16px 40px;
         .deliveryAddressBox {
           width: 343px;
+          margin: 0 auto;
           .deliveryForm {
             color: #333;
             &__label {
@@ -202,17 +48,17 @@
               font-size: 14px;
             }
             &__condition {
-              background-color: #ea352d;
+              background-color: $red-action;
               font-weight: bold;
               font-size: 12px;
-              color: #fff;
+              color: $field-color;
               border-radius: 2px;
               padding: 2px 4px;
               margin-left: 8px;
             }
             &__form {
               display: block;
-              border: 1px solid #ccc;
+              @include border;
               border-radius: 4px;
               line-height: 30px;
               padding: 10px;
@@ -224,10 +70,10 @@
               margin-top: 24px;
             }
             &__optional{
-              background-color: #ccc;
+              background-color: $bar-color;
               font-weight: bold;
               font-size: 12px;
-              color: #fff;
+              color: $field-color;
               border-radius: 2px;
               padding: 2px 4px;
               margin-left: 8px;
@@ -235,10 +81,10 @@
           }
           .prefectureWrap{
             margin-top: 8px;
-            background-color: #fff;
+            background-color: $field-color;
             position: relative;
             .prefectureBox{
-              border: 1px solid #ccc;
+              @include border;
               border-radius: 4px;
               line-height: 30px;
               height: 48px;
@@ -259,9 +105,9 @@
           }
           .addressBtn{
             margin-top: 24px;
-            background-color: #ea352d;
-            border: 1px solid #ea352d;
-            color: #fff;
+            background-color: $red-action;
+            border: 1px solid $red-action;
+            color: $field-color;
             display: block;
             width: 100%;
             line-height: 48px;

@@ -47,7 +47,6 @@ class OrdersController < ApplicationController
 
   private
 
-
   def set_item
     @item = Item.find(params[:item_id])
     @item_images = @item.item_images

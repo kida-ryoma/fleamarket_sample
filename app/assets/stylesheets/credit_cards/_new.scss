@@ -1,7 +1,7 @@
 .signUpCreditCard{
     .CreditCardBox{
       width: 700px;
-      background-color: #fff;
+      background-color: $field-color;
       height: 80%;
       margin-top: 40px;
       margin-bottom: 40px;
@@ -28,10 +28,10 @@
             font-weight: 600;
             font-size: 14px;
             &__condition {
-              background-color: #EA352D;
+              background-color: $red-action;
               font-weight: bold;
               font-size: 12px;
-              color: #fff;
+              color: $field-color;
               border-radius: 2px;
               padding: 2px 4px;
               margin-left: 8px;
@@ -41,7 +41,7 @@
             margin-top: 10px;
             margin-bottom: 20px;
             display: block;
-            border: 1px solid #ccc;
+            @include border;
             border-radius: 4px;
             line-height: 30px;
             padding: 10px;
@@ -49,9 +49,9 @@
           }
           .creditCardBtn{
             margin-top: 32px;
-            background-color: #EA352D;
-            border: 1px solid #EA352D;
-            color: #fff;
+            background-color: $red-action;
+            border: 1px solid $red-action;
+            color: $field-color;
             display: block;
             width: 100%;
             line-height: 48px;
@@ -71,7 +71,7 @@
               padding: 10px;
               height: 50px;
               width: 125px;
-              border: 1px solid #ccc;
+              @include border;
               border-radius: 4px;
             }
           }
