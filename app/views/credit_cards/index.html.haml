@@ -1,4 +1,6 @@
 = render 'layouts/header'
+- breadcrumb :credit_card_delete
+= render "layouts/breadcrumbs"
 .wrapper
   .creditCardBox
     .creditCardBox__title
@@ -6,7 +8,7 @@
     - if @credit_card.present?
       .creditCardBox__container
         .creditCardInfo
-          = image_tag "/uploads/credit_cards/#{@card_image}",width:'50',height:'50', class: "creditCardInfo__logo"
+          = image_tag asset_path("credit_cards/#{@card_image}"),width:'50',height:'50', class: "creditCardInfo__logo"
           %ol.creditCardInfo__number
             %li.creditCardInfo__number__card
               = "**** **** **** " + @card_info.last4

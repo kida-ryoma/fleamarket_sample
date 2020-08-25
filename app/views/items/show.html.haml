@@ -58,15 +58,14 @@
           %th 配送日の目安
           %td
             = @item.preparation_day.days
-    -# - if current_user == @item.user
-    -# ↑ログイン機能がまだ無い為コメントアウトしてます
-    .item__edit
-      = link_to "商品を編集する", "/items/#{@item.id}/edit",class: "btn"
-    .item__destroy
-      = link_to "商品を削除する", "/items/#{@item.id}/destroy_confirmation",class: "btn"
-    -# - else
-    .item__buy
-      = link_to "購入画面に進む", new_item_order_path(@item),class: "btn"
+    - if current_user == @item.user
+      .item__edit
+        = link_to "商品を編集する", "/items/#{@item.id}/edit",class: "btn"
+      .item__destroy
+        = link_to "商品を削除する", "/items/#{@item.id}/destroy_confirmation",class: "btn"
+    - else
+      .item__buy
+        = link_to "購入画面に進む", new_item_order_path(@item),class: "btn"
   .otherItems
     .userItems
       = link_to "",class: "userItems__title" do

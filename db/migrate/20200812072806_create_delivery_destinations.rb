@@ -7,7 +7,7 @@ class CreateDeliveryDestinations < ActiveRecord::Migration[6.0]
       t.string :delivery_first_name_kana, null: false,  format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'はカタカナで入力して下さい。'}
       t.string :delivery_phone_number
       t.integer :post_code, null: false
-      t.integer :prefecture_code, null: false
+      t.string :prefecture_code, null: false
       t.string :city, null:false
       t.string :house_number, null: false
       t.string :building_name

@@ -6,7 +6,6 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :price, null: false
       t.string :size
       t.string :brand
-      t.integer :sales_status
       t.integer :prefecture_code, null: false
       t.references :category,foreign_key: true
       t.references :status,type: :bigint, foreign_key: true

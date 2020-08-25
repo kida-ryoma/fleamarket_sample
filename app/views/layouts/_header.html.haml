@@ -2,12 +2,12 @@
   .innerHeader
     .innerHeader__upperHeader
       .image
-        = link_to image_tag("/material/logo/logo.png", class: "image__logo"), "#"
+        = link_to image_tag("/material/logo/logo.png", class: "image__logo"), root_path
       .searchBox
-        %input.searchBox--input{:name => "key", :placeholder => "キーワードから探す"}/
-        %button
-          .searchBox__search__icon
-          = link_to image_tag("/material/icon/icon-search1.png", class: "searchBox__search__icon__logo"), "#"
+        = form_with url: search_items_path, method: :get, class: "searchForm", local: true do |f|
+          = f.text_field :keyword, class: "searchForm__input", placeholder: "キーワードから探す"
+          %button{type: "submit", class: "searchForm__btn"}
+            = image_tag("/material/icon/icon-search1.png", class: "searchForm__btn__img")
     %nav.innerHeader__lowerHeader
       %ol.leftList
         %li.leftList__category

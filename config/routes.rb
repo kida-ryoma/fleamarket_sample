@@ -20,10 +20,12 @@ root to: "homes#index"
     collection do
       get 'get_category_children', defaults: { format: 'json'}
       get 'get_category_grandchildren', defaults: { format: 'json'}
+      get 'search'
     end
     resources :orders, only: [:new, :create]
     member do
       get 'destroy_confirmation'
+      post 'item_orders'
     end
   end
   resources :users, only: [:show]
