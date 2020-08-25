@@ -93,7 +93,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def address_params
-    params.permit(:delivery_family_name, :delivery_first_name, :delivery_family_name_kana, :delivery_first_name_kana, :delivery_phone_number, :post_code, :prefecture_code, :city, :house_number, :building_name)
+    params.require(:delivery_destination).permit(:delivery_family_name, :delivery_first_name, :delivery_family_name_kana, :delivery_first_name_kana, :delivery_phone_number, :post_code, :prefecture_code, :city, :house_number, :building_name)
   end
 
   def credit_card_params
