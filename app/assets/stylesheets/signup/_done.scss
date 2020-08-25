@@ -2,11 +2,11 @@
   height: calc(100vh - 180px - 128px);
   display: flex;
   justify-content: center;
-  background-color: #eeeeee;
+  background-color: $background-color;
   .completeRegiBox{
     height: 80%;
     width: 700px;
-    background-color: #fff;
+    background-color: $field-color;
     &__title{
       text-align: center;
       padding: 32px;
@@ -32,9 +32,9 @@
         }
         &__btn{
           margin-top: 60px;
-          background-color: #EA352D;
-          border: 1px solid #EA352D;
-          color: #fff;
+          background-color: $red-action;
+          border: 1px solid $red-action;
+          color: $field-color;
           display: block;
           width: 100%;
           line-height: 48px;

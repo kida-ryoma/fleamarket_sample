@@ -13,7 +13,7 @@
 .bodyItem{
   background-color: $background-color;
   .body {
-    background-color: white;
+    background-color: $field-color;
     width: 50%;
     margin: 0 auto;
     .form {
@@ -41,13 +41,13 @@
         }
         &__input {
           width: 100%;
-          border: 1px solid lightgray;
+          @include border;
           padding: 10px;
           border-radius: 4px;
         }
         &__select {
           width: 100%;
-          border: 1px solid lightgray;
+          @include border;
           height: 47px;
           padding: 0 8px;
           border-radius: 4px;
@@ -67,7 +67,7 @@
             &__box {
               text-align: right;
               width: 250px;
-              border: 1px solid lightgray;
+              @include border;
               padding: 10px;
               border-radius: 4px;
             }
@@ -77,11 +77,11 @@
           }
         }
         &__btn {
-          background-color: red;
+          background-color: $red-action;
           width: 50%;
           border: none;
           border-radius: 3px;
-          color: white;
+          color: $field-color;
           padding: 10px 0;
           display: block;
           margin: 0 auto;
@@ -89,8 +89,8 @@
         }
         .required {
           font-size: 12px;
-          background-color: red;
-          color: white;
+          background-color: $red-action;
+          color: $field-color;
           padding: 3px;
           border-radius: 3px;
           margin-left: 5px;
@@ -98,7 +98,7 @@
         .optional {
           font-size: 12px;
           background-color: lightgray;
-          color: white;
+          color: $field-color;
           padding: 3px;
           border-radius: 3px;
           margin-left: 5px;

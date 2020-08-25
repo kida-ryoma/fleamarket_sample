@@ -28,7 +28,7 @@ a {
 
 
 .userMyPage {
-  background-color: #EEEEEE;
+  background-color: $background-color;
   overflow: hidden;
   width: 100vw;
   height: 100vh;
@@ -40,10 +40,10 @@ a {
     display: flex;
     justify-content: space-between;
     height: 100vh;
-    background-color: #FFFFFF;
+    background-color: $field-color;
     .sideWrapper {
       width: 30%;
-      background-color:#eeeeee;
+      background-color:$background-color;
       height: 100%;
       .listContainer {
         &__title {
@@ -51,7 +51,7 @@ a {
           margin: 30px 0 5px 0;
         }
         .list {
-          background-color: white;
+          background-color: $field-color;
           list-style: none;
           .listBox {
             text-decoration: none;
@@ -85,11 +85,12 @@ a {
     .myPageContent {
       width: 65%;
       height: 100%;
+      background-color: $background-color;
       overflow: scroll;
       .myPageWrapper {
       height: 90%;
-      background-color: #FFFFFF;
-      border-bottom: #FFFFFF;
+      background-color: $field-color;
+      border-bottom: $field-color;
         &__myPageUserIcon {
           height: 30%;
           position: relative;
@@ -130,7 +131,7 @@ a {
               text-align: center;
               display: block;
               margin: 0 auto;
-              border-top: 3px solid red;
+              border-top: 3px solid $red-action;
               a.myPageTabsTitle{
                 display: block;
                 color: #000;
@@ -209,7 +210,7 @@ a {
     }
     .myPageGap {
       width: 5%;
-      background-color: #EEEEEE;
+      background-color: $background-color;
       height: 100vh;
     }
   }

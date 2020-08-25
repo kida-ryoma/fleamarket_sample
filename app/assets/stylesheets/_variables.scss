@@ -1,5 +1,11 @@
 $main-color: #3CCACE;
 $background-color: #eeeeee;
+$red-action: red;
+$field-color: white;
+$bar-color: #ccc;
+@mixin border {
+  border: 1px solid #ccc;
+}
 $fontA: 15px;
 $fontB: 17px;
 $fontC: 20px;
@@ -7,7 +13,3 @@ $fontD: 25px;
 $fontE: 30px;
 $fontF: 38px;
 $border-radius: 5px;
-
-// 以下は時間に余裕があるときにやりましょう
-// １：ボタンのmixin
-// ２：所々のwidth

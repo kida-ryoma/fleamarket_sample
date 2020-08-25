@@ -3,7 +3,7 @@
   justify-content: center;
   height: 128px;
   align-items: center;
-  background-color: #eeeeee;
+  background-color: $background-color;
 }
 .upperLogo{
   width: 193px;
@@ -11,9 +11,9 @@
 main.singleMain{
   display: flex;
   justify-content: center;
-  background-color: #eeeeee;
+  background-color: $background-color;
   .userLoginPageBlock{
-    background-color: #fff;
+    background-color: $field-color;
     width: 456px;
     .userCreate{
       padding: 40px 64px;
@@ -27,7 +27,7 @@ main.singleMain{
         width: 100%;
         display: block;
         background-color: #0099E8;
-        color: #fff;
+        color: $field-color;
         text-decoration: none;
         border: 1px solid #0099E8;
         line-height: 40px;
@@ -46,7 +46,7 @@ main.singleMain{
     background-color: #385185;
     line-height: 50px;
     text-decoration: none;
-    color: #fff;
+    color: $field-color;
     border: 1px solid transparent;
     border-radius: 4px;
     position: relative;
@@ -54,7 +54,7 @@ main.singleMain{
   &__google{
     display: block;
     margin-top: 16px;
-    background-color: #fff;
+    background-color: $field-color;
     color: #333;
     line-height: 50px;
     text-decoration: none;
@@ -74,20 +74,20 @@ main.singleMain{
   &__email{
     height: 50px;
     width: 100%;
-    border: 1px solid #ccc;
+    @include border;
     border-radius: 4px;
     padding-left: 16px;
   }
   &__password{
     height: 50px;
     width: 100%;
-    border: 1px solid #ccc;
+    @include border;
     border-radius: 4px;
     padding-left: 16px;
   }
   .formField {
     font-size: 16px;
-    background-color: #fff;
+    background-color: $field-color;
     line-height: 50px;
     margin-top: 16px;
   }
@@ -98,14 +98,14 @@ main.singleMain{
     margin: 24px 0 0;
     .loginBtn{
       width: 100%;
-      background-color: #EA352D;
-      color:#fff;
+      background-color: $red-action;
+      color:$field-color;
       line-height: 50px;
       font-size: 14px;
       cursor: pointer;
       text-align: center;
       border-radius: 4px;
-      border: 1px solid #EA352D;
+      border: 1px solid $red-action;
     }
   }
   .forgotPasswordBtn {
