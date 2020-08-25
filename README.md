@@ -1,12 +1,12 @@
 # README
-<img src="https://img.shields.io/badge/ruby-2.6.5-green.svg?longCache=true">　<img src="https://img.shields.io/badge/aws-EC2-yellow.svg?longCache=true">　<img src="https://img.shields.io/badge/aws-S3-yellow.svg?longCache=true">  <img src="https://img.shields.io/badge/mysql-14-blue.svg?longCache=true">　<img src="https://img.shields.io/badge/-jquery-green.svg?longCache=true"> 
+<img src="https://img.shields.io/badge/ruby-2.6.5-green.svg?longCache=true"> <img src="https://img.shields.io/badge/aws-EC2-yellow.svg?longCache=true"> <img src="https://img.shields.io/badge/aws-S3-yellow.svg?longCache=true"> <img src="https://img.shields.io/badge/mysql-14-blue.svg?longCache=true"> <img src="https://img.shields.io/badge/-jquery-green.svg?longCache=true"> 
 
 
 ## :octocat: fleamarket_80h :octocat:
  フリマアプリ【メルカリ】のクローンサイト。 誰でも簡単に売買が楽しめるフリマアプリ機能を再現しています。 ユーザー登録、出品、購入機能を再現しています。
 
 ## Link to our app
-(http://54.92.4.10)
+![フリマWEBサイトアプリケーション](http://54.92.4.10/)
  
  
  Basic認証(ID:user80/pass:userh80)
