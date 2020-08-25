@@ -6,7 +6,7 @@
  フリマアプリ【メルカリ】のクローンサイト。 誰でも簡単に売買が楽しめるフリマアプリ機能を再現しています。 ユーザー登録、出品、購入機能を再現しています。
 
 ## Link to our app
-![フリマWEBサイトアプリケーション](http://54.92.4.10/)
+[フリマWEBサイトアプリケーション](http://54.92.4.10/)
  
  
  Basic認証(ID:user80/pass:userh80)
@@ -25,7 +25,7 @@
 
 ## DEMO
 - ER図 https://gyazo.com/507d7b01c8f60f185ab299245e5be38f
-- トップページ https://gyazo.com/c080db75a43dffdb592f0854c55674b4
+- トップページ <img src=”https://raw.github.com/wiki/hideki/fleamarket_sample_80h.wiki/images/top_view.gif” />
 - マイページ一覧　https://gyazo.com/b2e01967c7e80e91ff1e9fd16cf798fc
 - 出品購入画面 https://gyazo.com/14916211123281b194971853e46f7af8
 - 商品詳細ページ https://gyazo.com/1b5a4d2025b6826f3a32eb803a028811
