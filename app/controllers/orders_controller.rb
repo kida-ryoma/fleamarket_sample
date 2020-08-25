@@ -1,11 +1,12 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item
+  before_action :item_price
   require"payjp"
 
   def new
     Order.new
-    @address = DeliveryDestination.where(user_id: current_user.id).first
+    @address = DeliveryDestination.find_by(user_id: current_user.id)
     @user = current_user
     Payjp.api_key = ENV["SECRET_KEY"]
       customer = Payjp::Customer.retrieve(@credit_card.customer_id)
@@ -31,7 +32,7 @@ class OrdersController < ApplicationController
 
   def create
     Order.create(seller_id: @item.user_id, buyer_id: current_user.id, item_id: @item_id)
-    @credit_card = CreditCard.where(user_id: current_user.id).first
+    @credit_card = CreditCard.find_by(user_id: current_user.id)
     Payjp.api_key = ENV['SECRET_KEY']
     Payjp::Charge.create(
     amount: @item.price,
@@ -48,7 +49,16 @@ class OrdersController < ApplicationController
   def set_item
     @item = Item.find(params[:item_id])
     @item_images = @item.item_images
-    @credit_card = CreditCard.where(user_id: current_user.id).first
+    @credit_card = CreditCard.find_by(user_id: current_user.id)
+  end
+
+  def item_price
+    @item = Item.find(params[:item_id])
+    if @item.delivery_responsibility_id == 1
+      @item_price = @item.price
+    else
+      @item_price = @item.price + 300
+    end
   end
 
 end
