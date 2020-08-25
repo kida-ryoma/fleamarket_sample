@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
     customer: Payjp::Customer.retrieve(@credit_card.customer_id),
     currency: 'jpy'
     )
-    @item.update(order_id: @item.id)
+    @item.save(order_id: @item.id)
     redirect_to root_path
   end
 
