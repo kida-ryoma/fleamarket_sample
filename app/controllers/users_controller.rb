@@ -5,7 +5,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @user_items = @user.items.where(order_id:nil)
+    @user_items = @user.items.map do |item|
+      item unless item.order
+    end.compact
   end
 
   private

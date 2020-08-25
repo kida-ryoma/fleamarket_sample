@@ -8,9 +8,13 @@ class ItemsController < ApplicationController
 
   def show
     @item_images = @item.item_images
-    @user_items = @item.user.items.where(order_id: nil)
+    @user_items = @item.user.items.map do |item|
+      item unless item.order
+    end.compact
     category_id = @item.category_id
-    @category_items = Item.where(category_id: category_id)
+    @category_items = Item.where(category_id: category_id).map do |item|
+      item unless item.order
+    end.compact
   end
 
   def new
@@ -28,13 +32,11 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item.item_images.build
-    # ログイン機能を未実装なのでコメントアウトしています
-    # if current_user == @item.user_id
-    #   @item.item_images.build
-    # else
-    #   redirect_to root_path
-    # end
+    if current_user == @item.user
+      @item.item_images.build
+    else
+      redirect_to root_path
+    end
   end
 
   def update
@@ -83,7 +85,7 @@ class ItemsController < ApplicationController
         :price, :size, :sales_status,
         :status_id, :prefecture_code,
         :category_id, :delivery_responsibility_id,
-        :order_id, :user_id,:preparation_day_id,
+        :user_id,:preparation_day_id,
         item_images_attributes:[:image, :_destroy, :id])
         .merge(user_id: current_user.id)
   end
