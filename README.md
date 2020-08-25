@@ -1,4 +1,79 @@
 # README
+<img src="https://img.shields.io/badge/ruby-2.6.5-green.svg?longCache=true">
+<img src="https://img.shields.io/badge/aws-EC2-yellow.svg?longCache=true">
+<img src="https://img.shields.io/badge/aws-S3-yellow.svg?longCache=true">
+<img src="https://img.shields.io/badge/mysql-14-blue.svg?longCache=true">
+<img src="https://img.shields.io/badge/-jquery-green.svg?longCache=true"> 
+
+## fleamarket_80h
+ フリマアプリ【メルカリ】のクローンサイト。 誰でも簡単に売買が楽しめるフリマアプリ機能を再現しています。 ユーザー登録、出品、購入機能を再現しています。
+
+## Link to our app
+(http://54.92.4.10)
+ 
+ 
+ Basic認証(ID:user80/pass:userh80)
+
+## Test User
+* 購入者用アカウント
+  * メールアドレス　buyer@item.com
+  * パスワード　1111111
+* 購入用カード情報
+  * 番号：4242424242424242
+  * 期限：01/29
+  * セキュリティコード：123
+* 出品用アカウント
+  * メールアドレス seller@item.com
+  * パスワード 1111111
+
+## DEMO
+- ER図 https://gyazo.com/507d7b01c8f60f185ab299245e5be38f
+- トップページ https://gyazo.com/c080db75a43dffdb592f0854c55674b4
+- マイページ一覧　https://gyazo.com/b2e01967c7e80e91ff1e9fd16cf798fc
+- 出品購入画面 https://gyazo.com/14916211123281b194971853e46f7af8
+- 商品詳細ページ https://gyazo.com/1b5a4d2025b6826f3a32eb803a028811
+- 会員情報画面 https://gyazo.com/6ec359317b617df6f79730968de4a9db
+
+## Features
+- ユーザー登録機能　【gem:devise,jp_prefecture】【ウィザード形式】
+- ユーザーログイン/ログアウト機能 【gem:devise】
+- 商品購入機能　【gem:pay.jp】
+- 商品出品機能 【gem:jquery,ancestry】
+- 商品編集機能
+- 商品削除機能　
+- 商品詳細機能　【gem:ancestry】
+- カテゴリー機能 【gem:ancestry】
+- 商品検索機能
+- パンくず機能 【gem:gretel】
+
+## Installation
+- $ git clone https://github.com/goemon11/fleamarket_sample_80h.git
+- $ cd fleamarket_sample_80h.git
+- $ bundle install
+
+## Author
+- Ryo Ishikawa(Roll of ScrumMaster)
+- Mayuko Ueda
+- Hideki Kato
+- Ryoma Kida
+- Sasuke Watanabe
+
+## Person in charge of a task
+* Ryo Ishikawa
+  * スクラムマスター、ユーザー新規登録/ログインページ【フロントサイド】、パンくず【サーバーサイド】
+  * 商品出品機能【サーバーサイド】、カテゴリー機能【サーバーサイド】、デプロイ担当、データベース設計
+* Mayuko Ueda
+  * 商品出品ページ【フロントサイド】、ユーザーマイページ【フロントサイド】、カテゴリー機能【サーバーサイド及フロントサイド】 
+  * 検索機能【サーバーサイド】、商品詳細表示【サーバーサイド及フロントサイド】、データベース設計
+* Hideki Kato
+  * ユーザー新規登録/ログインページ【フロントサイド】、商品一覧表示【サーバーサイド】
+  * README.md【編集】、リファクタリング【CSS】、データベース設計
+* Ryoma Kida
+  * 商品確認ページ【フロントサイド】、ユーザー新規登録/ログイン【サーバーサイド】、商品削除【フロントサイド及サーバーサイド】
+  * 商品情報編集【フロントサイド及サーバーサイド】、データベース設計
+* Sasuke Watanabe
+  * トップページ【フロントサイド】、商品購入機能【フロントサイド及サーバーサイド】、ユーザー新規登録/ログイン【サーバーサイド及フロントサイド】
+  * ユーザーマイページ【フロントサイド】、データベース設計
 
 ## itemsテーブル
 
