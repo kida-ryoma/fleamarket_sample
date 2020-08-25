@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: :show
   before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren, :search]
-
   
   def index
     
@@ -21,7 +20,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if (@item.save) && (@item.item_images.present?)
+    if @item.save
       redirect_to root_path
     else
       redirect_to new_item_path
@@ -75,7 +74,6 @@ class ItemsController < ApplicationController
   def search
     @items = Item.search(params[:keyword]).order("created_at DESC")
   end
-
   
   private
   def item_params

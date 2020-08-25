@@ -25,12 +25,6 @@
     %h2.signUpCreditCardBox__title
       クレジットカード情報入力
     = form_with model: @credit_card, url: users_sign_up_credit_card_path, class: "creditCardForm",id: "cardCreateForm",local: true do |f|
-      - if @credit_card.errors.any?
-        .SettingGroupFormErrors
-          %h2= "#{@credit_card.errors.full_messages.count}件のエラーが発生しました。"
-          %ul
-            - @credit_card.errors.full_messages.each do |message|
-              %li= message
       .signUpCreditCardBlock
         .inputCreditCardBlock
           %label.confirmationCcTitle(for="cardnumber-input")

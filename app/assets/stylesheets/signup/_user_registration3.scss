@@ -37,11 +37,10 @@
         border-color: #f5f5f5;
       }
       .deliveryAddressForm {
-        display: flex;
-        justify-content: center;
         padding: 24px 16px 40px;
         .deliveryAddressBox {
           width: 343px;
+          margin: 0 auto;
           .deliveryForm {
             color: #333;
             &__label {
