@@ -211,14 +211,12 @@
   }
 }
 .signUpBoxHeader{
-  display: flex;
-  justify-content: center;
   background-color: #eeeeee;
-  height: calc(100vh - 180px - 128px);
   .signUpBox{
     height: 80%;
     width: 700px;
     background-color: #fff;
+    margin: 0 auto;
     &__title{
       text-align: center;
       padding: 32px;
@@ -232,10 +230,9 @@
     }
     form.phoneNumberForm{
       padding: 40px 40px 64px;
-      display: flex;
-      justify-content: center;
       .signUpPhoneNumberBlock{
         width: 343px;
+        margin: 0 auto;
         .inputPhoneNumberBlock{
           color: #333;
           .confirmationPnTitle{
