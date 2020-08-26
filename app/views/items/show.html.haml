@@ -26,7 +26,7 @@
         %tr
           %th 出品者
           %td 
-            = link_to "#{@item.user.nick_name}","", class: "btn"
+            = link_to "#{@item.user.nick_name}",user_path(@item.user_id), class: "btn"
         %tr
           %th カテゴリー
           %td 
