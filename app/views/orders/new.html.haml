@@ -16,7 +16,7 @@
         %span.price
           = "¥#{@item_price}"
     .paymentWay
-      = link_to "変更する >", "",class: "change__btn"
+      = link_to "変更する >", root_path,class: "change__btn"
       .paymentWay__title
         支払い方法
       .paymentWay__cardInfo
@@ -28,7 +28,7 @@
           = @exp_month + " / " + @exp_year
         = image_tag asset_path("credit_cards/#{@card_image}"),width:'50',height:'50', class: "creditCardInfo__logo"
     .deliveryDestination
-      = link_to "変更する >", "",class: "change__btn"
+      = link_to "変更する >", root_path,class: "change__btn"
       .destination
         配送先
         .destination__info
