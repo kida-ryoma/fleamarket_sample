@@ -13,9 +13,8 @@
           #imageBox
             #previews
             = f.fields_for :item_images do |image|
-              .jsFile_group{data:{index: image.index}}
-                = image.file_field :image, type: "file", class: "jsFile"
-                
+              #0.jsFile_group{data:{index: image.index}}
+                = image.file_field :image, class: "jsFile" 
       .formBox
         .formBox__title
           商品名

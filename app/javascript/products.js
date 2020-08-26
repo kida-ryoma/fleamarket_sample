@@ -5,10 +5,14 @@ $(document).on('turbolinks:load', ()=> {
   }
 
   const buildFileField = (index) =>{
-    const html = `<div class="jsFile_group" data-index="${index}">
+    const html = `<div class="jsFile_group" data-index="${index}" id = ${index} >
                     <input class="jsFile" type="file" name="item[item_images_attributes][${index}][image]" id = "item_item_images_${index}_image"><br>
-                    <div class="jsRemove">削除</div>
                   </div>`;
+    return html;
+  }
+
+  const buildDeleteField = (index) =>{
+    const html = `<div class="jsRemove" data-index="${index-1}"> 削除 </div>`;
     return html;
   }
   var fileIndex = [1,2,3,4,5,6,7,8,9,10];
@@ -23,6 +27,7 @@ $(document).on('turbolinks:load', ()=> {
     if (img = $(`img[data-index = ${targetIndex}]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {
+      $(`#${targetIndex}`).append(buildDeleteField(fileIndex[0]));
       $('#previews').append(buildImg(targetIndex, blobUrl));
       $('#imageBox').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
@@ -36,7 +41,8 @@ $(document).on('turbolinks:load', ()=> {
 
   $('#imageBox').on('click', '.jsRemove', function() {
     if ($('.image').length == 10){
-      $('#imageBox').append(buildFileField(fileIndex[0]));
+      console.log(this)
+      $('#imageBox').append(buildFileField(fileIndex[1]));
     }
     $(this).parent().remove();
     const targetIndex = $(this).parent().data('index')
