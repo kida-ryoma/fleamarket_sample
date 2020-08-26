@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', ()=> {
   const buildImg = (index, url) => {
-    const html = `<img data-index="${index}" src="${url}" >`;
+    const html = `<img data-index="${index}" src="${url}" class="image" >`;
     return html;
   }
 
@@ -11,16 +11,16 @@ $(document).on('turbolinks:load', ()=> {
                   </div>`;
     return html;
   }
-  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
+  var fileIndex = [1,2,3,4,5,6,7,8,9,10];
+  lastIndex = $('.jsFile_group:last').data('index');
+  fileIndex.splice(0, lastIndex);
+  $('.hiddenDestroy').hide();
   
   $('#imageBox').on('change', '.jsFile', function(e) {
-    lastIndex = $('.jsFile_group:last').data('index');
-    fileIndex.splice(0, lastIndex);
-    $('.hiddenDestroy').hide();
     const targetIndex = $(this).parent().data('index');
     const file = e.target.files[0]
     const blobUrl = window.URL.createObjectURL(file);
-    if (img = $(`img[data-index = "${targetIndex}"]`)[0]) {
+    if (img = $(`img[data-index = ${targetIndex}]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {
       $('#previews').append(buildImg(targetIndex, blobUrl));
@@ -28,9 +28,16 @@ $(document).on('turbolinks:load', ()=> {
       fileIndex.shift();
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
+    if ($('.image').length == 10){
+      lastInput = $('.jsFile_group:last');
+      lastInput.remove();
+    }
   });
 
   $('#imageBox').on('click', '.jsRemove', function() {
+    if ($('.image').length == 10){
+      $('#imageBox').append(buildFileField(fileIndex[0]));
+    }
     $(this).parent().remove();
     const targetIndex = $(this).parent().data('index')
     const hiddenCheck = $(`input[data-index = ${targetIndex}].hiddenDestroy`)
