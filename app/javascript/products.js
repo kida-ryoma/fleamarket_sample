@@ -1,19 +1,18 @@
 $(document).on('turbolinks:load', ()=> {
   const buildImg = (index, url) => {
-    const html = `<img data-index="${index}" src="${url}" width="100px">`;
+    const html = `<img data-index="${index}" src="${url}" >`;
     return html;
   }
 
   const buildFileField = (index) =>{
     const html = `<div class="jsFile_group" data-index="${index}">
                     <input class="jsFile" type="file" name="item[item_images_attributes][${index}][image]" id = "item_item_images_${index}_image"><br>
-                    <div class="jsRemove" data-index="${index}">削除</div>
+                    <div class="jsRemove">削除</div>
                   </div>`;
     return html;
   }
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
   
- 
   $('#imageBox').on('change', '.jsFile', function(e) {
     lastIndex = $('.jsFile_group:last').data('index');
     fileIndex.splice(0, lastIndex);
@@ -36,7 +35,8 @@ $(document).on('turbolinks:load', ()=> {
     const targetIndex = $(this).parent().data('index')
     const hiddenCheck = $(`input[data-index = ${targetIndex}].hiddenDestroy`)
     if (hiddenCheck) hiddenCheck.prop('checked', true);
-    if ($('.jsFile').length == 0) $('#imageBox').append(buildFileField(fileIndex[0]));
+    if ($('.jsFile').length == 0) 
+    $('#imageBox').append(buildFileField(fileIndex[0]));
     $(`img[data-index= ${targetIndex}]`).remove();
   });
 });

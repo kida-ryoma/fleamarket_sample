@@ -14,8 +14,9 @@
             #previews
             = f.fields_for :item_images do |image|
               .jsFile_group{data:{index: image.index}}
-                = image.file_field :image, class: "jsFile"
-                %br
+                = image.file_field :image, class: "jsFile", style: "display:none"
+                %label{for: "jsFile"}
+                  %i.fas.fa-camera
                 .jsRemove 削除
       .formBox
         .formBox__title

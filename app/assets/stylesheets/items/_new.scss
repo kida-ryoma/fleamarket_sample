@@ -20,18 +20,13 @@
       .formBox {
         border-bottom: 1px solid rgb(245, 245, 245);
         padding: 20px 40px;
-        .imageBox {
-          &__icon {
-            display: block;
-            padding: 60px;
-            text-align: center;
-            border: 1px dotted rgb(245, 245, 245);
-            background-color: rgb(248, 248, 248);
-            margin-top: 20px;
-          }
-          &__file {
-            // 読み込みのファイルを一旦みやすくするため、機能のみの実現をさせた。後に、マークアップ当てる予定。
-            // display: none;
+        #imageBox {
+          #previews{
+            .jsFile_group{
+              .jsFile{
+
+              }
+            }
           }
         }
         .imageExplanation {
