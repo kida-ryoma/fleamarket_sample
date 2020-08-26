@@ -20,27 +20,44 @@
       %li.userSignupBarProgress2__type
         完了
         .userSignupBarProgress2__rod-last
-.signUpBoxHeader
-  .signUpBox
-    %h2.signUpBox__title
-      電話番号登録
-    = form_with  model: @phone_number, url: users_sign_up_phone_number_path, class: "phoneNumberForm",local: true do |f|
-      - if @phone_number.errors.any?
+- if @phone_number.errors.any?
+  .signUpBoxHeaderX
+    .signUpBox
+      %h2.signUpBox__title
+        電話番号登録
+      = form_with  model: @phone_number, url: users_sign_up_phone_number_path, class: "phoneNumberForm",local: true do |f|
         .SettingRegistrationErrors
           %h2= "#{@phone_number.errors.full_messages.count}件のエラーが発生しました。"
           %ul
             - @phone_number.errors.full_messages.each do |message|
               %li= message
-      .signUpPhoneNumberBlock
-        .inputPhoneNumberBlock
-          %label.confirmationPnTitle
-            電話番号登録
-          %span.confirmationPnTitle__condition
-            必須
-          = f.text_field :number, placeholder: '携帯電話の番号を入力', class: "confirmationPnTitleForm"
-          %p.smsPolicy
-            ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
-          = f.submit '次へ進む', class: "phoneNumberBtn"
+        .signUpPhoneNumberBlock
+          .inputPhoneNumberBlock
+            %label.confirmationPnTitle
+              電話番号登録
+            %span.confirmationPnTitle__condition
+              必須
+            = f.text_field :number, placeholder: "携帯電話の番号を入力", class: "confirmationPnTitleForm"
+            %p.smsPolicy
+              ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+            = f.submit "次へ進む", class: "phoneNumberBtn"
+- else
+  .signUpBoxHeader
+    .signUpBox
+      %h2.signUpBox__title
+        電話番号登録
+      = form_with  model: @phone_number, url: users_sign_up_phone_number_path, class: "phoneNumberForm",local: true do |f|
+        .signUpPhoneNumberBlock
+          .inputPhoneNumberBlock
+            %label.confirmationPnTitle
+              電話番号登録
+            %span.confirmationPnTitle__condition
+              必須
+            = f.text_field :number, placeholder: "携帯電話の番号を入力", class: "confirmationPnTitleForm"
+            %p.smsPolicy
+              ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+            = f.submit "次へ進む", class: "phoneNumberBtn"
+
 .exbitFooter
   .exbitFooter__content
     = link_to "プライバシーポリシー", "", class: "policy"
