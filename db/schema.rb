@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_12_134316) do
+ActiveRecord::Schema.define(version: 2020_08_12_120311) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -73,10 +73,8 @@ ActiveRecord::Schema.define(version: 2020_08_12_134316) do
     t.bigint "preparation_day_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "order_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["delivery_responsibility_id"], name: "index_items_on_delivery_responsibility_id"
-    t.index ["order_id"], name: "index_items_on_order_id"
     t.index ["preparation_day_id"], name: "index_items_on_preparation_day_id"
     t.index ["status_id"], name: "index_items_on_status_id"
     t.index ["user_id"], name: "index_items_on_user_id"
@@ -145,7 +143,6 @@ ActiveRecord::Schema.define(version: 2020_08_12_134316) do
   add_foreign_key "item_images", "items"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "delivery_responsibilities"
-  add_foreign_key "items", "orders"
   add_foreign_key "items", "preparation_days"
   add_foreign_key "items", "statuses"
   add_foreign_key "items", "users"

@@ -6,7 +6,7 @@
     margin-top: 40px;
     width: 50%;
     margin: 50px auto;
-    background-color: white;
+    background-color: $field-color;
     overflow: hidden;
     &__title {
       margin-top: 20px;
@@ -45,9 +45,9 @@
         }
       }
       &__delete {
-        background-color: #EA352D;
-        border: 1px solid #EA352D;
-        color: #fff;
+        background-color: $red-action;
+        border: 1px solid $red-action;
+        color: $field-color;
         display: block;
         width: 100px;
         line-height: 48px;

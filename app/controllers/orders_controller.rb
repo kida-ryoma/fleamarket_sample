@@ -31,20 +31,21 @@ class OrdersController < ApplicationController
   end
 
   def create
-    Order.create(seller_id: @item.user_id, buyer_id: current_user.id, item_id: @item_id)
-    @credit_card = CreditCard.find_by(user_id: current_user.id)
-    Payjp.api_key = ENV['SECRET_KEY']
-    Payjp::Charge.create(
-    amount: @item.price,
-    customer: Payjp::Customer.retrieve(@credit_card.customer_id),
-    currency: 'jpy'
-    )
-    @item.update(order_id: @item.id)
-    redirect_to root_path
+    if Order.create(seller_id: @item.user_id, buyer_id: current_user.id, item_id: @item.id)
+      @credit_card = CreditCard.find_by(user_id: current_user.id)
+      Payjp.api_key = ENV['SECRET_KEY']
+      Payjp::Charge.create(
+      amount: @item.price,
+      customer: Payjp::Customer.retrieve(@credit_card.customer_id),
+      currency: 'jpy'
+      )
+      redirect_to root_path
+    else
+      redirect_to new_item_order_path
+    end
   end
 
   private
-
 
   def set_item
     @item = Item.find(params[:item_id])

@@ -94,7 +94,7 @@
               .myPageWrapper__myPageUserIcon__count__item
                 出品数
                 %span.myPageWrapper__myPageUserIcon__count__item__number
-                  0
+                  = @user.items.count
         %section.myPageWrapper__myPageTabContainer
           %ul.myPageTabs
             %li.myPageTabsActive

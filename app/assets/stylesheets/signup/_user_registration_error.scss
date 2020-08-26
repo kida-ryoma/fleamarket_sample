@@ -1,7 +1,7 @@
 .SettingRegistrationErrors {
   margin: ０ auto;
   padding: 40px;
-  background-color: #fff;
+  background-color: $field-color;
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
@@ -11,6 +11,6 @@
   border-radius: 2px;
   text-align: center;
   background-color: #F35500;
-  color: #fff;
+  color: $field-color;
   height: 20%;
 }

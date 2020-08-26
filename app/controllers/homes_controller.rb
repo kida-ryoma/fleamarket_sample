@@ -1,6 +1,7 @@
 class HomesController < ApplicationController
   def index
-    @items = Item.all.where(order_id:nil)
-    
+    @items = Item.all.map do |item|
+      item unless item.order
+    end.compact
   end
 end
