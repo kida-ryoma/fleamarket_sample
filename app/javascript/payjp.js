@@ -11,11 +11,6 @@ $(function() {
       cvc: document.getElementById("cvc").value
       // クレジットカードに必要な情報を取り出しcardの変数に代入
     };
-    if (card.number == "" || card.cvc == "") {
-      alert("入力もれがあります");
-      $(".creditCardBtn").prop('disabled', false);
-      // もし記載漏れがあればここで処理は終了する
-    } else {
       Payjp.createToken(card, function(status, response) {
         if (status === 200 ) {
           // 200とは処理が正常であるということをpayjpが用意してくれているレスポンス
@@ -30,11 +25,10 @@ $(function() {
           );
           $('#cardCreateForm').get(0).submit();
           alert("登録に成功しました");
-        } else {
-          alert("カード情報が正しくありません");
+    } else {
+          alert("登録に失敗しました")
           $('.creditCardBtn').prop("disabled", false);
         }
-      });
-    }
+      })
   });
 });
