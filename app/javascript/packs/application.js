@@ -8,6 +8,7 @@ require('jquery');
 require("@rails/activestorage").start()
 require("channels");
 require("../products");
+require("../edit_product");
 require("../category");
 require("../change-images");
 require('../payjp');

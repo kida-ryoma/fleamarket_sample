@@ -16,7 +16,6 @@ $(function(){
   fileIndex.splice(0, lastIndex);
 
   $('.imageBox').on('change', '.jsFile', function(e) {
-    console.log("hoge")
     $('.hiddenDestroy').hide();
     const targetIndex = $(this).parent().data('index');
     const file = e.target.files[0]
