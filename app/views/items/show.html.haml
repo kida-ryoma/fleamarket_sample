@@ -12,7 +12,7 @@
       .item__images__big
         = image_tag @item_images.first.image_url, class: "bigImage"
       .item__images__small
-        - @item_images.each do |img|
+        - @item_images.first(10).each do |img|
           = image_tag img.image_url, class: "smallImage"
     .item__prices
       .item__prices__price
