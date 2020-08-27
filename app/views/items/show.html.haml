@@ -12,7 +12,7 @@
       .item__images__big
         = image_tag @item_images.first.image_url, class: "bigImage"
       .item__images__small
-        - @item_images.each do |img|
+        - @item_images.first(10).each do |img|
           = image_tag img.image_url, class: "smallImage"
     .item__prices
       .item__prices__price
@@ -26,7 +26,7 @@
         %tr
           %th 出品者
           %td 
-            = link_to "#{@item.user.nick_name}",user_path(@item.user_id), class: "btn"
+            = link_to "#{@item.user.nick_name}","", class: "btn"
         %tr
           %th カテゴリー
           %td 
