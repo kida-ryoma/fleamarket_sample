@@ -61,12 +61,14 @@ class ItemsController < ApplicationController
   
   
   def destroy_confirmation
+    user = @item.user
+    if user != current_user
+      redirect_to root_path
+    end
   end
 
   def destroy
     if @item.destroy
-      # redirect_to controller: :users, action: :show
-      # 本当は↑に飛ばしたいが今ルーティングとアクションの設定がない
       redirect_to root_path
     else
       render :destroy_confirmation
