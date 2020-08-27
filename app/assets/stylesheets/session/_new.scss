@@ -9,6 +9,7 @@
   width: 193px;
 }
 main.singleMain{
+  height: calc(100vh - 180px - 128px);
   display: flex;
   justify-content: center;
   background-color: $background-color;

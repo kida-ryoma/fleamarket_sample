@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: :show
+  before_action :authenticate_user!, except: [:show, :search]
   before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren, :search]
   
   def index
@@ -65,16 +65,16 @@ class ItemsController < ApplicationController
 
   def destroy
     if @item.destroy
-      # redirect_to controller: :users, action: :show
-      # 本当は↑に飛ばしたいが今ルーティングとアクションの設定がない
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     else
       render :destroy_confirmation
     end
   end
 
   def search
-    @items = Item.search(params[:keyword]).order("created_at DESC")
+    @items = Item.search(params[:keyword]).order("created_at DESC").map do |item|
+      item unless item.order
+    end.compact
   end
   
   private
