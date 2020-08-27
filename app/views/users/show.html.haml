@@ -85,7 +85,7 @@
             - else
               = image_tag asset_path('profile.default1.png'), class: "content__myPageUserIcon__photo", heght: "60", width: "60"
             %h2.myPageWrapper__myPageUserIcon__userName
-              = current_user.nick_name
+              = @user.nick_name
             .myPageWrapper__myPageUserIcon__count
               .myPageContent__myPageUserIcon__count__item
                 評価
