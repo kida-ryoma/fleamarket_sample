@@ -44,8 +44,9 @@
             = @address.delivery_first_name
     .buy
       .buy__box
-        = form_tag(action: :create, method: :post) do
-          %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_cf241efe47cd23679b76022d"}
+        %button.buy__box__btn
+          =link_to item_orders_path, method: :post do
+            購入する
   .exbitFooter
     .exbitFooter__content
       = link_to "プライバシーポリシー", "", class: "policy"
@@ -55,3 +56,5 @@
       = image_tag("/material/logo/logo-white.png",class: "footerLogo")
     %p
       %samll © 2020 Fmarket
+
+              
