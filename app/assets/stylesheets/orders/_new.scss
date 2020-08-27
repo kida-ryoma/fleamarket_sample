@@ -126,13 +126,19 @@
         width: calc(100% - 10px);
         height: 100%;
         &__btn{
-          text-decoration: none;
           color: $field-color;
           background-color: $red-action;
           display: block;
           text-align: center;
           border-radius: 5px;
-          padding: 10px 0px;
+          line-height: 3;
+          margin: 0 auto;
+          width: 50%;
+          font-size: 15px;
+          a {
+            text-decoration: none;
+            display: block;
+          }
         }
         &__btn:hover{
           background-color: tomato;
