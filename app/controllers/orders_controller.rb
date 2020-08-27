@@ -35,6 +35,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+      Order.create(seller_id: @item.user_id, buyer_id: current_user.id, item_id: @item.id)
       Payjp.api_key = ENV['SECRET_KEY']
       CreditCard.find_by(user_id: current_user.id)
       Payjp::Charge.create(
