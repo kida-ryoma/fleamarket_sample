@@ -163,6 +163,7 @@ a {
             }
           }
           .myPageLists {
+            background-color: $field-color;
             display: flex;
             flex-direction: column;
             .myPageList {
