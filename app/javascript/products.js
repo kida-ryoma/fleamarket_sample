@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', ()=> {
+$(function(){
   const buildImg = (index, url) => {
     const html = `<img data-index="${index}" src="${url}" width="100px">`;
     return html;
