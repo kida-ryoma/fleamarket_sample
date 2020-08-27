@@ -61,6 +61,10 @@ class ItemsController < ApplicationController
   
   
   def destroy_confirmation
+    user = @item.user
+    if user != current_user
+      redirect_to root_path
+    end
   end
 
   def destroy
