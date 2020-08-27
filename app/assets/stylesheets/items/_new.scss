@@ -20,6 +20,11 @@
       .formBox {
         border-bottom: 1px solid rgb(245, 245, 245);
         padding: 20px 40px;
+        #previews{
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+          grid-template-rows   : 1fr 1fr;
+        }
         .imageBox {
           &__icon {
             display: block;
