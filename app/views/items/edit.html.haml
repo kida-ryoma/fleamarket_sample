@@ -10,7 +10,7 @@
           %span.required 必須
         .imageExplanation
           最大10枚までアップロードできます
-          #imageBox
+          .imageBox
             #previews
               - @item.item_images.each_with_index do |image, i|
                 -if image.persisted?
